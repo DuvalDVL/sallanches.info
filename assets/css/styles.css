@@ -1042,6 +1042,51 @@ button { font-family: var(--font-titre); cursor: pointer; }
 }
 
 /* ============================================================
+   BOTTOM NAV MOBILE
+   ============================================================ */
+.bottom-nav {
+  display: none;
+}
+@media (max-width: 768px) {
+  .bottom-nav {
+    display: flex;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: var(--noir);
+    border-top: 1px solid rgba(255,255,255,0.08);
+    z-index: 150;
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+  .bottom-nav a {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 4px;
+    text-decoration: none;
+    gap: 3px;
+    transition: var(--transition);
+  }
+  .bottom-nav a.active .bn-icon,
+  .bottom-nav a.active .bn-label { color: var(--ambre); }
+  .bn-icon { color: rgba(255,255,255,0.4); transition: var(--transition); }
+  .bn-icon svg { width: 20px; height: 20px; }
+  .bn-label {
+    font-family: var(--font-titre);
+    font-size: 9px;
+    color: rgba(255,255,255,0.4);
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+    transition: var(--transition);
+  }
+  /* Espace pour le bottom nav */
+  body { padding-bottom: 60px; }
+}
+
+/* ============================================================
    RESPONSIVE
    ============================================================ */
 @media (max-width: 1024px) {
