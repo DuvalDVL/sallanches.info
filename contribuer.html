@@ -1,0 +1,102 @@
+/* Sallanches.info — main.js */
+
+document.addEventListener('DOMContentLoaded', function () {
+
+  /* ---- MENU MOBILE ---- */
+  var burger = document.getElementById('burger-btn');
+  var mobileMenu = document.getElementById('mobile-menu');
+  var mobileClose = document.getElementById('mobile-close');
+
+  if (burger && mobileMenu) {
+    burger.addEventListener('click', function () {
+      var isOpen = !mobileMenu.hidden;
+      mobileMenu.hidden = isOpen;
+      burger.setAttribute('aria-expanded', !isOpen);
+      document.body.style.overflow = isOpen ? '' : 'hidden';
+    });
+  }
+
+  if (mobileClose && mobileMenu) {
+    mobileClose.addEventListener('click', function () {
+      mobileMenu.hidden = true;
+      if (burger) burger.setAttribute('aria-expanded', 'false');
+      document.body.style.overflow = '';
+    });
+  }
+
+  /* Fermeture menu mobile sur touche Echap */
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && mobileMenu && !mobileMenu.hidden) {
+      mobileMenu.hidden = true;
+      if (burger) burger.setAttribute('aria-expanded', 'false');
+      document.body.style.overflow = '';
+      if (burger) burger.focus();
+    }
+  });
+
+  /* ---- SONDAGE ---- */
+  var options = document.querySelectorAll('.sondage-option');
+  if (options.length > 0) {
+    var storageKey = 'sondage_' + (document.querySelector('.sondage-card') ? document.querySelector('.sondage-card').dataset.id || 'default' : 'default');
+    var voted = localStorage.getItem(storageKey);
+
+    if (voted) {
+      showResults(voted);
+    }
+
+    options.forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        if (localStorage.getItem(storageKey)) return;
+        var val = btn.dataset.value;
+        localStorage.setItem(storageKey, val);
+        showResults(val);
+      });
+    });
+
+    function showResults(votedValue) {
+      var total = 0;
+      var votes = {};
+      options.forEach(function (btn) {
+        var v = btn.dataset.value;
+        var count = parseInt(btn.dataset.votes || '0', 10);
+        if (v === votedValue) count += 1;
+        votes[v] = count;
+        total += count;
+      });
+
+      options.forEach(function (btn) {
+        var v = btn.dataset.value;
+        var pct = total > 0 ? Math.round((votes[v] / total) * 100) : 0;
+        var bar = btn.querySelector('.progress-bar');
+        var pctEl = btn.querySelector('.option-pct');
+        if (bar) bar.style.width = pct + '%';
+        if (pctEl) pctEl.textContent = pct + '%';
+        if (v === votedValue) btn.classList.add('voted');
+        btn.setAttribute('aria-pressed', v === votedValue ? 'true' : 'false');
+      });
+
+      var footer = document.querySelector('.sondage-footer');
+      if (footer) {
+        var totalVotes = total;
+        footer.textContent = totalVotes + ' votant' + (totalVotes > 1 ? 's' : '');
+      }
+    }
+  }
+
+  /* ---- SKIP TO MAIN (accessibilité) ---- */
+  var skipLink = document.querySelector('a[href="#main-content"]');
+  if (skipLink) {
+    skipLink.addEventListener('click', function (e) {
+      e.preventDefault();
+      var main = document.getElementById('main-content');
+      if (main) { main.focus(); }
+    });
+  }
+
+  /* ---- LAZY LOAD images nativement (fallback) ---- */
+  if ('loading' in HTMLImageElement.prototype) {
+    var lazyImgs = document.querySelectorAll('img[loading="lazy"]');
+    lazyImgs.forEach(function (img) { img.src = img.dataset.src || img.src; });
+  }
+
+});
