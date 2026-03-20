@@ -34,7 +34,7 @@ layout: default
 
       {% if page.image %}
       <figure class="article-featured-img" itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
-        <img src="{{ post.image | prepend: site.baseurl }}" alt="{{ page.image_alt | default: page.title }}" loading="eager" itemprop="url">
+        <img src="{{ page.image | prepend: site.baseurl }}" alt="{{ page.image_alt | default: page.title }}" loading="eager" itemprop="url">
         {% if page.image_caption %}
         <figcaption>{{ page.image_caption }}</figcaption>
         {% endif %}
