@@ -21,7 +21,7 @@ layout: default
 
         <div class="article-meta-bar">
           <time itemprop="datePublished" datetime="{{ page.date | date_to_xmlschema }}">
-            {{ page.date | date: "%d %B %Y" }}
+            {{ page.date | date: "%d" }} {% assign pm = page.date | date: "%-m" %}{% case pm %}{% when "1" %}janvier{% when "2" %}février{% when "3" %}mars{% when "4" %}avril{% when "5" %}mai{% when "6" %}juin{% when "7" %}juillet{% when "8" %}août{% when "9" %}septembre{% when "10" %}octobre{% when "11" %}novembre{% when "12" %}décembre{% endcase %} {{ page.date | date: "%Y" }}
           </time>
           {% if page.time %}<span class="sep">·</span><span>{{ page.time }}</span>{% endif %}
           {% if page.author %}<span class="sep">·</span><span itemprop="author">{{ page.author }}</span>{% endif %}
