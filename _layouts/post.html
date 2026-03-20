@@ -1,0 +1,99 @@
+---
+layout: default
+---
+
+<article class="container" itemscope itemtype="https://schema.org/NewsArticle">
+
+  <div class="article-layout">
+
+    <div class="article-content">
+
+      <header class="article-header">
+        {% if page.category %}
+        <a href="{{ site.baseurl }}/{{ page.category | slugify }}/" class="badge">{{ page.category }}</a>
+        {% endif %}
+
+        <h1 class="article-title" itemprop="headline">{{ page.title }}</h1>
+
+        {% if page.description %}
+        <p class="article-subtitle" itemprop="description">{{ page.description }}</p>
+        {% endif %}
+
+        <div class="article-meta-bar">
+          <time itemprop="datePublished" datetime="{{ page.date | date_to_xmlschema }}">
+            {{ page.date | date: "%d %B %Y" }}
+          </time>
+          {% if page.time %}<span class="sep">·</span><span>{{ page.time }}</span>{% endif %}
+          {% if page.author %}<span class="sep">·</span><span itemprop="author">{{ page.author }}</span>{% endif %}
+          {% if page.ville %}<span class="sep">·</span><span class="ville">{{ page.ville }}</span>{% endif %}
+          {% if page.reading_time %}<span class="sep">·</span><span>{{ page.reading_time }} min</span>{% endif %}
+        </div>
+
+        {% include share.html %}
+      </header>
+
+      {% if page.image %}
+      <figure class="article-featured-img" itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
+        <img src="{{ page.image }}" alt="{{ page.image_alt | default: page.title }}" loading="eager" itemprop="url">
+        {% if page.image_caption %}
+        <figcaption>{{ page.image_caption }}</figcaption>
+        {% endif %}
+      </figure>
+      {% endif %}
+
+      <div class="article-body" itemprop="articleBody">
+        {{ content }}
+      </div>
+
+      <div class="article-share">
+        <p class="article-share-title">Cet article vous a plu ? Partagez-le</p>
+        {% include share.html %}
+      </div>
+
+    </div>
+
+    <aside class="article-sidebar" aria-label="Sidebar">
+
+      <div class="sidebar-widget">
+        <div class="widget-title">À lire aussi</div>
+        {% assign related = site.posts | where_exp: "post", "post.url != page.url" | limit: 4 %}
+        {% for post in related %}
+        <div style="margin-bottom: 12px; padding-bottom: 12px; border-bottom: 1px solid var(--gris-border);">
+          {% if post.category %}
+          <span class="badge" style="font-size: 9px; margin-bottom: 4px;">{{ post.category }}</span>
+          {% endif %}
+          <p style="font-family: var(--font-titre); font-size: 12px; font-weight: 600; line-height: 1.4; margin-top: 4px;">
+            <a href="{{ post.url }}" style="color: var(--texte);">{{ post.title }}</a>
+          </p>
+          <p style="font-family: var(--font-titre); font-size: 10px; color: var(--gris-text); margin-top: 3px;">{{ post.date | date: "%d %B %Y" }}</p>
+        </div>
+        {% endfor %}
+      </div>
+
+      <div class="sidebar-widget">
+        <div class="pub-label">Publicité</div>
+        <div class="pub-placeholder">Espace publicitaire</div>
+      </div>
+
+      <div class="sidebar-widget">
+        <div class="widget-title">Newsletter</div>
+        <p style="font-family: var(--font-titre); font-size: 12px; color: var(--gris-text); margin-bottom: 12px; line-height: 1.5;">
+          Recevez l'actu de la semaine directement dans votre boite mail.
+        </p>
+        <form action="https://formspree.io/f/VOTRE_ID" method="POST">
+          <input type="email" name="email" placeholder="votre@email.fr" required
+            style="width: 100%; padding: 8px 12px; border: 1px solid var(--gris-border); border-radius: var(--rayon); font-family: var(--font-titre); font-size: 12px; margin-bottom: 8px;">
+          <button type="submit" style="width: 100%; background: var(--ambre); border: none; border-radius: var(--rayon); padding: 9px; font-family: var(--font-titre); font-size: 12px; font-weight: 700; color: var(--noir); cursor: pointer;">
+            Je m'inscris
+          </button>
+          <p style="font-family: var(--font-titre); font-size: 10px; color: var(--gris-text); margin-top: 6px; line-height: 1.4;">
+            En vous inscrivant, vous acceptez notre <a href="{{ site.baseurl }}/confidentialite/" style="color: var(--ambre);">politique de confidentialité</a>.
+          </p>
+        </form>
+      </div>
+
+    </aside>
+
+  </div>
+
+</article>
