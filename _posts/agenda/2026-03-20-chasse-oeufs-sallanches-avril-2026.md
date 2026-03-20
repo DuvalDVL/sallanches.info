@@ -1,24 +1,24 @@
 ---
 layout: post
 title: "Chasse aux oeufs sous la Grenette"
-description: "La traditionnelle chasse aux oeufs de Paques revient sous la Grenette de Sallanches le dimanche 19 avril, pour les enfants de 2 a 10 ans."
+description: "La traditionnelle chasse aux oeufs de Pâques revient sous la Grenette de Sallanches le dimanche 19 avril, pour les enfants de 2 à 10 ans."
 date: 2026-03-20
 event_date: 2026-04-19
 event_time: "10h00 - 11h30"
 event_lieu: "Sous la Grenette, Sallanches"
 event_tarif: "Gratuit"
 category: Agenda
-author: La redaction
+author: La rédaction
 ville: Sallanches
 reading_time: 2
 image: /assets/img/articles/chasse-oeufs-paques.jpg
-image_alt: "Chasse aux oeufs de Paques pour enfants a Sallanches"
+image_alt: "Chasse aux oeufs de Pâques pour enfants à Sallanches"
 tags: [agenda, famille, enfants, paques, sallanches, gratuit]
 permalink: /agenda/chasse-oeufs-paques-sallanches-2026/
 ---
 
-Le dimanche 19 avril, les enfants de 2 a 10 ans sont invites a participer a la chasse aux oeufs organisee sous la Grenette de Sallanches, de 10h a 11h30.
+Le dimanche 19 avril, les enfants de 2 à 10 ans sont invités à participer à la chasse aux oeufs organisée sous la Grenette de Sallanches, de 10h à 11h30.
 
 <!--more-->
 
-Evenement gratuit, ouvert a tous les enfants accompagnes. Renseignements aupres de la mairie de Sallanches ou de l'office de tourisme.
+Événement gratuit, ouvert à tous les enfants accompagnés. Renseignements auprès de la mairie de Sallanches ou de l'office de tourisme.
