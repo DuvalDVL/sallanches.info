@@ -3,6 +3,7 @@ description: "L'actualité locale de Sallanches, Passy, Saint-Gervais et Magland
 baseurl: "/sallanches.info"
 url: "https://sallanches.info"
 locale: fr_FR
+lang: fr
 
 # Auteur
 author:
