@@ -1,7 +1,7 @@
 ---
 layout: post
-title: "Spectacle 'Geometrie Variable' a la salle Leon Curral"
-description: "La compagnie Volubilis presente 'Geometrie Variable', un spectacle de cirque contemporain, a la salle Leon Curral de Sallanches."
+title: "Spectacle 'Géometrie Variable' à la salle Léon Curral"
+description: "La compagnie Volubilis présente 'Géometrie Variable', un spectacle de cirque contemporain, à la salle Léon Curral de Sallanches."
 date: 2026-03-20
 event_date: 2026-03-24
 event_time: "20h00"
@@ -17,8 +17,8 @@ tags: [agenda, spectacle, cirque, sallanches, leon-curral]
 permalink: /agenda/spectacle-geometrie-variable-sallanches-mars-2026/
 ---
 
-La salle Leon Curral accueille mardi 24 mars le spectacle "Geometrie Variable", une creation de cirque contemporain de la compagnie Volubilis.
+La salle Leon Curral accueille mardi 24 mars le spectacle "Géometrie Variable", une création de cirque contemporain de la compagnie Volubilis.
 
 <!--more-->
 
-La seance est prevue a 20h00. Renseignements et reservations aupres de la salle ou de l'office de tourisme de Sallanches.
+La séance est prevue a 20h00. Renseignements et réservations auprès de la salle ou de l'office de tourisme de Sallanches.
