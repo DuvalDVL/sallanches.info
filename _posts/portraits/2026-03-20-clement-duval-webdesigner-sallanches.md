@@ -41,4 +41,4 @@ Un indicateur souvent cite : plusieurs clients ont constate un passage de deux a
 
 Clement Duval intervient sur tout le bassin : Sallanches, Cluses, Bonneville, Chamonix, Megève, Passy, Annecy. Il connait le tissu economique local, ses specificites, ses contraintes. "Je ne suis pas une agence parisienne qui debarque avec des solutions generiques. Je vis ici."
 
-Duval DVL est joignable sur [duvaldvl.com](https://duvaldvl.com) ou directement au 07 60 16 61 36.
+Duval DVL est joignable sur [duvaldvl.com](https://duvaldvl.com) ou directement au 07 60 16 61 36. Pour les artisans et PME de la vallée qui souhaitent améliorer leur visibilité en ligne, un audit gratuit est disponible sur demande.
