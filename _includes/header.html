@@ -1,0 +1,57 @@
+{% assign current = page.url %}
+
+<header class="site-header" role="banner">
+
+  <div class="header-top">
+    <a href="{{ site.baseurl }}/" class="site-logo" aria-label="Sallanches.info - Accueil">
+      Sallanches<span class="point">.</span>info
+    </a>
+    <span class="header-tagline" aria-hidden="true">L'actu locale 100% gratuite</span>
+    <div class="header-actions">
+      <span class="btn-gratuit" aria-hidden="true">100% gratuit</span>
+      <a href="{{ site.baseurl }}/contribuer/" class="btn-contribuer" aria-label="Contribuer - Envoyer une info">
+        Vous avez une info ?
+      </a>
+      <button class="burger-btn" id="burger-btn" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="mobile-menu">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+          <line x1="3" y1="6" x2="21" y2="6"/>
+          <line x1="3" y1="12" x2="21" y2="12"/>
+          <line x1="3" y1="18" x2="21" y2="18"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <nav class="header-nav" role="navigation" aria-label="Rubriques">
+    <a href="{{ site.baseurl }}/" class="nav-link {% if current == '/' %}active{% endif %}" aria-current="{% if current == '/' %}page{% endif %}">Accueil</a>
+    <a href="{{ site.baseurl }}/actualites/" class="nav-link {% if current contains '/actualites' %}active{% endif %}">Actualités</a>
+    <a href="{{ site.baseurl }}/economie/" class="nav-link {% if current contains '/economie' %}active{% endif %}">Économie</a>
+    <a href="{{ site.baseurl }}/agenda/" class="nav-link {% if current contains '/agenda' %}active{% endif %}">Agenda</a>
+    <a href="{{ site.baseurl }}/portraits/" class="nav-link {% if current contains '/portraits' %}active{% endif %}">Portraits</a>
+    <a href="{{ site.baseurl }}/pratique/" class="nav-link {% if current contains '/pratique' %}active{% endif %}">Pratique</a>
+    <a href="{{ site.baseurl }}/passy/" class="nav-link {% if current contains '/passy' %}active{% endif %}">Passy</a>
+    <a href="{{ site.baseurl }}/saint-gervais/" class="nav-link {% if current contains '/saint-gervais' %}active{% endif %}">Saint-Gervais</a>
+    <a href="{{ site.baseurl }}/magland/" class="nav-link {% if current contains '/magland' %}active{% endif %}">Magland</a>
+  </nav>
+
+</header>
+
+<!-- Menu mobile -->
+<div class="mobile-menu" id="mobile-menu" role="dialog" aria-modal="true" aria-label="Menu de navigation" hidden>
+  <div class="mobile-menu-header">
+    <span class="site-logo">Sallanches<span class="point">.</span>info</span>
+    <button class="mobile-close" id="mobile-close" aria-label="Fermer le menu">&times;</button>
+  </div>
+  <ul class="mobile-nav-links" role="list">
+    <li><a href="{{ site.baseurl }}/">Accueil</a></li>
+    <li><a href="{{ site.baseurl }}/actualites/">Actualités</a></li>
+    <li><a href="{{ site.baseurl }}/economie/">Économie</a></li>
+    <li><a href="{{ site.baseurl }}/agenda/">Agenda</a></li>
+    <li><a href="{{ site.baseurl }}/portraits/">Portraits</a></li>
+    <li><a href="{{ site.baseurl }}/pratique/">Pratique</a></li>
+    <li><a href="{{ site.baseurl }}/passy/">Passy</a></li>
+    <li><a href="{{ site.baseurl }}/saint-gervais/">Saint-Gervais</a></li>
+    <li><a href="{{ site.baseurl }}/magland/">Magland</a></li>
+  </ul>
+  <a href="{{ site.baseurl }}/contribuer/" class="mobile-contribuer">Vous avez une info ? Contribuez</a>
+</div>
