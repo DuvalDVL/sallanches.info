@@ -64,7 +64,7 @@ description: Toute l'actualité locale de Sallanches et de la vallée. 100% grat
             <span class="badge">{{ hero_post.category }}</span>
             {% endif %}
             {% if hero_post.image %}
-            <img src="{{ hero_post.image }}" alt="{{ hero_post.image_alt | default: hero_post.title }}" loading="eager" itemprop="image">
+            <img src="{{ post.image | prepend: site.baseurl }}" alt="{{ hero_post.image_alt | default: hero_post.title }}" loading="eager" itemprop="image">
             {% endif %}
           </div>
         </a>
@@ -92,7 +92,7 @@ description: Toute l'actualité locale de Sallanches et de la vallée. 100% grat
           <a href="{{ post.url }}" aria-label="Lire : {{ post.title }}">
             <div class="side-card-img">
               {% if post.image %}
-              <img src="{{ post.image }}" alt="{{ post.image_alt | default: post.title }}" loading="lazy" itemprop="image">
+              <img src="{{ post.image | prepend: site.baseurl }}" alt="{{ post.image_alt | default: post.title }}" loading="lazy" itemprop="image">
               {% endif %}
             </div>
           </a>
@@ -129,7 +129,7 @@ description: Toute l'actualité locale de Sallanches et de la vallée. 100% grat
           <div class="article-card-img">
             {% if post.category %}<span class="badge">{{ post.category }}</span>{% endif %}
             {% if post.image %}
-            <img src="{{ post.image }}" alt="{{ post.image_alt | default: post.title }}" loading="lazy" itemprop="image">
+            <img src="{{ post.image | prepend: site.baseurl }}" alt="{{ post.image_alt | default: post.title }}" loading="lazy" itemprop="image">
             {% endif %}
           </div>
         </a>
