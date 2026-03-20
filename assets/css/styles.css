@@ -732,6 +732,36 @@ button { font-family: var(--font-titre); cursor: pointer; }
 .btn-secondary-outline:hover { border-color: rgba(255,255,255,0.6); color: var(--blanc); }
 
 /* ============================================================
+   FIL D'ARIANE
+   ============================================================ */
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 6px;
+  font-family: var(--font-titre);
+  font-size: 12px;
+  color: var(--gris-text);
+  margin-bottom: 20px;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--gris-border);
+}
+.breadcrumb a {
+  color: var(--gris-text);
+  text-decoration: none;
+  transition: var(--transition);
+}
+.breadcrumb a:hover { color: var(--ambre); }
+.breadcrumb span[aria-current="page"] {
+  color: var(--texte);
+  font-weight: 600;
+}
+.breadcrumb-sep {
+  color: var(--gris-border);
+  font-size: 14px;
+}
+
+/* ============================================================
    LAYOUT ARTICLE
    ============================================================ */
 .article-layout {
