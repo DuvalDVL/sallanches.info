@@ -8,6 +8,16 @@ layout: default
 
     <div class="article-content">
 
+      <nav class="breadcrumb" aria-label="Fil d'ariane">
+        <a href="{{ site.baseurl }}/">Accueil</a>
+        <span class="breadcrumb-sep" aria-hidden="true">›</span>
+        {% if page.category %}
+        <a href="{{ site.baseurl }}/{{ page.category | slugify }}/">{{ page.category }}</a>
+        <span class="breadcrumb-sep" aria-hidden="true">›</span>
+        {% endif %}
+        <span aria-current="page">{{ page.title | truncate: 50 }}</span>
+      </nav>
+
       <header class="article-header">
         {% if page.category %}
         <a href="{{ site.baseurl }}/{{ page.category | slugify }}/" class="badge">{{ page.category }}</a>
