@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
   <!-- SEO de base -->
-  <title>{% if page.title %}{{ page.title }} | Sallanches.info{% else %}Sallanches.info - L'actualitÃ© locale{% endif %}</title>
+  <title>{% if page.title %}{{ page.title }} | Sallanches.info{% else %}Sallanches.info - L'actualité locale{% endif %}</title>
   <meta name="description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
   <meta name="robots" content="index, follow">
 
@@ -39,7 +39,7 @@
   <!-- Article metadata (Google News) -->
   {% if page.layout == 'post' %}
   <meta property="article:published_time" content="{{ page.date | date_to_xmlschema }}">
-  <meta property="article:author" content="{{ page.author | default: 'La rÃ©daction' }}">
+  <meta property="article:author" content="{{ page.author | default: 'La rédaction' }}">
   {% if page.category %}
   <meta property="article:section" content="{{ page.category }}">
   {% endif %}
@@ -82,7 +82,7 @@
     "dateModified": "{{ page.date | date_to_xmlschema }}",
     "author": {
       "@type": "Person",
-      "name": "{{ page.author | default: 'La rÃ©daction' }}"
+      "name": "{{ page.author | default: 'La rédaction' }}"
     },
     "publisher": {
       "@type": "Organization",
@@ -117,7 +117,7 @@
   <!-- RSS Feed -->
   <link rel="alternate" type="application/rss+xml" title="Sallanches.info" href="{{ site.baseurl }}/feed.xml">
 
-  <!-- Google Analytics (Ã  activer) -->
+  <!-- Google Analytics (à activer) -->
   <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script> -->
 
 </head>
