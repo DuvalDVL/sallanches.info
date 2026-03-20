@@ -58,7 +58,7 @@ description: Toute l'actualité locale de Sallanches et de la vallée. 100% grat
       <!-- Article principal -->
       {% if hero_post %}
       <article class="une-hero" itemscope itemtype="https://schema.org/NewsArticle">
-        <a href="{{ hero_post.url }}" aria-label="Lire : {{ hero_post.title }}">
+        <a href="{{ hero_post.url | prepend: site.baseurl }}" aria-label="Lire : {{ hero_post.title }}">
           <div class="une-hero-img">
             {% if hero_post.category %}
             <span class="badge">{{ hero_post.category }}</span>
@@ -75,7 +75,7 @@ description: Toute l'actualité locale de Sallanches et de la vallée. 100% grat
             {% if hero_post.ville %}<span class="sep">·</span><span class="ville">{{ hero_post.ville }}</span>{% endif %}
           </div>
           <h2 class="une-hero-title" itemprop="headline">
-            <a href="{{ hero_post.url }}">{{ hero_post.title }}</a>
+            <a href="{{ hero_post.url | prepend: site.baseurl }}">{{ hero_post.title }}</a>
           </h2>
           {% if hero_post.description %}
           <p class="une-hero-excerpt" itemprop="description">{{ hero_post.description }}</p>
@@ -89,7 +89,7 @@ description: Toute l'actualité locale de Sallanches et de la vallée. 100% grat
       <div class="une-side" role="list" aria-label="Autres articles à la une">
         {% for post in side_posts %}
         <article class="side-card" role="listitem" itemscope itemtype="https://schema.org/NewsArticle">
-          <a href="{{ post.url }}" aria-label="Lire : {{ post.title }}">
+          <a href="{{ post.url | prepend: site.baseurl }}" aria-label="Lire : {{ post.title }}">
             <div class="side-card-img">
               {% if post.image %}
               <img src="{{ post.image | prepend: site.baseurl }}" alt="{{ post.image_alt | default: post.title }}" loading="lazy" itemprop="image">
@@ -99,7 +99,7 @@ description: Toute l'actualité locale de Sallanches et de la vallée. 100% grat
           <div class="side-card-body">
             {% if post.category %}<span class="badge">{{ post.category }}</span>{% endif %}
             <h3 class="side-card-title" itemprop="headline">
-              <a href="{{ post.url }}">{{ post.title }}</a>
+              <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
             </h3>
             <p class="side-card-meta">
               <time itemprop="datePublished" datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%d %B" }}</time>
@@ -125,7 +125,7 @@ description: Toute l'actualité locale de Sallanches et de la vallée. 100% grat
       {% assign actus = site.posts | slice: 4, 6 %}
       {% for post in actus %}
       <article class="article-card" role="listitem" itemscope itemtype="https://schema.org/NewsArticle">
-        <a href="{{ post.url }}" aria-label="Lire : {{ post.title }}">
+        <a href="{{ post.url | prepend: site.baseurl }}" aria-label="Lire : {{ post.title }}">
           <div class="article-card-img">
             {% if post.category %}<span class="badge">{{ post.category }}</span>{% endif %}
             {% if post.image %}
@@ -139,7 +139,7 @@ description: Toute l'actualité locale de Sallanches et de la vallée. 100% grat
             {% if post.ville %} · {{ post.ville }}{% endif %}
           </div>
           <h3 class="article-card-title" itemprop="headline">
-            <a href="{{ post.url }}">{{ post.title }}</a>
+            <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
           </h3>
         </div>
       </article>
