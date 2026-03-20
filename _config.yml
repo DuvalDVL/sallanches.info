@@ -1,0 +1,45 @@
+title: "Sallanches.info"
+description: "L'actualité locale de Sallanches, Passy, Saint-Gervais et Magland. 100% gratuit, sans abonnement."
+baseurl: ""
+url: "https://sallanches.info"
+locale: fr_FR
+
+# Auteur
+author:
+  name: "La rédaction"
+  email: "contact@sallanches.info"
+
+# Réseaux sociaux
+social:
+  facebook: "https://facebook.com/sallanchesinfo"
+  twitter: "https://x.com/sallanchesinfo"
+  linkedin: "https://linkedin.com/company/sallanchesinfo"
+
+# Contact
+contact:
+  email: "contact@sallanches.info"
+
+# Blog
+permalink: /articles/:categories/:title/
+excerpt_separator: <!--more-->
+
+# Plugins
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap
+  - jekyll-feed
+
+# Collections
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+
+# Exclusions
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - README.md
