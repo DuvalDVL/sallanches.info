@@ -64,7 +64,7 @@ description: Toute l'actualité locale de Sallanches et de la vallée. 100% grat
             <span class="badge">{{ hero_post.category }}</span>
             {% endif %}
             {% if hero_post.image %}
-            <img src="{{ post.image | prepend: site.baseurl }}" alt="{{ hero_post.image_alt | default: hero_post.title }}" loading="eager" itemprop="image">
+            <img src="{{ hero_post.image | prepend: site.baseurl }}" alt="{{ hero_post.image_alt | default: hero_post.title }}" loading="eager" itemprop="image">
             {% endif %}
           </div>
         </a>
