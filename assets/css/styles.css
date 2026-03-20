@@ -732,6 +732,50 @@ button { font-family: var(--font-titre); cursor: pointer; }
 .btn-secondary-outline:hover { border-color: rgba(255,255,255,0.6); color: var(--blanc); }
 
 /* ============================================================
+   RUBRIQUES MOBILE (homepage)
+   ============================================================ */
+.rubriques-mobile {
+  display: none;
+}
+@media (max-width: 768px) {
+  .rubriques-mobile {
+    display: block;
+    background: var(--blanc);
+    border-bottom: 1px solid var(--gris-border);
+    padding: 10px 0;
+  }
+  .rubriques-scroll {
+    display: flex;
+    gap: 8px;
+    overflow-x: auto;
+    padding: 0 16px;
+    scrollbar-width: none;
+  }
+  .rubriques-scroll::-webkit-scrollbar { display: none; }
+  .rubrique-pill {
+    display: inline-block;
+    white-space: nowrap;
+    background: var(--gris-bg);
+    border: 1px solid var(--gris-border);
+    border-radius: 20px;
+    padding: 6px 14px;
+    font-family: var(--font-titre);
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--texte);
+    text-decoration: none;
+    transition: var(--transition);
+    flex-shrink: 0;
+  }
+  .rubrique-pill:hover,
+  .rubrique-pill:active {
+    background: var(--ambre);
+    border-color: var(--ambre);
+    color: var(--noir);
+  }
+}
+
+/* ============================================================
    FIL D'ARIANE
    ============================================================ */
 .breadcrumb {
@@ -1110,6 +1154,9 @@ button { font-family: var(--font-titre); cursor: pointer; }
   .newsletter-phone { width: 100%; }
   .contribuer-actions { flex-direction: column; align-items: center; }
   .une-hero-img { height: 220px; }
+
+  /* Grille catégorie mobile - 1 colonne */
+  .cat-grid { grid-template-columns: 1fr !important; }
 
   /* Article mobile */
   .article-title { font-size: 20px; line-height: 1.3; }
