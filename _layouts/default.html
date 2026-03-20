@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <!-- SEO de base -->
+  <title>{% if page.title %}{{ page.title }} | Sallanches.info{% else %}Sallanches.info - L'actualitÃ© locale{% endif %}</title>
+  <meta name="description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
+  <meta name="robots" content="index, follow">
+
+  <!-- Open Graph (Facebook, LinkedIn, WhatsApp) -->
+  <meta property="og:type" content="{% if page.layout == 'post' %}article{% else %}website{% endif %}">
+  <meta property="og:title" content="{% if page.title %}{{ page.title }}{% else %}Sallanches.info{% endif %}">
+  <meta property="og:description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
+  <meta property="og:url" content="{{ page.url | absolute_url }}">
+  <meta property="og:site_name" content="Sallanches.info">
+  <meta property="og:locale" content="fr_FR">
+  {% if page.image %}
+  <meta property="og:image" content="{{ site.url }}{{ page.image }}">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  {% else %}
+  <meta property="og:image" content="{{ site.url }}/assets/img/og-default.jpg">
+  {% endif %}
+
+  <!-- Twitter Card (X) -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@sallanchesinfo">
+  <meta name="twitter:title" content="{% if page.title %}{{ page.title }}{% else %}Sallanches.info{% endif %}">
+  <meta name="twitter:description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
+  {% if page.image %}
+  <meta name="twitter:image" content="{{ site.url }}{{ page.image }}">
+  {% else %}
+  <meta name="twitter:image" content="{{ site.url }}/assets/img/og-default.jpg">
+  {% endif %}
+
+  <!-- Article metadata (Google News) -->
+  {% if page.layout == 'post' %}
+  <meta property="article:published_time" content="{{ page.date | date_to_xmlschema }}">
+  <meta property="article:author" content="{{ page.author | default: 'La rÃ©daction' }}">
+  {% if page.category %}
+  <meta property="article:section" content="{{ page.category }}">
+  {% endif %}
+  {% endif %}
+
+  <!-- Canonical -->
+  <link rel="canonical" href="{{ page.url | replace:'index.html','' | absolute_url }}">
+
+  <!-- Schema.org -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "NewsMediaOrganization",
+    "name": "Sallanches.info",
+    "url": "{{ site.url }}",
+    "logo": "{{ site.url }}/assets/img/logo.png",
+    "description": "{{ site.description }}",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Sallanches",
+      "postalCode": "74700",
+      "addressCountry": "FR"
+    },
+    "sameAs": [
+      "{{ site.social.facebook }}",
+      "{{ site.social.twitter }}",
+      "{{ site.social.linkedin }}"
+    ]
+  }
+  </script>
+
+  {% if page.layout == 'post' %}
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "NewsArticle",
+    "headline": "{{ page.title | escape }}",
+    "description": "{{ page.description | escape }}",
+    "datePublished": "{{ page.date | date_to_xmlschema }}",
+    "dateModified": "{{ page.date | date_to_xmlschema }}",
+    "author": {
+      "@type": "Person",
+      "name": "{{ page.author | default: 'La rÃ©daction' }}"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Sallanches.info",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "{{ site.url }}/assets/img/logo.png"
+      }
+    },
+    "image": "{% if page.image %}{{ site.url }}{{ page.image }}{% else %}{{ site.url }}/assets/img/og-default.jpg{% endif %}",
+    "url": "{{ page.url | absolute_url }}",
+    "mainEntityOfPage": "{{ page.url | absolute_url }}"
+  }
+  </script>
+  {% endif %}
+
+  <!-- Fonts (preconnect pour performance) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/styles.css">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="{{ site.baseurl }}/assets/img/favicon.png">
+  <link rel="apple-touch-icon" href="{{ site.baseurl }}/assets/img/apple-touch-icon.png">
+
+  <!-- Sitemap -->
+  <link rel="sitemap" type="application/xml" href="{{ site.baseurl }}/sitemap.xml">
+
+  <!-- RSS Feed -->
+  <link rel="alternate" type="application/rss+xml" title="Sallanches.info" href="{{ site.baseurl }}/feed.xml">
+
+  <!-- Google Analytics (Ã  activer) -->
+  <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script> -->
+
+</head>
+<body>
+
+  {% include header.html %}
+
+  <main id="main-content" tabindex="-1">
+    {{ content }}
+  </main>
+
+  {% include footer.html %}
+
+  <!-- JS -->
+  <script src="{{ site.baseurl }}/assets/js/main.js" defer></script>
+
+</body>
+</html>
