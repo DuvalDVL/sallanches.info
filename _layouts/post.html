@@ -63,7 +63,7 @@ layout: default
           <span class="badge" style="font-size: 9px; margin-bottom: 4px;">{{ post.category }}</span>
           {% endif %}
           <p style="font-family: var(--font-titre); font-size: 12px; font-weight: 600; line-height: 1.4; margin-top: 4px;">
-            <a href="{{ post.url }}" style="color: var(--texte);">{{ post.title }}</a>
+            <a href="{{ post.url | prepend: site.baseurl }}" style="color: var(--texte);">{{ post.title }}</a>
           </p>
           <p style="font-family: var(--font-titre); font-size: 10px; color: var(--gris-text); margin-top: 3px;">{{ post.date | date: "%d %B %Y" }}</p>
         </div>
