@@ -21,7 +21,7 @@ contact:
   email: "contact@sallanches.info"
 
 # Blog
-permalink: /:categories/:title/
+permalink: /blog/:title/
 excerpt_separator: <!--more-->
 
 # Plugins
