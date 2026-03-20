@@ -63,6 +63,24 @@ permalink: /contribuer/
             aria-required="true"></textarea>
         </div>
 
+        <div style="margin-bottom: 20px; background: var(--gris-bg); border-radius: var(--rayon); padding: 14px;">
+          <p style="font-family: var(--font-titre); font-size: 12px; font-weight: 600; color: var(--texte); margin-bottom: 10px;">Si votre information est publiée, souhaitez-vous apparaître comme source ?</p>
+          <div style="display: flex; flex-direction: column; gap: 8px;">
+            <label style="display: flex; align-items: center; gap: 8px; font-family: var(--font-titre); font-size: 13px; color: var(--texte); cursor: pointer;">
+              <input type="radio" name="attribution" value="anonyme" checked style="accent-color: var(--ambre);">
+              Rester anonyme - aucun nom ne sera mentionné
+            </label>
+            <label style="display: flex; align-items: center; gap: 8px; font-family: var(--font-titre); font-size: 13px; color: var(--texte); cursor: pointer;">
+              <input type="radio" name="attribution" value="prenom" style="accent-color: var(--ambre);">
+              Prénom uniquement (ex : "selon Marc, habitant de Sallanches")
+            </label>
+            <label style="display: flex; align-items: center; gap: 8px; font-family: var(--font-titre); font-size: 13px; color: var(--texte); cursor: pointer;">
+              <input type="radio" name="attribution" value="nom_complet" style="accent-color: var(--ambre);">
+              Nom complet
+            </label>
+          </div>
+        </div>
+
         <div style="margin-bottom: 24px;">
           <label for="photo" style="font-family: var(--font-titre); font-size: 12px; font-weight: 600; color: var(--texte); display: block; margin-bottom: 6px;">
             Photo (optionnel)
