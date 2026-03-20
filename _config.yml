@@ -1,16 +1,16 @@
 title: "Sallanches.info"
-description: "L'actualité locale de Sallanches, Passy, Saint-Gervais et Magland. 100% gratuit, sans abonnement."
+description: "L'actualite locale de Sallanches, Passy, Saint-Gervais et Magland. 100% gratuit, sans abonnement."
 baseurl: "/sallanches.info"
-url: "https://sallanches.info"
+url: "https://duvaldvl.github.io"
 locale: fr_FR
 lang: fr
 
-# Author
+# Auteur
 author:
-  name: "La rédaction"
+  name: "La redaction"
   email: "contact@sallanches.info"
 
-# Réseaux sociaux
+# Reseaux sociaux
 social:
   facebook: "https://facebook.com/sallanchesinfo"
   twitter: "https://x.com/sallanchesinfo"
@@ -20,9 +20,11 @@ social:
 contact:
   email: "contact@sallanches.info"
 
-# Blog
-permalink: /blog/:title/
-excerpt_separator: <!--more-->
+# Permalink - utilise la categorie du dossier _posts/[categorie]/
+permalink: /:categories/:title/
+
+# Excerpts
+excerpt_separator: "<!--more-->"
 
 # Plugins
 plugins:
@@ -30,7 +32,7 @@ plugins:
   - jekyll-sitemap
   - jekyll-feed
 
-# Collections
+# Layout par defaut pour les articles
 defaults:
   - scope:
       path: ""
