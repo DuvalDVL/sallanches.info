@@ -1,5 +1,5 @@
 /* ============================================================
-   SALLANCHES.INFO â€” Styles principaux
+   SALLANCHES.INFO — Styles principaux
    ============================================================ */
 
 @import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap');
@@ -39,7 +39,7 @@ a { color: inherit; text-decoration: none; }
 button { font-family: var(--font-titre); cursor: pointer; }
 
 /* ============================================================
-   ACCESSIBILITÃ‰
+   ACCESSIBILITÉ
    ============================================================ */
 :focus-visible {
   outline: 3px solid var(--ambre);
@@ -80,7 +80,7 @@ button { font-family: var(--font-titre); cursor: pointer; }
   box-shadow: 0 2px 8px rgba(0,0,0,0.3);
 }
 
-/* Barre supÃ©rieure */
+/* Barre supérieure */
 .header-top {
   display: flex;
   align-items: center;
@@ -216,7 +216,7 @@ button { font-family: var(--font-titre); cursor: pointer; }
 }
 
 /* ============================================================
-   BADGE CATÃ‰GORIE
+   BADGE CATÉGORIE
    ============================================================ */
 .badge {
   display: inline-block;
@@ -238,7 +238,7 @@ button { font-family: var(--font-titre); cursor: pointer; }
 .badge-rouge { background: var(--rouge-alerte); color: white; }
 
 /* ============================================================
-   HOMEPAGE â€” UNE PRINCIPALE
+   HOMEPAGE — UNE PRINCIPALE
    ============================================================ */
 .homepage-main { padding: 24px 0; background: var(--gris-bg); }
 
@@ -334,7 +334,7 @@ button { font-family: var(--font-titre); cursor: pointer; }
 .share-btn:hover { border-color: var(--ambre); color: var(--ambre); }
 .share-btn svg { width: 14px; height: 14px; flex-shrink: 0; }
 
-/* Colonne latÃ©rale UNE */
+/* Colonne latérale UNE */
 .une-side { display: flex; flex-direction: column; gap: 10px; }
 
 .side-card {
