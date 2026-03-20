@@ -1,11 +1,11 @@
 ---
 layout: post
-title: "Municipales a Sallanches : quatre listes en lice pour le second tour ce dimanche"
-description: "Un scrutin exceptionnel a Sallanches. Pour la premiere fois depuis longtemps, quatre listes s'affrontent au second tour des elections municipales, prevu ce dimanche 22 mars."
+title: "Municipales à Sallanches : quatre listes en lice pour le second tour ce dimanche"
+description: "Un scrutin exceptionnel à Sallanches. Pour la première fois depuis longtemps, quatre listes s'affrontent au second tour des elections municipales, prévu ce dimanche 22 mars."
 date: 2026-03-20
 time: "21h00"
 breaking: true
-breaking_text: "Municipales Sallanches : 4 candidats au second tour ce dimanche - Resultat attendu en soiree"
+breaking_text: "Municipales Sallanches : 4 candidats au second tour ce dimanche - Résultat attendu en soirée"
 category: Actualites
 author: Clement Duval
 ville: Sallanches
