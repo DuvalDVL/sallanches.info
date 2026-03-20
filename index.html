@@ -179,17 +179,13 @@ description: Toute l'actualité locale de Sallanches et de la vallée. 100% grat
           <span class="option-pct"></span>
         </button>
       </div>
-      <p style="text-align: right; margin-top: 16px; font-family: var(--font-titre); font-size: 12px;">
-    <a href="{{ site.baseurl }}/contribuer/" style="color: var(--ambre); text-decoration: underline;">
-        Soumettre un sujet de sondage
-    </a>
-</p>
+      <p class="sondage-footer">Sondage non représentatif — pour information uniquement</p>
     </div>
   </div>
 </section>
 
 <!-- AGENDA -->
-{% assign agenda_posts = site.posts | where: "category", "Agenda" | limit: 4 %}
+{% assign agenda_posts = site.posts | where: "category", "Agenda" | limit: 5 %}
 {% if agenda_posts.size > 0 %}
 <section class="agenda-section" aria-label="Agenda local">
   <div class="container">
@@ -201,12 +197,18 @@ description: Toute l'actualité locale de Sallanches et de la vallée. 100% grat
       {% for event in agenda_posts %}
       <article class="agenda-item" itemscope itemtype="https://schema.org/Event">
         <div class="agenda-date" aria-hidden="true">
-          <div class="jour">{{ event.event_date | date: "%-d" | default: event.date | date: "%-d" }}</div>
-          <div class="mois">{{ event.event_date | date: "%b" | default: event.date | date: "%b" }}</div>
+          {% if event.event_date %}
+          {% assign edate = event.event_date %}
+          {% else %}
+          {% assign edate = event.date %}
+          {% endif %}
+          <div class="jour">{{ edate | date: "%-d" }}</div>
+          {% assign em = edate | date: "%-m" %}
+          <div class="mois">{% case em %}{% when "1" %}jan{% when "2" %}fév{% when "3" %}mar{% when "4" %}avr{% when "5" %}mai{% when "6" %}jun{% when "7" %}jul{% when "8" %}aoû{% when "9" %}sep{% when "10" %}oct{% when "11" %}nov{% when "12" %}déc{% endcase %}</div>
         </div>
         <div class="agenda-info">
           <p class="agenda-titre" itemprop="name">
-            <a href="{{ event.url }}">{{ event.title }}</a>
+            <a href="{{ event.url | prepend: site.baseurl }}">{{ event.title }}</a>
           </p>
           <p class="agenda-detail">
             {% if event.event_time %}{{ event.event_time }} · {% endif %}
