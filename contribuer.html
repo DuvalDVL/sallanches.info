@@ -1,102 +1,97 @@
-/* Sallanches.info — main.js */
+---
+layout: default
+title: Contribuer - Envoyez votre info à Sallanches.info
+description: Vous avez une info locale ? Un événement, un problème, une bonne nouvelle ? Signalez-le à Sallanches.info.
+permalink: /contribuer/
+---
 
-document.addEventListener('DOMContentLoaded', function () {
+<section style="padding: 48px 0; background: var(--gris-bg);">
+  <div class="container-sm">
 
-  /* ---- MENU MOBILE ---- */
-  var burger = document.getElementById('burger-btn');
-  var mobileMenu = document.getElementById('mobile-menu');
-  var mobileClose = document.getElementById('mobile-close');
+    <div style="text-align: center; margin-bottom: 36px;">
+      <span class="badge">Participez</span>
+      <h1 style="font-family: var(--font-titre); font-size: 32px; font-weight: 700; margin: 12px 0 10px; line-height: 1.2;">Vous avez une info ?</h1>
+      <p style="font-family: var(--font-titre); font-size: 16px; color: var(--gris-text); max-width: 520px; margin: 0 auto; line-height: 1.6;">
+        Sallanches.info c'est aussi votre voix. Partagez ce que vous observez dans la vallée.
+        Chaque contribution est lue et vérifiée avant publication.
+      </p>
+    </div>
 
-  if (burger && mobileMenu) {
-    burger.addEventListener('click', function () {
-      var isOpen = !mobileMenu.hidden;
-      mobileMenu.hidden = isOpen;
-      burger.setAttribute('aria-expanded', !isOpen);
-      document.body.style.overflow = isOpen ? '' : 'hidden';
-    });
-  }
+    <div style="background: var(--blanc); border-radius: var(--rayon); border: 1px solid var(--gris-border); padding: 32px; box-shadow: var(--shadow-sm);">
 
-  if (mobileClose && mobileMenu) {
-    mobileClose.addEventListener('click', function () {
-      mobileMenu.hidden = true;
-      if (burger) burger.setAttribute('aria-expanded', 'false');
-      document.body.style.overflow = '';
-    });
-  }
+      <form action="https://formspree.io/f/VOTRE_ID" method="POST" enctype="multipart/form-data" aria-label="Formulaire de contribution">
 
-  /* Fermeture menu mobile sur touche Echap */
-  document.addEventListener('keydown', function (e) {
-    if (e.key === 'Escape' && mobileMenu && !mobileMenu.hidden) {
-      mobileMenu.hidden = true;
-      if (burger) burger.setAttribute('aria-expanded', 'false');
-      document.body.style.overflow = '';
-      if (burger) burger.focus();
-    }
-  });
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px;">
+          <div>
+            <label for="prenom" style="font-family: var(--font-titre); font-size: 12px; font-weight: 600; color: var(--texte); display: block; margin-bottom: 6px;">
+              Prénom <span aria-hidden="true" style="color: var(--rouge-alerte);">*</span>
+            </label>
+            <input type="text" id="prenom" name="prenom" required autocomplete="given-name"
+              style="width: 100%; padding: 10px 14px; border: 1px solid var(--gris-border); border-radius: var(--rayon); font-family: var(--font-titre); font-size: 13px; color: var(--texte);"
+              aria-required="true">
+          </div>
+          <div>
+            <label for="email" style="font-family: var(--font-titre); font-size: 12px; font-weight: 600; color: var(--texte); display: block; margin-bottom: 6px;">
+              Email <span aria-hidden="true" style="color: var(--rouge-alerte);">*</span>
+            </label>
+            <input type="email" id="email" name="email" required autocomplete="email"
+              style="width: 100%; padding: 10px 14px; border: 1px solid var(--gris-border); border-radius: var(--rayon); font-family: var(--font-titre); font-size: 13px; color: var(--texte);"
+              aria-required="true">
+          </div>
+        </div>
 
-  /* ---- SONDAGE ---- */
-  var options = document.querySelectorAll('.sondage-option');
-  if (options.length > 0) {
-    var storageKey = 'sondage_' + (document.querySelector('.sondage-card') ? document.querySelector('.sondage-card').dataset.id || 'default' : 'default');
-    var voted = localStorage.getItem(storageKey);
+        <div style="margin-bottom: 16px;">
+          <label for="commune" style="font-family: var(--font-titre); font-size: 12px; font-weight: 600; color: var(--texte); display: block; margin-bottom: 6px;">Commune concernée</label>
+          <select id="commune" name="commune"
+            style="width: 100%; padding: 10px 14px; border: 1px solid var(--gris-border); border-radius: var(--rayon); font-family: var(--font-titre); font-size: 13px; color: var(--texte); background: white;">
+            <option value="">Choisir une commune</option>
+            <option value="Sallanches">Sallanches</option>
+            <option value="Passy">Passy</option>
+            <option value="Saint-Gervais">Saint-Gervais</option>
+            <option value="Magland">Magland</option>
+            <option value="Autre">Autre</option>
+          </select>
+        </div>
 
-    if (voted) {
-      showResults(voted);
-    }
+        <div style="margin-bottom: 16px;">
+          <label for="sujet" style="font-family: var(--font-titre); font-size: 12px; font-weight: 600; color: var(--texte); display: block; margin-bottom: 6px;">
+            Votre information <span aria-hidden="true" style="color: var(--rouge-alerte);">*</span>
+          </label>
+          <textarea id="sujet" name="message" required rows="6"
+            style="width: 100%; padding: 10px 14px; border: 1px solid var(--gris-border); border-radius: var(--rayon); font-family: var(--font-titre); font-size: 13px; color: var(--texte); resize: vertical;"
+            placeholder="Décrivez ce que vous avez observé, vu ou entendu. Plus vous donnez de détails, plus il est facile de vérifier et de publier."
+            aria-required="true"></textarea>
+        </div>
 
-    options.forEach(function (btn) {
-      btn.addEventListener('click', function () {
-        if (localStorage.getItem(storageKey)) return;
-        var val = btn.dataset.value;
-        localStorage.setItem(storageKey, val);
-        showResults(val);
-      });
-    });
+        <div style="margin-bottom: 24px;">
+          <label for="photo" style="font-family: var(--font-titre); font-size: 12px; font-weight: 600; color: var(--texte); display: block; margin-bottom: 6px;">
+            Photo (optionnel)
+          </label>
+          <input type="file" id="photo" name="photo" accept="image/*"
+            style="font-family: var(--font-titre); font-size: 13px; color: var(--texte);"
+            aria-describedby="photo-help">
+          <p id="photo-help" style="font-family: var(--font-titre); font-size: 11px; color: var(--gris-text); margin-top: 4px;">
+            JPG ou PNG uniquement. En envoyant une photo, vous certifiez en être l'auteur ou avoir les droits de diffusion.
+          </p>
+        </div>
 
-    function showResults(votedValue) {
-      var total = 0;
-      var votes = {};
-      options.forEach(function (btn) {
-        var v = btn.dataset.value;
-        var count = parseInt(btn.dataset.votes || '0', 10);
-        if (v === votedValue) count += 1;
-        votes[v] = count;
-        total += count;
-      });
+        <div style="background: var(--gris-bg); border-radius: var(--rayon); padding: 14px; margin-bottom: 20px; font-family: var(--font-titre); font-size: 12px; color: var(--gris-text); line-height: 1.6;">
+          Vos informations sont utilisées uniquement pour traiter votre contribution. Votre nom ne sera pas publié sans votre accord explicite.
+          <a href="{{ site.baseurl }}/confidentialite/" style="color: var(--ambre);">Politique de confidentialité</a>
+        </div>
 
-      options.forEach(function (btn) {
-        var v = btn.dataset.value;
-        var pct = total > 0 ? Math.round((votes[v] / total) * 100) : 0;
-        var bar = btn.querySelector('.progress-bar');
-        var pctEl = btn.querySelector('.option-pct');
-        if (bar) bar.style.width = pct + '%';
-        if (pctEl) pctEl.textContent = pct + '%';
-        if (v === votedValue) btn.classList.add('voted');
-        btn.setAttribute('aria-pressed', v === votedValue ? 'true' : 'false');
-      });
+        <button type="submit"
+          style="width: 100%; background: var(--ambre); border: none; border-radius: var(--rayon); padding: 14px; font-family: var(--font-titre); font-size: 15px; font-weight: 700; color: var(--noir); cursor: pointer; transition: background 0.2s;"
+          onmouseover="this.style.background='#fdb41a'" onmouseout="this.style.background='var(--ambre)'">
+          Envoyer mon info
+        </button>
 
-      var footer = document.querySelector('.sondage-footer');
-      if (footer) {
-        var totalVotes = total;
-        footer.textContent = totalVotes + ' votant' + (totalVotes > 1 ? 's' : '');
-      }
-    }
-  }
+      </form>
+    </div>
 
-  /* ---- SKIP TO MAIN (accessibilité) ---- */
-  var skipLink = document.querySelector('a[href="#main-content"]');
-  if (skipLink) {
-    skipLink.addEventListener('click', function (e) {
-      e.preventDefault();
-      var main = document.getElementById('main-content');
-      if (main) { main.focus(); }
-    });
-  }
+    <p style="text-align: center; font-family: var(--font-titre); font-size: 12px; color: var(--gris-text); margin-top: 16px;">
+      Vous pouvez aussi nous écrire directement : <a href="mailto:contact@sallanches.info" style="color: var(--ambre);">contact@sallanches.info</a>
+    </p>
 
-  /* ---- LAZY LOAD images nativement (fallback) ---- */
-  if ('loading' in HTMLImageElement.prototype) {
-    var lazyImgs = document.querySelectorAll('img[loading="lazy"]');
-    lazyImgs.forEach(function (img) { img.src = img.dataset.src || img.src; });
-  }
-
-});
+  </div>
+</section>
