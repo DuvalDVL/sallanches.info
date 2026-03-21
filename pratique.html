@@ -1,8 +1,51 @@
 ---
-layout: category
+layout: default
 title: Pratique
-cat_label: Pratique
-cat_desc: Informations utiles pour les habitants : horaires, services publics, transports et bons plans.
-filter_tag: pratique
 permalink: /pratique/
 ---
+<section style="background: var(--noir); padding: 32px 0 24px;">
+  <div class="container">
+    <nav class="breadcrumb" aria-label="Fil d'ariane" style="margin-bottom: 16px; padding-bottom: 12px; border-bottom: 1px solid rgba(255,255,255,0.1);">
+      <a href="{{ site.baseurl }}/" style="color: rgba(255,255,255,0.5);">Accueil</a>
+      <span style="color: rgba(255,255,255,0.25);"> &rsaquo; </span>
+      <span style="color: rgba(255,255,255,0.8); font-weight: 600;">Pratique</span>
+    </nav>
+    <h1 style="font-family: var(--font-titre); font-size: 28px; font-weight: 700; color: var(--blanc); margin-bottom: 6px;">Pratique</h1>
+    <p style="font-family: var(--font-titre); font-size: 14px; color: rgba(255,255,255,0.45);">Informations utiles aux habitants : horaires, services publics, transports et bons plans.</p>
+  </div>
+</section>
+<section style="padding: 32px 0 48px; background: var(--gris-bg);">
+  <div class="container">
+    <div class="cat-grid" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px;">
+      {% for post in site.posts %}
+        {% for t in post.tags %}
+          {% if t == "pratique" %}
+            <article class="article-card">
+              <a href="{{ post.url | prepend: site.baseurl }}">
+                <div class="article-card-img">
+                  <span class="badge">Pratique</span>
+                  {% if post.image %}
+                  <img src="{{ post.image | prepend: site.baseurl }}" alt="{{ post.image_alt | default: post.title }}" loading="lazy">
+                  {% endif %}
+                </div>
+              </a>
+              <div class="article-card-body">
+                <div class="article-card-meta">
+                  <time>{{ post.date | date: "%d %B %Y" }}</time>
+                  {% if post.ville %} &middot; {{ post.ville }}{% endif %}
+                </div>
+                <h2 class="article-card-title">
+                  <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+                </h2>
+                {% if post.description %}
+                <p style="font-family: var(--font-titre); font-size: 12px; color: var(--gris-text); line-height: 1.5; margin-top: 6px;">{{ post.description | truncate: 100 }}</p>
+                {% endif %}
+              </div>
+            </article>
+            {% break %}
+          {% endif %}
+        {% endfor %}
+      {% endfor %}
+    </div>
+  </div>
+</section>
