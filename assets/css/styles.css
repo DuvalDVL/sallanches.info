@@ -464,7 +464,14 @@ button { font-family: var(--font-titre); cursor: pointer; }
   align-items: center;
   overflow-x: auto;
   scrollbar-width: none;
-  padding: 0 20px;
+  padding: 0 16px;
+  -webkit-overflow-scrolling: touch;
+}
+.services-grid::after {
+  content: '';
+  display: block;
+  min-width: 8px;
+  flex-shrink: 0;
 }
 .services-grid::-webkit-scrollbar { display: none; }
 .services-label {
@@ -732,48 +739,39 @@ button { font-family: var(--font-titre); cursor: pointer; }
 .btn-secondary-outline:hover { border-color: rgba(255,255,255,0.6); color: var(--blanc); }
 
 /* ============================================================
-   RUBRIQUES MOBILE (homepage)
+   BARRE RUBRIQUES (toutes pages)
    ============================================================ */
-.rubriques-mobile {
-  display: none;
+.rubriques-bar {
+  background: var(--blanc);
+  border-bottom: 1px solid var(--gris-border);
+  padding: 8px 0;
 }
-@media (max-width: 768px) {
-  .rubriques-mobile {
-    display: block;
-    background: var(--blanc);
-    border-bottom: 1px solid var(--gris-border);
-    padding: 10px 0;
-  }
-  .rubriques-scroll {
-    display: flex;
-    gap: 8px;
-    overflow-x: auto;
-    padding: 0 16px;
-    scrollbar-width: none;
-  }
-  .rubriques-scroll::-webkit-scrollbar { display: none; }
-  .rubrique-pill {
-    display: inline-block;
-    white-space: nowrap;
-    background: var(--gris-bg);
-    border: 1px solid var(--gris-border);
-    border-radius: 20px;
-    padding: 6px 14px;
-    font-family: var(--font-titre);
-    font-size: 12px;
-    font-weight: 600;
-    color: var(--texte);
-    text-decoration: none;
-    transition: var(--transition);
-    flex-shrink: 0;
-  }
-  .rubrique-pill:hover,
-  .rubrique-pill:active {
-    background: var(--ambre);
-    border-color: var(--ambre);
-    color: var(--noir);
-  }
+.rubriques-scroll {
+  display: flex;
+  gap: 6px;
+  overflow-x: auto;
+  padding: 0 20px;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
 }
+.rubriques-scroll::-webkit-scrollbar { display: none; }
+.rubrique-pill {
+  display: inline-block;
+  white-space: nowrap;
+  background: var(--gris-bg);
+  border: 1px solid var(--gris-border);
+  border-radius: 20px;
+  padding: 5px 14px;
+  font-family: var(--font-titre);
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--texte);
+  text-decoration: none;
+  transition: var(--transition);
+  flex-shrink: 0;
+}
+.rubrique-pill:hover { background: var(--ambre); border-color: var(--ambre); color: var(--noir); }
+.rubrique-pill.active { background: var(--noir); border-color: var(--noir); color: var(--blanc); }
 
 /* ============================================================
    FIL D'ARIANE
