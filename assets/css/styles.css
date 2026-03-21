@@ -474,7 +474,9 @@ button { font-family: var(--font-titre); cursor: pointer; }
   overflow-x: auto;
   scrollbar-width: none;
   -webkit-overflow-scrolling: touch;
-  padding: 0 16px 0 16px;
+  padding: 0 20px;
+  max-width: var(--container);
+  margin: 0 auto;
 }
 .services-grid::-webkit-scrollbar { display: none; }
 .services-grid::after {
