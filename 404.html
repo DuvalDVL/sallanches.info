@@ -1,0 +1,44 @@
+---
+layout: default
+title: Page introuvable - Sallanches.info
+description: La page que vous cherchez n'existe pas ou a été déplacée.
+permalink: /404.html
+---
+
+<section style="padding: 80px 0; text-align: center; background: var(--gris-bg); min-height: 60vh; display: flex; align-items: center;">
+  <div class="container-sm" style="width: 100%;">
+
+    <div style="font-family: var(--font-titre); font-size: 120px; font-weight: 700; color: var(--ambre); line-height: 1; margin-bottom: 16px;">404</div>
+
+    <h1 style="font-family: var(--font-titre); font-size: 28px; font-weight: 700; color: var(--texte); margin-bottom: 12px;">Cette page est introuvable</h1>
+
+    <p style="font-family: var(--font-titre); font-size: 15px; color: var(--gris-text); margin-bottom: 36px; max-width: 480px; margin-left: auto; margin-right: auto; line-height: 1.7;">
+      La page que vous cherchez n'existe pas, a été déplacée ou l'adresse contient une erreur.
+    </p>
+
+    <div style="display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-bottom: 48px;">
+      <a href="{{ site.baseurl }}/" style="background: var(--ambre); color: var(--noir); font-family: var(--font-titre); font-weight: 700; font-size: 14px; padding: 12px 24px; border-radius: 24px; text-decoration: none;">
+        Retour à l'accueil
+      </a>
+      <a href="{{ site.baseurl }}/actualites/" style="background: transparent; color: var(--texte); font-family: var(--font-titre); font-weight: 600; font-size: 14px; padding: 12px 24px; border-radius: 24px; border: 1.5px solid var(--gris-border); text-decoration: none;">
+        Voir les actualités
+      </a>
+    </div>
+
+    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; max-width: 560px; margin: 0 auto;">
+      <a href="{{ site.baseurl }}/agenda/" style="background: var(--blanc); border: 1px solid var(--gris-border); border-radius: var(--rayon); padding: 16px 12px; text-decoration: none; text-align: center; transition: var(--transition);">
+        <div style="font-family: var(--font-titre); font-size: 13px; font-weight: 700; color: var(--texte);">Agenda</div>
+        <div style="font-family: var(--font-titre); font-size: 11px; color: var(--gris-text); margin-top: 4px;">Événements à venir</div>
+      </a>
+      <a href="{{ site.baseurl }}/portraits/" style="background: var(--blanc); border: 1px solid var(--gris-border); border-radius: var(--rayon); padding: 16px 12px; text-decoration: none; text-align: center;">
+        <div style="font-family: var(--font-titre); font-size: 13px; font-weight: 700; color: var(--texte);">Portraits</div>
+        <div style="font-family: var(--font-titre); font-size: 11px; color: var(--gris-text); margin-top: 4px;">Habitants et entrepreneurs</div>
+      </a>
+      <a href="{{ site.baseurl }}/contribuer/" style="background: var(--blanc); border: 1px solid var(--gris-border); border-radius: var(--rayon); padding: 16px 12px; text-decoration: none; text-align: center;">
+        <div style="font-family: var(--font-titre); font-size: 13px; font-weight: 700; color: var(--texte);">Contribuer</div>
+        <div style="font-family: var(--font-titre); font-size: 11px; color: var(--gris-text); margin-top: 4px;">Envoyer une info</div>
+      </a>
+    </div>
+
+  </div>
+</section>
