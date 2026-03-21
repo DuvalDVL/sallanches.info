@@ -1,4 +1,4 @@
-/* Sallanches.infoX — main.js */
+/* Sallanches.info — main.js */
 
 document.addEventListener('DOMContentLoaded', function () {
 
