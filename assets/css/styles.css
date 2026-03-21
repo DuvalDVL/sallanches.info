@@ -466,6 +466,7 @@ button { font-family: var(--font-titre); cursor: pointer; }
   border-top: 1px solid var(--gris-border);
   border-bottom: 1px solid var(--gris-border);
   padding: 14px 0;
+  overflow: hidden;
 }
 .services-grid {
   display: flex;
@@ -473,13 +474,23 @@ button { font-family: var(--font-titre); cursor: pointer; }
   align-items: center;
   overflow-x: auto;
   scrollbar-width: none;
-  padding: 0 16px;
   -webkit-overflow-scrolling: touch;
+  padding: 0 20px;
+  max-width: var(--container);
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+.services-grid::-webkit-scrollbar { display: none; }
+.services-grid::before {
+  content: '';
+  display: block;
+  min-width: 1px;
+  flex-shrink: 0;
 }
 .services-grid::after {
   content: '';
   display: block;
-  min-width: 8px;
+  min-width: 16px;
   flex-shrink: 0;
 }
 .services-grid::-webkit-scrollbar { display: none; }
