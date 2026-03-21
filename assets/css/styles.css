@@ -179,16 +179,8 @@ button { font-family: var(--font-titre); cursor: pointer; }
 
 /* Burger mobile */
 .burger-btn {
-  display: none;
-  background: none;
-  border: none;
-  padding: 6px;
-  color: rgba(255,255,255,0.7);
-  cursor: pointer;
-  -webkit-tap-highlight-color: transparent;
-  touch-action: manipulation;
+  display: none !important;
 }
-.burger-btn svg { width: 22px; height: 22px; display: block; }
 
 /* ============================================================
    BANDEAU BREAKING NEWS
@@ -759,6 +751,7 @@ button { font-family: var(--font-titre); cursor: pointer; }
    BARRE RUBRIQUES (toutes pages)
    ============================================================ */
 .rubriques-bar {
+  display: none;
   background: var(--blanc);
   border-bottom: 1px solid var(--gris-border);
   padding: 8px 0;
@@ -767,18 +760,19 @@ button { font-family: var(--font-titre); cursor: pointer; }
   display: flex;
   gap: 6px;
   overflow-x: auto;
-  padding: 0 20px;
+  padding: 0 16px;
   scrollbar-width: none;
   -webkit-overflow-scrolling: touch;
 }
 .rubriques-scroll::-webkit-scrollbar { display: none; }
+.rubriques-scroll::after { content: ''; display: block; min-width: 8px; flex-shrink: 0; }
 .rubrique-pill {
   display: inline-block;
   white-space: nowrap;
   background: var(--gris-bg);
   border: 1px solid var(--gris-border);
   border-radius: 20px;
-  padding: 5px 14px;
+  padding: 6px 14px;
   font-family: var(--font-titre);
   font-size: 12px;
   font-weight: 600;
@@ -1053,15 +1047,8 @@ button { font-family: var(--font-titre); cursor: pointer; }
    MOBILE MENU
    ============================================================ */
 .mobile-menu {
-  display: none;
-  position: fixed;
-  top: 0; left: 0; right: 0; bottom: 0;
-  background: var(--noir);
-  z-index: 200;
-  padding: 20px;
-  overflow-y: auto;
+  display: none !important;
 }
-.mobile-menu.open { display: block; }
 .mobile-menu-header {
   display: flex;
   justify-content: space-between;
@@ -1157,6 +1144,7 @@ button { font-family: var(--font-titre); cursor: pointer; }
 }
 
 @media (max-width: 768px) {
+  .rubriques-bar { display: block; }
   .une-grid { grid-template-columns: 1fr; }
   .une-side { display: none; }
   .articles-grid { grid-template-columns: 1fr; }
