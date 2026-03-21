@@ -126,16 +126,9 @@
   {% include header.html %}
 
   <main id="main-content" tabindex="-1">
-    {% assign excluded = "/contact/,/contribuer/,/mentions-legales/,/confidentialite/,/donnees-personnelles/,/a-propos/" | split: "," %}
-    {% assign show_rubriques = true %}
-    {% for excl in excluded %}
-      {% if page.url contains excl %}
-        {% assign show_rubriques = false %}
-      {% endif %}
-    {% endfor %}
-    {% if show_rubriques %}
+    {% unless page.url contains '/contact/' or page.url contains '/contribuer/' or page.url contains '/mentions-legales/' or page.url contains '/confidentialite/' or page.url contains '/donnees-personnelles/' or page.url contains '/a-propos/' %}
     {% include rubriques-bar.html %}
-    {% endif %}
+    {% endunless %}
     {{ content }}
   </main>
 
