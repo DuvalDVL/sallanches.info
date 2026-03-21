@@ -17,7 +17,8 @@ layout: default
 <section style="padding: 32px 0 48px; background: var(--gris-bg);">
   <div class="container">
     {% if page.filter_tag %}
-      {% assign cat_posts = site.posts | where_exp: "item", "item.tags contains page.filter_tag" %}
+      {% assign tag_filter = page.filter_tag %}
+      {% assign cat_posts = site.posts | where_exp: "item", "item.tags contains tag_filter" %}
     {% elsif page.filter_category %}
       {% assign cat_posts = site.posts | where: "category", page.filter_category %}
     {% elsif page.filter_ville %}
