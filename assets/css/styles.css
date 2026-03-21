@@ -186,8 +186,9 @@ button { font-family: var(--font-titre); cursor: pointer; }
   color: rgba(255,255,255,0.7);
   cursor: pointer;
   -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
 }
-.burger-btn svg { width: 22px; height: 22px; }
+.burger-btn svg { width: 22px; height: 22px; display: block; }
 
 /* ============================================================
    BANDEAU BREAKING NEWS
@@ -218,16 +219,18 @@ button { font-family: var(--font-titre); cursor: pointer; }
   flex: 1;
 }
 .breaking-ticker {
-  display: inline-flex;
+  display: inline-block;
   white-space: nowrap;
-  animation: ticker 18s linear infinite;
   text-decoration: none;
   color: var(--noir);
   font-family: var(--font-titre);
   font-size: 12px;
   font-weight: 600;
 }
-.breaking-ticker:hover { animation-play-state: paused; }
+.breaking-ticker.is-overflow {
+  animation: ticker 18s linear infinite;
+}
+.breaking-ticker.is-overflow:hover { animation-play-state: paused; }
 @keyframes ticker {
   0%   { transform: translateX(0); }
   100% { transform: translateX(-50%); }
@@ -1159,7 +1162,7 @@ button { font-family: var(--font-titre); cursor: pointer; }
   .articles-grid { grid-template-columns: 1fr; }
   .header-tagline { display: none; }
   .header-nav { display: none; }
-  .burger-btn { display: flex !important; align-items: center; justify-content: center; }
+  .burger-btn { display: block !important; }
   .btn-gratuit { display: none; }
   .footer-grid { grid-template-columns: 1fr; gap: 20px; }
   .newsletter-form { flex-direction: column; }
