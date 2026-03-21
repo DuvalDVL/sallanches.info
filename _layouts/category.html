@@ -1,7 +1,6 @@
 ---
 layout: default
 ---
-
 <section style="background: var(--noir); padding: 32px 0 24px;">
   <div class="container">
     <nav class="breadcrumb" aria-label="Fil d'ariane" style="margin-bottom: 16px; padding-bottom: 12px; border-bottom: 1px solid rgba(255,255,255,0.1);">
@@ -15,25 +14,18 @@ layout: default
     {% endif %}
   </div>
 </section>
-
 <section style="padding: 32px 0 48px; background: var(--gris-bg);">
   <div class="container">
-
     {% if page.filter_category %}
-      {% assign posts = site.posts | where: "category", page.filter_category %}
+      {% assign cat_posts = site.posts | where: "category", page.filter_category %}
     {% elsif page.filter_ville %}
-      {% assign posts = site.posts | where: "ville", page.filter_ville %}
-    {% elsif page.filter_tag %}
-      {% assign tag_filter = page.filter_tag %}
-      {% assign posts = site.posts | where_exp: "post", "post.tags contains tag_filter" %}
+      {% assign cat_posts = site.posts | where: "ville", page.filter_ville %}
     {% else %}
-      {% assign posts = site.posts %}
+      {% assign cat_posts = site.posts %}
     {% endif %}
-
-    {% if posts.size > 0 %}
-
-    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px;" class="cat-grid">
-      {% for post in posts %}
+    {% if cat_posts.size > 0 %}
+    <div class="cat-grid" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px;">
+      {% for post in cat_posts %}
       <article class="article-card" itemscope itemtype="https://schema.org/NewsArticle">
         <a href="{{ post.url | prepend: site.baseurl }}" aria-label="Lire : {{ post.title }}">
           <div class="article-card-img">
@@ -45,11 +37,7 @@ layout: default
         </a>
         <div class="article-card-body">
           <div class="article-card-meta">
-            <time itemprop="datePublished" datetime="{{ post.date | date_to_xmlschema }}">
-              {{ post.date | date: "%-d" }}
-              {% assign m = post.date | date: "%-m" %}{% case m %}{% when "1" %}janvier{% when "2" %}février{% when "3" %}mars{% when "4" %}avril{% when "5" %}mai{% when "6" %}juin{% when "7" %}juillet{% when "8" %}août{% when "9" %}septembre{% when "10" %}octobre{% when "11" %}novembre{% when "12" %}décembre{% endcase %}
-              {{ post.date | date: "%Y" }}
-            </time>
+            <time itemprop="datePublished" datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%d %B %Y" }}</time>
             {% if post.ville %} · {{ post.ville }}{% endif %}
           </div>
           <h2 class="article-card-title" itemprop="headline">
@@ -62,13 +50,11 @@ layout: default
       </article>
       {% endfor %}
     </div>
-
     {% else %}
     <div style="text-align: center; padding: 4rem; background: var(--blanc); border-radius: var(--rayon); border: 1px solid var(--gris-border);">
       <p style="font-family: var(--font-titre); font-size: 16px; color: var(--gris-text); margin-bottom: 16px;">Aucun article dans cette rubrique pour l'instant.</p>
       <a href="{{ site.baseurl }}/" style="color: var(--ambre); font-family: var(--font-titre); font-weight: 600; text-decoration: underline;">Retour à l'accueil</a>
     </div>
     {% endif %}
-
   </div>
 </section>
