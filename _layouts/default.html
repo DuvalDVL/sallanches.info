@@ -126,9 +126,7 @@
   {% include header.html %}
 
   <main id="main-content" tabindex="-1">
-    {% unless page.url contains '/contact/' or page.url contains '/contribuer/' or page.url contains '/mentions-legales/' or page.url contains '/confidentialite/' or page.url contains '/donnees-personnelles/' or page.url contains '/a-propos/' %}
-    {% include rubriques-bar.html %}
-    {% endunless %}
+    {% unless page.hide_rubriques %}{% include rubriques-bar.html %}{% endunless %}
     {{ content }}
   </main>
 
