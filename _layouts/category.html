@@ -5,7 +5,7 @@ layout: default
   <div class="container">
     <nav class="breadcrumb" aria-label="Fil d'ariane" style="margin-bottom: 16px; padding-bottom: 12px; border-bottom: 1px solid rgba(255,255,255,0.1);">
       <a href="{{ site.baseurl }}/" style="color: rgba(255,255,255,0.5);">Accueil</a>
-      <span class="breadcrumb-sep" style="color: rgba(255,255,255,0.25);">›</span>
+      <span class="breadcrumb-sep" style="color: rgba(255,255,255,0.25);">&rsaquo;</span>
       <span style="color: rgba(255,255,255,0.8); font-weight: 600;">{{ page.cat_label | default: page.title }}</span>
     </nav>
     <h1 style="font-family: var(--font-titre); font-size: 28px; font-weight: 700; color: var(--blanc); margin-bottom: 6px;">{{ page.cat_label | default: page.title }}</h1>
@@ -38,7 +38,7 @@ layout: default
         <div class="article-card-body">
           <div class="article-card-meta">
             <time itemprop="datePublished" datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%d %B %Y" }}</time>
-            {% if post.ville %} · {{ post.ville }}{% endif %}
+            {% if post.ville %} &middot; {{ post.ville }}{% endif %}
           </div>
           <h2 class="article-card-title" itemprop="headline">
             <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
@@ -53,7 +53,7 @@ layout: default
     {% else %}
     <div style="text-align: center; padding: 4rem; background: var(--blanc); border-radius: var(--rayon); border: 1px solid var(--gris-border);">
       <p style="font-family: var(--font-titre); font-size: 16px; color: var(--gris-text); margin-bottom: 16px;">Aucun article dans cette rubrique pour l'instant.</p>
-      <a href="{{ site.baseurl }}/" style="color: var(--ambre); font-family: var(--font-titre); font-weight: 600; text-decoration: underline;">Retour à l'accueil</a>
+      <a href="{{ site.baseurl }}/" style="color: var(--ambre); font-family: var(--font-titre); font-weight: 600; text-decoration: underline;">Retour &agrave; l'accueil</a>
     </div>
     {% endif %}
   </div>
