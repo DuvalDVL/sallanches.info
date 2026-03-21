@@ -1,0 +1,69 @@
+---
+layout: default
+title: Contact - Sallanches.info
+description: Contactez la rédaction de Sallanches.info pour toute question, signalement ou partenariat.
+hide_rubriques: true
+permalink: /contact/
+---
+
+<section style="padding: 48px 0; background: var(--gris-bg);">
+  <div class="container-sm">
+
+    <div style="text-align: center; margin-bottom: 36px;">
+      <h1 style="font-family: var(--font-titre); font-size: 32px; font-weight: 700; margin-bottom: 10px;">Nous contacter</h1>
+      <p style="font-family: var(--font-titre); font-size: 15px; color: var(--gris-text);">Une question, une remarque, un partenariat ? Nous vous répondons sous 48h.</p>
+    </div>
+
+    <div style="background: var(--blanc); border-radius: var(--rayon); border: 1px solid var(--gris-border); padding: 32px; box-shadow: var(--shadow-sm);">
+
+      <form action="https://formspree.io/f/VOTRE_ID" method="POST">
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px;">
+          <div>
+            <label for="nom" style="font-family: var(--font-titre); font-size: 12px; font-weight: 600; color: var(--texte); display: block; margin-bottom: 6px;">Nom <span style="color: var(--rouge-alerte);">*</span></label>
+            <input type="text" id="nom" name="nom" required autocomplete="name"
+              style="width: 100%; padding: 10px 14px; border: 1px solid var(--gris-border); border-radius: var(--rayon); font-family: var(--font-titre); font-size: 13px;">
+          </div>
+          <div>
+            <label for="email" style="font-family: var(--font-titre); font-size: 12px; font-weight: 600; color: var(--texte); display: block; margin-bottom: 6px;">Email <span style="color: var(--rouge-alerte);">*</span></label>
+            <input type="email" id="email" name="email" required autocomplete="email"
+              style="width: 100%; padding: 10px 14px; border: 1px solid var(--gris-border); border-radius: var(--rayon); font-family: var(--font-titre); font-size: 13px;">
+          </div>
+        </div>
+
+        <div style="margin-bottom: 16px;">
+          <label for="sujet" style="font-family: var(--font-titre); font-size: 12px; font-weight: 600; color: var(--texte); display: block; margin-bottom: 6px;">Sujet <span style="color: var(--rouge-alerte);">*</span></label>
+          <select id="sujet" name="sujet" required
+            style="width: 100%; padding: 10px 14px; border: 1px solid var(--gris-border); border-radius: var(--rayon); font-family: var(--font-titre); font-size: 13px; background: white;">
+            <option value="">Choisir un sujet</option>
+            <option value="question">Question générale</option>
+            <option value="erreur">Signaler une erreur dans un article</option>
+            <option value="partenariat">Partenariat / article sponsorisé</option>
+            <option value="droit-rectification">Droit de rectification</option>
+            <option value="autre">Autre</option>
+          </select>
+        </div>
+
+        <div style="margin-bottom: 24px;">
+          <label for="message" style="font-family: var(--font-titre); font-size: 12px; font-weight: 600; color: var(--texte); display: block; margin-bottom: 6px;">Message <span style="color: var(--rouge-alerte);">*</span></label>
+          <textarea id="message" name="message" required rows="6"
+            style="width: 100%; padding: 10px 14px; border: 1px solid var(--gris-border); border-radius: var(--rayon); font-family: var(--font-titre); font-size: 13px; resize: vertical;"></textarea>
+        </div>
+
+        <button type="submit"
+          style="width: 100%; background: var(--ambre); border: none; border-radius: var(--rayon); padding: 14px; font-family: var(--font-titre); font-size: 15px; font-weight: 700; color: var(--noir); cursor: pointer;">
+          Envoyer le message
+        </button>
+
+      </form>
+
+      <div style="margin-top: 24px; padding-top: 20px; border-top: 1px solid var(--gris-border); text-align: center;">
+        <p style="font-family: var(--font-titre); font-size: 13px; color: var(--gris-text);">
+          Vous pouvez aussi nous écrire directement à
+          <a href="mailto:contact@sallanches.info" style="color: var(--ambre); font-weight: 600;">contact@sallanches.info</a>
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
