@@ -12,23 +12,14 @@ description: Toute l'actualité locale de Sallanches et de la vallée. 100% grat
 {% if breaking %}
 <div class="breaking-bar" role="alert" aria-live="polite">
   <span class="breaking-label">En direct</span>
-  <span class="breaking-text">{{ breaking.breaking_text | default: breaking.title }}</span>
-</div>
-{% endif %}
-
-<!-- Rubriques mobile -->
-<div class="rubriques-mobile" role="navigation" aria-label="Rubriques">
-  <div class="rubriques-scroll">
-    <a href="{{ site.baseurl }}/actualites/" class="rubrique-pill">Actualités</a>
-    <a href="{{ site.baseurl }}/economie/" class="rubrique-pill">Économie</a>
-    <a href="{{ site.baseurl }}/agenda/" class="rubrique-pill">Agenda</a>
-    <a href="{{ site.baseurl }}/portraits/" class="rubrique-pill">Portraits</a>
-    <a href="{{ site.baseurl }}/pratique/" class="rubrique-pill">Pratique</a>
-    <a href="{{ site.baseurl }}/passy/" class="rubrique-pill">Passy</a>
-    <a href="{{ site.baseurl }}/saint-gervais/" class="rubrique-pill">Saint-Gervais</a>
-    <a href="{{ site.baseurl }}/magland/" class="rubrique-pill">Magland</a>
+  <div class="breaking-ticker-wrap">
+    <a href="{{ breaking.url | prepend: site.baseurl }}" class="breaking-ticker">
+      <span>{{ breaking.breaking_text | default: breaking.title }}</span>
+      <span aria-hidden="true">&nbsp;&nbsp;&nbsp;{{ breaking.breaking_text | default: breaking.title }}</span>
+    </a>
   </div>
 </div>
+{% endif %}
 
 <!-- Services locaux -->
 <div class="services-bar" role="navigation" aria-label="Services pratiques">
