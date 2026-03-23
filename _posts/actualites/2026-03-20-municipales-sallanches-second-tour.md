@@ -5,7 +5,6 @@ description: "Un scrutin exceptionnel à Sallanches. Pour la première fois depu
 date: 2026-03-20
 time: "21h00"
 breaking: false
-breaking_text: "Municipales Sallanches : 4 candidats au second tour ce dimanche - Résultat attendu en soirée"
 category: Actualites
 author: Clement Duval
 ville: Sallanches
