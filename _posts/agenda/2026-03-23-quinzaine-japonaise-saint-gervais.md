@@ -2,7 +2,7 @@
 layout: post
 title: "Évasion : Saint-Gervais se met à l'heure japonaise pour célébrer les Sakuras"
 description: "Du 27 mars au 10 avril, la commune organise la Quinzaine 'Saint-Gervais sous les Sakuras', un voyage culturel unique entre tradition et modernité."
-date: 2026-03-24
+date: 2026-03-23
 event_date: 2026-03-27
 event_time: "En journée (Ouverture)"
 event_lieu: "MJC et divers lieux, Saint-Gervais-les-Bains"
