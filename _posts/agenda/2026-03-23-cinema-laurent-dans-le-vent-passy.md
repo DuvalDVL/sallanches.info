@@ -2,7 +2,7 @@
 layout: post
 title: "Toiles de Passy : projection du film 'Laurent dans le vent'"
 description: "Rendez-vous le lundi 30 mars au soir pour la diffusion d'une comédie dramatique rafraîchissante, tournée au cœur d'une station de ski."
-date: 2026-03-24
+date: 2026-03-23
 event_date: 2026-03-30
 event_time: "20h00 - 22h00"
 event_lieu: "Plateau d'Assy, Passy"
