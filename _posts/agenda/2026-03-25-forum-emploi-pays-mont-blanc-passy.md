@@ -3,6 +3,10 @@ layout: post
 title: "Emploi : le Forum du Pays du Mont-Blanc fait son retour au Parvis des Fiz ce vendredi"
 description: "Recruteurs et candidats ont rendez-vous à Passy pour la 8e édition du forum de l'emploi local. Des dizaines d'offres sont à pourvoir dans la vallée."
 date: 2026-03-23
+event_date: 2026-04-27
+event_time: "8h30 - 14h00"
+event_lieu: "Parvis des Fiz, Passy"
+event_tarif: "Gratuit"
 category: Agenda
 author: La rédaction
 ville: Passy
