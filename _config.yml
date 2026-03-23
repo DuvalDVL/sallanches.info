@@ -1,7 +1,7 @@
 title: "Sallanches.info"
 description: "L'actualite locale de Sallanches, Passy, Saint-Gervais et Magland. 100% gratuit, sans abonnement."
-baseurl: "/sallanches.info"
-url: "https://duvaldvl.github.io"
+baseurl: ""
+url: "https://sallanches.info"
 locale: fr_FR
 lang: fr
 
