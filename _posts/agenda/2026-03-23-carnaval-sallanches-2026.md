@@ -2,7 +2,7 @@
 layout: post
 title: "Le Carnaval de Sallanches fait son grand retour dans le centre-ville"
 description: "Événement incontournable du printemps au Pays du Mont-Blanc, le Carnaval animera les rues de Sallanches le dimanche 19 avril. Préparez vos costumes !"
-date: 2026-03-24
+date: 2026-03-23
 event_date: 2026-04-19
 event_time: "14h00 - 17h00"
 event_lieu: "Centre-ville, Sallanches"
