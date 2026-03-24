@@ -263,15 +263,24 @@ description: Toute l'actualité locale de Sallanches et de la vallée. 100% grat
     <div class="newsletter-inner">
       <h2>L'actu de la vallée dans votre boite mail</h2>
       <p>Un résumé hebdomadaire, gratuit. Plus de 500 abonnés locaux.</p>
-      <form action="https://formspree.io/f/VOTRE_ID" method="POST" class="newsletter-form" aria-label="Formulaire d'inscription newsletter">
-        <input type="email" name="email" class="newsletter-input" placeholder="votre@email.fr" required aria-label="Adresse email" autocomplete="email">
+      
+      <form id="sib-form" method="POST" action="https://d302d3af.sibforms.com/serve/MUIFALnbshfeB3oJqrFMGixgRSpGU1wmjEis5u1wHMN7fFibu8x_Xue-R0FBlSCroiL5BX0C-pUqGzSkMoamGUmtlxr43ZunGTB20d93ojfHAwo7lnoKrIDVt4LPP68F-QDWql8s0Yh1aqnCCBYfxPWYxfFIW7oi58y4l7x6fc93Eh3BtDRy3ShxX_1U8iFyvz42ZsFs47VOhu4I0Q==" data-type="subscription" class="newsletter-form" aria-label="Formulaire d'inscription newsletter">
+        
+        <input type="email" id="EMAIL" name="EMAIL" class="newsletter-input" placeholder="votre@email.fr" required aria-label="Adresse email" autocomplete="email">
+        
         <input type="tel" name="telephone" class="newsletter-phone" placeholder="06 00 00 00 00" aria-label="Numéro de téléphone (optionnel)" autocomplete="tel">
-        <button type="submit" class="btn-newsletter">Je m'inscris</button>
+        
+        <button form="sib-form" type="submit" class="btn-newsletter">Je m'inscris</button>
+        
+        <input type="text" name="email_address_check" value="" class="input--hidden" style="display:none;">
+        <input type="hidden" name="locale" value="fr">
       </form>
+      
       <label class="newsletter-rgpd">
-        <input type="checkbox" name="bons_plans" value="oui" aria-describedby="rgpd-info">
+        <input type="checkbox" id="OPT_IN" name="OPT_IN" value="1" aria-describedby="rgpd-info">
         <span id="rgpd-info">Je souhaite aussi recevoir des bons plans et promotions d'entreprises locales de la vallée. <a href="{{ site.baseurl }}/confidentialite/">En savoir plus</a></span>
       </label>
+      
     </div>
   </div>
 </section>
