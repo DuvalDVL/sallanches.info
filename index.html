@@ -161,7 +161,7 @@ description: Toute l'actualité locale de Sallanches et de la vallée. 100% grat
     </div>
     
     <div class="sondage-card" id="poll-card" data-id="sondage_001">
-      <p class="sondage-label" id="total-votants">Votez</p>
+      <p class="sondage-label" id="total-votants">Chargement...</p>
       <p class="sondage-question">Selon vous, quel est le principal besoin de Sallanches en ce moment ?</p>
       
       <div class="sondage-options" role="group" aria-label="Options du sondage">
@@ -191,11 +191,9 @@ description: Toute l'actualité locale de Sallanches et de la vallée. 100% grat
 </section>
 
 <script type="module">
-  // 1. Importation des modules Firebase depuis les CDN Google
   import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-app.js";
   import { getDatabase, ref, onValue, runTransaction } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-database.js";
 
-  // 2. Ta configuration Firebase
   const firebaseConfig = {
     apiKey: "AIzaSyCnmo7OGbJ5FOJptrW_gIjCu1nRwK_jsYI",
     authDomain: "sallanches-info.firebaseapp.com",
@@ -204,98 +202,101 @@ description: Toute l'actualité locale de Sallanches et de la vallée. 100% grat
     messagingSenderId: "190835836805",
     appId: "1:190835836805:web:e37329717ace60660d26ec",
     measurementId: "G-LYQH3QESC0",
-    // Ajout MANUEL de la databaseURL (Vérifie la terminaison selon ton serveur Europe ou US)
     databaseURL: "https://sallanches-info-default-rtdb.europe-west1.firebasedatabase.app" 
   };
 
-  // 3. Initialisation
   const app = initializeApp(firebaseConfig);
   const db = getDatabase(app);
 
-  // 4. Ciblage des éléments HTML
-  const pollCard = document.getElementById('poll-card');
-  const pollId = pollCard.getAttribute('data-id'); // "sondage_001"
-  const pollRef = ref(db, pollId);
-  const optionsButtons = pollCard.querySelectorAll('.sondage-option');
+  // On attend que la page soit totalement chargée pour éviter les bugs d'affichage
+  document.addEventListener("DOMContentLoaded", () => {
+    const pollCard = document.getElementById('poll-card');
+    if (!pollCard) return;
 
-  // 5. Fonction pour mettre à jour l'interface complète
-  function updateUI(votesData) {
-    let totalVotes = 0;
-    
-    // On calcule le total des votes
-    for (const key in votesData) {
-      totalVotes += votesData[key];
-    }
-
-    // NOUVEAU : On met à jour le texte du nombre total de votants
+    const pollId = pollCard.getAttribute('data-id'); 
+    const pollRef = ref(db, pollId);
+    const optionsButtons = pollCard.querySelectorAll('.sondage-option');
     const totalVotantsText = document.getElementById('total-votants');
-    if (totalVotantsText) {
-      if (totalVotes === 0) {
-        totalVotantsText.innerText = "Votez";
-      } else if (totalVotes === 1) {
-        totalVotantsText.innerText = "1 votant";
-      } else {
-        totalVotantsText.innerText = totalVotes + " votants";
-      }
-    }
 
-    // On met à jour chaque bouton (barres et pourcentages)
-    optionsButtons.forEach(button => {
-      const value = button.getAttribute('data-value');
-      const votes = votesData[value] || 0;
-      const pct = (totalVotes > 0) ? Math.round((votes / totalVotes) * 100) : 0;
-
-      const progressBar = button.querySelector('.progress-bar');
-      progressBar.style.transition = "width 0.6s cubic-bezier(0.4, 0, 0.2, 1)";
-      progressBar.style.width = pct + '%';
-      progressBar.style.backgroundColor = "var(--ambre, #f0a500)"; 
+    function updateUI(votesData) {
+      if (!votesData) return;
       
-      const pctText = button.querySelector('.option-pct');
-      pctText.innerText = pct + '%';
-    });
-  }
-
-  // 6. Écoute de la base de données en temps réel
-  onValue(pollRef, (snapshot) => {
-    const data = snapshot.val();
-    if (data) {
-      updateUI(data);
-      // Si l'utilisateur a déjà voté, on bloque les boutons visuellement
-      if (localStorage.getItem(pollId)) {
-        disableVoting();
+      let totalVotes = 0;
+      // On s'assure de bien additionner toutes les valeurs
+      for (const key in votesData) {
+        if (typeof votesData[key] === 'number') {
+          totalVotes += votesData[key];
+        }
       }
+
+      // Mise à jour du texte de façon sécurisée
+      if (totalVotantsText) {
+        if (totalVotes === 0) {
+          totalVotantsText.innerText = "Votez";
+        } else if (totalVotes === 1) {
+          totalVotantsText.innerText = "1 votant";
+        } else {
+          totalVotantsText.innerText = totalVotes + " votants";
+        }
+      }
+
+      optionsButtons.forEach(button => {
+        const value = button.getAttribute('data-value');
+        const votes = votesData[value] || 0;
+        const pct = (totalVotes > 0) ? Math.round((votes / totalVotes) * 100) : 0;
+
+        const progressBar = button.querySelector('.progress-bar');
+        progressBar.style.transition = "width 0.6s cubic-bezier(0.4, 0, 0.2, 1)";
+        progressBar.style.width = pct + '%';
+        progressBar.style.backgroundColor = "var(--ambre, #f0a500)"; 
+        
+        const pctText = button.querySelector('.option-pct');
+        pctText.innerText = pct + '%';
+      });
     }
-  });
 
-  // 7. Envoi du vote sécurisé
-  optionsButtons.forEach(button => {
-    button.addEventListener('click', function() {
-      // On bloque si le vote a déjà été effectué sur ce navigateur
-      if (localStorage.getItem(pollId)) return;
+    // L'écouteur Firebase est placé à la RACINE du sondage pour toujours récupérer le total global
+    onValue(pollRef, (snapshot) => {
+      const data = snapshot.val();
+      if (data) {
+        updateUI(data);
+        if (localStorage.getItem(pollId)) {
+          disableVoting();
+        }
+      } else {
+        // Cas où la base de données est vide
+        if (totalVotantsText) totalVotantsText.innerText = "Soyez le premier à voter";
+      }
+    });
 
-      const votedValue = this.getAttribute('data-value');
-      const voteRef = ref(db, pollId + '/' + votedValue);
+    optionsButtons.forEach(button => {
+      button.addEventListener('click', function() {
+        if (localStorage.getItem(pollId)) return;
 
-      // On utilise runTransaction pour éviter que 2 clics simultanés s'annulent
-      runTransaction(voteRef, (currentVotes) => {
-        return (currentVotes || 0) + 1;
-      }).then(() => {
-        // Le vote est passé : on enregistre sur le navigateur et on fige l'interface
-        localStorage.setItem(pollId, 'voted');
-        disableVoting();
-      }).catch((error) => {
-        console.error("Erreur de vote :", error);
+        const votedValue = this.getAttribute('data-value');
+        const voteRef = ref(db, pollId + '/' + votedValue);
+
+        runTransaction(voteRef, (currentVotes) => {
+          return (currentVotes || 0) + 1;
+        }).then(() => {
+          localStorage.setItem(pollId, 'voted');
+          disableVoting();
+          // Pas besoin d'appeler updateUI ici, le 'onValue' plus haut s'en charge automatiquement et globalement !
+        }).catch((error) => {
+          console.error("Erreur de vote :", error);
+        });
       });
     });
-  });
 
-  // 8. Figer l'interface
-  function disableVoting() {
-    optionsButtons.forEach(button => {
-      button.style.cursor = 'default';
-      button.setAttribute("aria-pressed", "true");
-    });
-  }
+    function disableVoting() {
+      optionsButtons.forEach(button => {
+        button.style.cursor = 'default';
+        button.setAttribute("aria-pressed", "true");
+        // Optionnel : ajoute une opacité pour montrer que c'est inactif
+        button.style.opacity = '0.9'; 
+      });
+    }
+  });
 </script>
 
 {% assign agenda_posts = site.posts | where: "category", "Agenda" %}
