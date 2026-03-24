@@ -154,32 +154,33 @@ description: Toute l'actualité locale de Sallanches et de la vallée. 100% grat
   </div>
 </section>
 
-<!-- SONDAGE -->
 <section class="sondage-section" aria-label="Sondage de la semaine">
   <div class="container">
     <div class="section-header">
       <h2 class="section-title">Sondage de la semaine</h2>
     </div>
-    <div class="sondage-card" data-id="sondage-001">
+    
+    <div class="sondage-card" id="poll-card" data-id="sondage_001">
       <p class="sondage-label">Votez</p>
       <p class="sondage-question">Selon vous, quel est le principal besoin de Sallanches en ce moment ?</p>
+      
       <div class="sondage-options" role="group" aria-label="Options du sondage">
-        <button class="sondage-option" data-value="parking" data-votes="48" aria-pressed="false">
+        <button class="sondage-option" data-value="parking" aria-pressed="false">
           <div class="progress-bar" style="width:0%"></div>
           <span class="option-text">Plus de places de stationnement</span>
           <span class="option-pct"></span>
         </button>
-        <button class="sondage-option" data-value="commerces" data-votes="35" aria-pressed="false">
+        <button class="sondage-option" data-value="commerces" aria-pressed="false">
           <div class="progress-bar" style="width:0%"></div>
           <span class="option-text">Plus de commerces en centre-ville</span>
           <span class="option-pct"></span>
         </button>
-        <button class="sondage-option" data-value="transport" data-votes="29" aria-pressed="false">
+        <button class="sondage-option" data-value="transport" aria-pressed="false">
           <div class="progress-bar" style="width:0%"></div>
           <span class="option-text">Amélioration des transports en commun</span>
           <span class="option-pct"></span>
         </button>
-        <button class="sondage-option" data-value="espaces" data-votes="18" aria-pressed="false">
+        <button class="sondage-option" data-value="espaces" aria-pressed="false">
           <div class="progress-bar" style="width:0%"></div>
           <span class="option-text">Plus d'espaces verts et de loisirs</span>
           <span class="option-pct"></span>
@@ -189,6 +190,102 @@ description: Toute l'actualité locale de Sallanches et de la vallée. 100% grat
     </div>
   </div>
 </section>
+
+<script type="module">
+  // 1. Importation des modules Firebase depuis les CDN Google
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-app.js";
+  import { getDatabase, ref, onValue, runTransaction } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-database.js";
+
+  // 2. Ta configuration Firebase
+  const firebaseConfig = {
+    apiKey: "AIzaSyCnmo7OGbJ5FOJptrW_gIjCu1nRwK_jsYI",
+    authDomain: "sallanches-info.firebaseapp.com",
+    projectId: "sallanches-info",
+    storageBucket: "sallanches-info.firebasestorage.app",
+    messagingSenderId: "190835836805",
+    appId: "1:190835836805:web:e37329717ace60660d26ec",
+    measurementId: "G-LYQH3QESC0",
+    // Ajout MANUEL de la databaseURL (Vérifie la terminaison selon ton serveur Europe ou US)
+    databaseURL: "https://sallanches-info-default-rtdb.europe-west1.firebasedatabase.app" 
+  };
+
+  // 3. Initialisation
+  const app = initializeApp(firebaseConfig);
+  const db = getDatabase(app);
+
+  // 4. Ciblage des éléments HTML
+  const pollCard = document.getElementById('poll-card');
+  const pollId = pollCard.getAttribute('data-id'); // "sondage_001"
+  const pollRef = ref(db, pollId);
+  const optionsButtons = pollCard.querySelectorAll('.sondage-option');
+
+  // 5. Fonction pour mettre à jour les barres de progression
+  function updateUI(votesData) {
+    let totalVotes = 0;
+    
+    // On calcule le total des votes
+    for (const key in votesData) {
+      totalVotes += votesData[key];
+    }
+
+    // On met à jour chaque bouton
+    optionsButtons.forEach(button => {
+      const value = button.getAttribute('data-value');
+      const votes = votesData[value] || 0;
+      const pct = (totalVotes > 0) ? Math.round((votes / totalVotes) * 100) : 0;
+
+      const progressBar = button.querySelector('.progress-bar');
+      progressBar.style.transition = "width 0.6s cubic-bezier(0.4, 0, 0.2, 1)";
+      progressBar.style.width = pct + '%';
+      progressBar.style.backgroundColor = "var(--ambre, #f0a500)"; // Prend la couleur ambre de ton site
+      
+      const pctText = button.querySelector('.option-pct');
+      pctText.innerText = pct + '%';
+    });
+  }
+
+  // 6. Écoute de la base de données en temps réel
+  onValue(pollRef, (snapshot) => {
+    const data = snapshot.val();
+    if (data) {
+      updateUI(data);
+      // Si l'utilisateur a déjà voté, on bloque les boutons visuellement
+      if (localStorage.getItem(pollId)) {
+        disableVoting();
+      }
+    }
+  });
+
+  // 7. Envoi du vote sécurisé
+  optionsButtons.forEach(button => {
+    button.addEventListener('click', function() {
+      // On bloque si le vote a déjà été effectué sur ce navigateur
+      if (localStorage.getItem(pollId)) return;
+
+      const votedValue = this.getAttribute('data-value');
+      const voteRef = ref(db, pollId + '/' + votedValue);
+
+      // On utilise runTransaction pour éviter que 2 clics simultanés s'annulent
+      runTransaction(voteRef, (currentVotes) => {
+        return (currentVotes || 0) + 1;
+      }).then(() => {
+        // Le vote est passé : on enregistre sur le navigateur et on fige l'interface
+        localStorage.setItem(pollId, 'voted');
+        disableVoting();
+      }).catch((error) => {
+        console.error("Erreur de vote :", error);
+      });
+    });
+  });
+
+  // 8. Figer l'interface
+  function disableVoting() {
+    optionsButtons.forEach(button => {
+      button.style.cursor = 'default';
+      button.setAttribute("aria-pressed", "true");
+    });
+  }
+</script>
 
 {% assign agenda_posts = site.posts | where: "category", "Agenda" %}
 
