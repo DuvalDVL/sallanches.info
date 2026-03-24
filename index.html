@@ -161,7 +161,7 @@ description: Toute l'actualité locale de Sallanches et de la vallée. 100% grat
     </div>
     
     <div class="sondage-card" id="poll-card" data-id="sondage_001">
-      <p class="sondage-label">Votez</p>
+      <p class="sondage-label" id="total-votants">Votez</p>
       <p class="sondage-question">Selon vous, quel est le principal besoin de Sallanches en ce moment ?</p>
       
       <div class="sondage-options" role="group" aria-label="Options du sondage">
@@ -186,7 +186,6 @@ description: Toute l'actualité locale de Sallanches et de la vallée. 100% grat
           <span class="option-pct"></span>
         </button>
       </div>
-      <p class="sondage-footer">Sondage non représentatif — pour information uniquement</p>
     </div>
   </div>
 </section>
@@ -219,7 +218,7 @@ description: Toute l'actualité locale de Sallanches et de la vallée. 100% grat
   const pollRef = ref(db, pollId);
   const optionsButtons = pollCard.querySelectorAll('.sondage-option');
 
-  // 5. Fonction pour mettre à jour les barres de progression
+  // 5. Fonction pour mettre à jour l'interface complète
   function updateUI(votesData) {
     let totalVotes = 0;
     
@@ -228,7 +227,19 @@ description: Toute l'actualité locale de Sallanches et de la vallée. 100% grat
       totalVotes += votesData[key];
     }
 
-    // On met à jour chaque bouton
+    // NOUVEAU : On met à jour le texte du nombre total de votants
+    const totalVotantsText = document.getElementById('total-votants');
+    if (totalVotantsText) {
+      if (totalVotes === 0) {
+        totalVotantsText.innerText = "Votez";
+      } else if (totalVotes === 1) {
+        totalVotantsText.innerText = "1 votant";
+      } else {
+        totalVotantsText.innerText = totalVotes + " votants";
+      }
+    }
+
+    // On met à jour chaque bouton (barres et pourcentages)
     optionsButtons.forEach(button => {
       const value = button.getAttribute('data-value');
       const votes = votesData[value] || 0;
@@ -237,7 +248,7 @@ description: Toute l'actualité locale de Sallanches et de la vallée. 100% grat
       const progressBar = button.querySelector('.progress-bar');
       progressBar.style.transition = "width 0.6s cubic-bezier(0.4, 0, 0.2, 1)";
       progressBar.style.width = pct + '%';
-      progressBar.style.backgroundColor = "var(--ambre, #f0a500)"; // Prend la couleur ambre de ton site
+      progressBar.style.backgroundColor = "var(--ambre, #f0a500)"; 
       
       const pctText = button.querySelector('.option-pct');
       pctText.innerText = pct + '%';
