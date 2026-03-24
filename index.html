@@ -165,34 +165,52 @@ description: Toute l'actualité locale de Sallanches et de la vallée. 100% grat
       <p class="sondage-question">Selon vous, quel est le principal besoin de Sallanches en ce moment ?</p>
       
       <div class="sondage-options" role="group" aria-label="Options du sondage">
-        <button class="sondage-option" data-value="parking" aria-pressed="false">
+        <button class="sondage-option unvoted-state" data-value="parking" aria-pressed="false">
           <div class="progress-bar" style="width:0%"></div>
           <span class="option-text">Plus de places de stationnement</span>
-          <span class="option-pct"></span>
+          <span class="option-pct hidden-result"></span>
         </button>
-        <button class="sondage-option" data-value="commerces" aria-pressed="false">
+        <button class="sondage-option unvoted-state" data-value="commerces" aria-pressed="false">
           <div class="progress-bar" style="width:0%"></div>
           <span class="option-text">Plus de commerces en centre-ville</span>
-          <span class="option-pct"></span>
+          <span class="option-pct hidden-result"></span>
         </button>
-        <button class="sondage-option" data-value="transport" aria-pressed="false">
+        <button class="sondage-option unvoted-state" data-value="transport" aria-pressed="false">
           <div class="progress-bar" style="width:0%"></div>
           <span class="option-text">Amélioration des transports en commun</span>
-          <span class="option-pct"></span>
+          <span class="option-pct hidden-result"></span>
         </button>
-        <button class="sondage-option" data-value="espaces" aria-pressed="false">
+        <button class="sondage-option unvoted-state" data-value="espaces" aria-pressed="false">
           <div class="progress-bar" style="width:0%"></div>
           <span class="option-text">Plus d'espaces verts et de loisirs</span>
-          <span class="option-pct"></span>
+          <span class="option-pct hidden-result"></span>
         </button>
       </div>
     </div>
   </div>
 </section>
 
+<style>
+  /* Neutralise le fond orange au clic sur ton thème */
+  .sondage-option {
+    background-color: transparent !important;
+    outline: none !important;
+  }
+  
+  /* Masque les pourcentages par défaut */
+  .hidden-result {
+    display: none !important;
+  }
+
+  /* Style optionnel pour l'option cliquée */
+  .sondage-option.user-choice .option-text {
+    font-weight: 700;
+  }
+</style>
+
 <script type="module">
   import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-app.js";
-  import { getDatabase, ref, onValue, runTransaction } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-database.js";
+  import { getDatabase, ref, onValue, update, increment } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-database.js";
 
   const firebaseConfig = {
     apiKey: "AIzaSyCnmo7OGbJ5FOJptrW_gIjCu1nRwK_jsYI",
@@ -208,7 +226,6 @@ description: Toute l'actualité locale de Sallanches et de la vallée. 100% grat
   const app = initializeApp(firebaseConfig);
   const db = getDatabase(app);
 
-  // On attend que la page soit totalement chargée pour éviter les bugs d'affichage
   document.addEventListener("DOMContentLoaded", () => {
     const pollCard = document.getElementById('poll-card');
     if (!pollCard) return;
@@ -217,22 +234,25 @@ description: Toute l'actualité locale de Sallanches et de la vallée. 100% grat
     const pollRef = ref(db, pollId);
     const optionsButtons = pollCard.querySelectorAll('.sondage-option');
     const totalVotantsText = document.getElementById('total-votants');
+    
+    // Vérifie si l'utilisateur a déjà voté au chargement
+    const hasVoted = localStorage.getItem(pollId);
 
+    // Fonction d'affichage : gère la logique de visibilité
     function updateUI(votesData) {
       if (!votesData) return;
       
       let totalVotes = 0;
-      // On s'assure de bien additionner toutes les valeurs
       for (const key in votesData) {
         if (typeof votesData[key] === 'number') {
           totalVotes += votesData[key];
         }
       }
 
-      // Mise à jour du texte de façon sécurisée
+      // Toujours afficher le nombre de votants
       if (totalVotantsText) {
         if (totalVotes === 0) {
-          totalVotantsText.innerText = "Votez";
+          totalVotantsText.innerText = "Sondage en cours";
         } else if (totalVotes === 1) {
           totalVotantsText.innerText = "1 votant";
         } else {
@@ -240,60 +260,74 @@ description: Toute l'actualité locale de Sallanches et de la vallée. 100% grat
         }
       }
 
+      // Si l'utilisateur n'a pas voté, on s'arrête là (pas de barres, pas de %)
+      if (!localStorage.getItem(pollId)) return;
+
+      // S'il A voté, on révèle les résultats
       optionsButtons.forEach(button => {
         const value = button.getAttribute('data-value');
         const votes = votesData[value] || 0;
         const pct = (totalVotes > 0) ? Math.round((votes / totalVotes) * 100) : 0;
 
+        // Révèle les pourcentages en retirant la classe hidden-result
+        const pctText = button.querySelector('.option-pct');
+        pctText.classList.remove('hidden-result');
+        pctText.innerText = pct + '%';
+
+        // Anime les barres
         const progressBar = button.querySelector('.progress-bar');
         progressBar.style.transition = "width 0.6s cubic-bezier(0.4, 0, 0.2, 1)";
         progressBar.style.width = pct + '%';
         progressBar.style.backgroundColor = "var(--ambre, #f0a500)"; 
         
-        const pctText = button.querySelector('.option-pct');
-        pctText.innerText = pct + '%';
+        // Fige les boutons
+        button.style.cursor = 'default';
+        button.setAttribute("aria-pressed", "true");
+        button.classList.remove('unvoted-state');
       });
     }
 
-    // L'écouteur Firebase est placé à la RACINE du sondage pour toujours récupérer le total global
+    // Écouteur en temps réel (mise à jour silencieuse si non voté, visible si voté)
     onValue(pollRef, (snapshot) => {
       const data = snapshot.val();
       if (data) {
         updateUI(data);
-        if (localStorage.getItem(pollId)) {
-          disableVoting();
-        }
       } else {
-        // Cas où la base de données est vide
-        if (totalVotantsText) totalVotantsText.innerText = "Soyez le premier à voter";
+        if (totalVotantsText) totalVotantsText.innerText = "Sondage en cours";
       }
     });
 
+    // Gestion du clic (Utilisation de increment pour éviter le bug d'affichage)
     optionsButtons.forEach(button => {
       button.addEventListener('click', function() {
-        if (localStorage.getItem(pollId)) return;
+        if (localStorage.getItem(pollId)) return; // Bloque les clics multiples
 
         const votedValue = this.getAttribute('data-value');
-        const voteRef = ref(db, pollId + '/' + votedValue);
+        
+        // Marque le bouton cliqué pour le CSS (optionnel)
+        this.classList.add('user-choice');
+        
+        // Enregistre le vote localement IMMÉDIATEMENT pour autoriser l'affichage
+        localStorage.setItem(pollId, 'voted');
 
-        runTransaction(voteRef, (currentVotes) => {
-          return (currentVotes || 0) + 1;
-        }).then(() => {
-          localStorage.setItem(pollId, 'voted');
-          disableVoting();
-          // Pas besoin d'appeler updateUI ici, le 'onValue' plus haut s'en charge automatiquement et globalement !
-        }).catch((error) => {
+        // Prépare la mise à jour atomique pour le serveur (sans "flash à zéro")
+        const updates = {};
+        updates[votedValue] = increment(1);
+
+        // Envoie la commande au serveur
+        update(pollRef, updates).catch((error) => {
           console.error("Erreur de vote :", error);
+          // Si erreur serveur, on annule le vote local
+          localStorage.removeItem(pollId);
         });
       });
     });
-
-    function disableVoting() {
+    
+    // Si déjà voté au chargement initial, on fige visuellement
+    if (hasVoted) {
       optionsButtons.forEach(button => {
         button.style.cursor = 'default';
-        button.setAttribute("aria-pressed", "true");
-        // Optionnel : ajoute une opacité pour montrer que c'est inactif
-        button.style.opacity = '0.9'; 
+        button.classList.remove('unvoted-state');
       });
     }
   });
