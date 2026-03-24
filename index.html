@@ -210,8 +210,7 @@ description: Toute l'actualité locale de Sallanches et de la vallée. 100% grat
 
 <script type="module">
   import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-app.js";
-  // On importe 'set' au lieu de 'update'
-  import { getDatabase, ref, onValue, set, increment } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-database.js";
+  import { getDatabase, ref, onValue, runTransaction } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-database.js";
 
   const firebaseConfig = {
     apiKey: "AIzaSyCnmo7OGbJ5FOJptrW_gIjCu1nRwK_jsYI",
@@ -236,7 +235,10 @@ description: Toute l'actualité locale de Sallanches et de la vallée. 100% grat
     const optionsButtons = pollCard.querySelectorAll('.sondage-option');
     const totalVotantsText = document.getElementById('total-votants');
     
-    const hasVoted = localStorage.getItem(pollId);
+    // NOUVEAU : Verrou pour empêcher l'updateUI de réagir aux mises à jour "fantômes"
+    let isVotingMode = false;
+    // Stockage local des dernières données fiables
+    let lastKnownData = null;
 
     function updateUI(votesData) {
       if (!votesData) return;
@@ -258,7 +260,6 @@ description: Toute l'actualité locale de Sallanches et de la vallée. 100% grat
         }
       }
 
-      // Bloque l'affichage des résultats si pas de vote
       if (!localStorage.getItem(pollId)) return;
 
       optionsButtons.forEach(button => {
@@ -284,7 +285,12 @@ description: Toute l'actualité locale de Sallanches et de la vallée. 100% grat
     onValue(pollRef, (snapshot) => {
       const data = snapshot.val();
       if (data) {
-        updateUI(data);
+        // NOUVEAU : On met à jour lastKnownData, mais on ne dessine l'interface
+        // QUE SI on n'est pas en train d'attendre une confirmation de vote.
+        lastKnownData = data;
+        if (!isVotingMode) {
+          updateUI(data);
+        }
       } else {
         if (totalVotantsText) totalVotantsText.innerText = "Sondage en cours";
       }
@@ -294,25 +300,39 @@ description: Toute l'actualité locale de Sallanches et de la vallée. 100% grat
       button.addEventListener('click', function() {
         if (localStorage.getItem(pollId)) return; 
 
+        // NOUVEAU : On active le verrou pour bloquer les rendus parasites
+        isVotingMode = true;
+
         const votedValue = this.getAttribute('data-value');
         this.classList.add('user-choice');
         
-        // On valide le vote localement
-        localStorage.setItem(pollId, 'voted');
-
-        // LA CORRECTION EST ICI : 
-        // On cible le chemin exact de la réponse (ex: sondage_001/transport)
+        // On retourne à la méthode transaction qui garantit que l'on lit
+        // les données serveur complètes avant d'écrire.
         const voteRef = ref(db, pollId + '/' + votedValue);
 
-        // On utilise 'set' pour modifier uniquement ce nœud précis sans perturber le reste
-        set(voteRef, increment(1)).catch((error) => {
+        runTransaction(voteRef, (currentVotes) => {
+          return (currentVotes || 0) + 1;
+        }).then(() => {
+          // Succès ! Le serveur a validé.
+          localStorage.setItem(pollId, 'voted');
+          
+          // On relâche le verrou et on force un rendu avec les dernières données fiables
+          isVotingMode = false;
+          if (lastKnownData) {
+            // Petite "triche" pour afficher le résultat immédiat sans attendre le prochain onValue
+            lastKnownData[votedValue] = (lastKnownData[votedValue] || 0) + 1;
+            updateUI(lastKnownData);
+          }
+        }).catch((error) => {
           console.error("Erreur de vote :", error);
-          localStorage.removeItem(pollId); // Annulation si erreur
+          isVotingMode = false;
+          // En cas d'erreur, on restaure l'interface
+          if (lastKnownData) updateUI(lastKnownData);
         });
       });
     });
     
-    if (hasVoted) {
+    if (localStorage.getItem(pollId)) {
       optionsButtons.forEach(button => {
         button.style.cursor = 'default';
         button.classList.remove('unvoted-state');
