@@ -7,7 +7,7 @@ category: Actualités
 author: Clément Duval
 ville: Sallanches
 reading_time: 3
-image: /assets/img/articles/lancement-sallanches-info.jpg
+image: /assets/img/articles/lancement-sallanches-info.webp
 image_alt: Vue du centre-ville de Sallanches avec le Mont-Blanc en arrière-plan
 image_caption: "Sallanches.info ouvre ses portes - Image : ©Sallanches.info"
 tags: [lancement, editorial, sallanches]
