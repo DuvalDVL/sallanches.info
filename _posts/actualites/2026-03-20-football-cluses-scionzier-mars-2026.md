@@ -7,7 +7,7 @@ category: Actualites
 author: La rédaction
 ville: Passy
 reading_time: 3
-image: /assets/img/articles/football-cluses-scionzier.jpg
+image: /assets/img/articles/football-cluses-scionzier.webp
 image_alt: "Match de football au stade de Cluses"
 tags: [football, sport, cluses, scionzier, vallee-arve, u17]
 permalink: /actualites/football-cluses-scionzier-semaine-mars-2026/
