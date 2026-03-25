@@ -70,7 +70,8 @@ description: Toute l'actualité locale de Sallanches et de la vallée. 100% grat
             <span class="badge">{{ hero_post.category }}</span>
             {% endif %}
             {% if hero_post.image %}
-            <img src="{{ hero_post.image | prepend: site.baseurl }}" alt="{{ hero_post.image_alt | default: hero_post.title }}" loading="eager" itemprop="image">
+            {% assign hero_img = hero_post.image | replace: '.jpg', '.webp' | replace: '.jpeg', '.webp' | replace: '.png', '.webp' %}
+            <img src="{{ hero_img | prepend: site.baseurl }}" alt="{{ hero_post.image_alt | default: hero_post.title }}" fetchpriority="high" loading="eager" decoding="sync" width="662" height="346" itemprop="image">
             {% endif %}
           </div>
         </a>
@@ -98,7 +99,8 @@ description: Toute l'actualité locale de Sallanches et de la vallée. 100% grat
           <a href="{{ post.url | prepend: site.baseurl }}" aria-label="Lire : {{ post.title }}">
             <div class="side-card-img">
               {% if post.image %}
-              <img src="{{ post.image | prepend: site.baseurl }}" alt="{{ post.image_alt | default: post.title }}" loading="lazy" itemprop="image">
+              {% assign side_img = post.image | replace: '.jpg', '.webp' | replace: '.jpeg', '.webp' | replace: '.png', '.webp' %}
+              <img src="{{ side_img | prepend: site.baseurl }}" alt="{{ post.image_alt | default: post.title }}" loading="lazy" decoding="async" width="662" height="346" itemprop="image">
               {% endif %}
             </div>
           </a>
@@ -135,7 +137,8 @@ description: Toute l'actualité locale de Sallanches et de la vallée. 100% grat
           <div class="article-card-img">
             {% if post.category %}<span class="badge">{{ post.category }}</span>{% endif %}
             {% if post.image %}
-            <img src="{{ post.image | prepend: site.baseurl }}" alt="{{ post.image_alt | default: post.title }}" loading="lazy" itemprop="image">
+            {% assign actu_img = post.image | replace: '.jpg', '.webp' | replace: '.jpeg', '.webp' | replace: '.png', '.webp' %}
+            <img src="{{ actu_img | prepend: site.baseurl }}" alt="{{ post.image_alt | default: post.title }}" loading="lazy" decoding="async" width="662" height="346" itemprop="image">
             {% endif %}
           </div>
         </a>
