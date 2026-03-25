@@ -7,7 +7,7 @@ category: Portraits
 author: La redaction
 ville: Sallanches
 reading_time: 5
-image: /assets/img/articles/clement-duval-webdesigner-sallanches.jpg
+image: /assets/img/articles/clement-duval-webdesigner-sallanches.webp
 image_alt: "Clement Duval, webdesigner et consultant SEO à Sallanches"
 tags: [portrait, webdesigner, seo, sallanches, entrepreneur, digital]
 permalink: /portraits/clement-duval-webdesigner-sallanches/
