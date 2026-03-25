@@ -15,7 +15,7 @@ event_end_date: 2026-03-29
 event_time: "A partir de 10h00"
 event_lieu: "Palais de Megeve et Eglise Saint-Jean-Baptiste"
 reading_time: 3
-image: /assets/img/articles/classiquicime-megeve-festival-2026.jpg
+image: /assets/img/articles/classiquicime-megeve-festival-2026.webp
 image_alt: "Festival Classiquicime a Megeve, musique classique dans les Alpes"
 tags: [musique, festival, megeve, classique, agenda, culture]
 permalink: /agenda/festival-classiquicime-megeve-mars-2026/
