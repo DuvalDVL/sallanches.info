@@ -11,7 +11,7 @@ category: Agenda
 author: La rédaction
 ville: Sallanches
 reading_time: 2
-image: /assets/img/articles/chasse-oeufs-paques.jpg
+image: /assets/img/articles/chasse-oeufs-paques.webp
 image_alt: "Chasse aux oeufs de Pâques pour enfants à Sallanches"
 tags: [agenda, famille, enfants, paques, sallanches, gratuit]
 permalink: /agenda/chasse-oeufs-paques-sallanches-2026/
