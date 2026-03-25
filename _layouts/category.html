@@ -14,31 +14,25 @@ layout: default
     {% endif %}
   </div>
 </section>
+
 <section style="padding: 32px 0 48px; background: var(--gris-bg);">
   <div class="container">
-    <div class="cat-grid" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px;">
-      {% assign found = false %}
-      {% for post in site.posts %}
-        {% assign show = false %}
-        {% if page.filter_category %}
-          {% if post.category == page.filter_category %}
-            {% assign show = true %}
-          {% endif %}
-        {% elsif page.filter_ville %}
-          {% if post.ville == page.filter_ville %}
-            {% assign show = true %}
-          {% endif %}
-        {% elsif page.filter_tag %}
-          {% for t in post.tags %}
-            {% if t == page.filter_tag %}
-              {% assign show = true %}
-            {% endif %}
-          {% endfor %}
-        {% else %}
-          {% assign show = true %}
-        {% endif %}
-        {% if show %}
-          {% assign found = true %}
+    
+    {% if page.filter_category %}
+      {% assign filtered_posts = site.categories[page.filter_category] %}
+    {% elsif page.filter_ville %}
+      {% assign filtered_posts = site.posts | where: "ville", page.filter_ville %}
+    {% elsif page.filter_tag %}
+      {% assign filtered_posts = site.tags[page.filter_tag] %}
+    {% else %}
+      {% assign filtered_posts = site.posts %}
+    {% endif %}
+
+    {% assign filtered_posts = filtered_posts | limit: 24 %}
+
+    {% if filtered_posts.size > 0 %}
+      <div class="cat-grid" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px;">
+        {% for post in filtered_posts %}
           <article class="article-card" itemscope itemtype="https://schema.org/NewsArticle">
             <a href="{{ post.url | prepend: site.baseurl }}" aria-label="{{ post.title }}">
               <div class="article-card-img">
@@ -61,14 +55,14 @@ layout: default
               {% endif %}
             </div>
           </article>
-        {% endif %}
-      {% endfor %}
-    </div>
-    {% unless found %}
-    <div style="text-align: center; padding: 4rem; background: var(--blanc); border-radius: var(--rayon); border: 1px solid var(--gris-border);">
-      <p style="font-family: var(--font-titre); font-size: 16px; color: var(--gris-text); margin-bottom: 16px;">Aucun article dans cette rubrique pour l'instant.</p>
-      <a href="{{ site.baseurl }}/" style="color: var(--ambre); font-family: var(--font-titre); font-weight: 600; text-decoration: underline;">Retour &agrave; l'accueil</a>
-    </div>
-    {% endunless %}
+        {% endfor %}
+      </div>
+    {% else %}
+      <div style="text-align: center; padding: 4rem; background: var(--blanc); border-radius: var(--rayon); border: 1px solid var(--gris-border);">
+        <p style="font-family: var(--font-titre); font-size: 16px; color: var(--gris-text); margin-bottom: 16px;">Aucun article dans cette rubrique pour l'instant.</p>
+        <a href="{{ site.baseurl }}/" style="color: var(--ambre); font-family: var(--font-titre); font-weight: 600; text-decoration: underline;">Retour à l'accueil</a>
+      </div>
+    {% endif %}
+    
   </div>
 </section>
