@@ -7,7 +7,7 @@ category: Economie
 author: La rédaction
 ville: Sallanches
 reading_time: 3
-image: /assets/img/articles/usine-dynastar-sallanches.jpg
+image: /assets/img/articles/usine-dynastar-sallanches.webp
 image_alt: "Ancienne usine Dynastar à Sallanches dans la vallée de l'Arve"
 tags: [economie, industrie, sallanches, dynastar, zag-skis, pugnat, sylvia-perruchione, immobilier-entreprise]
 permalink: /economie/avenir-site-dynastar-sallanches-recours/
