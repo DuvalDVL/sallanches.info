@@ -11,7 +11,7 @@ category: Agenda
 author: La rédaction
 ville: Saint-Gervais
 reading_time: 2
-image: /assets/img/articles/quinzaine-japonaise-saint-gervais.jpg
+image: /assets/img/articles/quinzaine-japonaise-saint-gervais.webp
 image_alt: "Célébration des cerisiers en fleurs à Saint-Gervais"
 tags: [agenda, culture, saint-gervais, japon, exposition, ateliers]
 permalink: /agenda/quinzaine-japonaise-sakuras-saint-gervais-2026/
