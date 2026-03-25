@@ -7,7 +7,7 @@ category: Economie
 author: La redaction
 ville: Sallanches
 reading_time: 4
-image: /assets/img/articles/site-dynastar-sallanches-zag-skis.jpg
+image: /assets/img/articles/site-dynastar-sallanches-zag-skis.webp
 image_alt: "Site de l'ancienne usine Dynastar a Sallanches, Haute-Savoie"
 tags: [dynastar, zag-skis, economie, industrie, sallanches, emploi]
 permalink: /economie/zag-skis-site-dynastar-sallanches-2026/
