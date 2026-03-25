@@ -7,7 +7,7 @@ category: Actualites
 author: La redaction
 ville: Saint-Gervais
 reading_time: 4
-image: /assets/img/articles/tramway-mont-blanc-nid-aigle-2026.jpg
+image: /assets/img/articles/tramway-mont-blanc-nid-aigle-2026.webp
 image_alt: "Le Tramway du Mont-Blanc sur la voie vers le Nid d'Aigle en Haute-Savoie"
 tags: [tramway, mont-blanc, saint-gervais, tourisme, infrastructure]
 permalink: /actualites/tramway-mont-blanc-nid-aigle-ete-2026/
