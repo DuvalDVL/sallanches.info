@@ -11,7 +11,7 @@ category: Agenda
 author: La rédaction
 ville: Sallanches
 reading_time: 2
-image: /assets/img/articles/carnaval-sallanches-2026.jpg
+image: /assets/img/articles/carnaval-sallanches-2026.webp
 image_alt: "Défilé du Carnaval dans les rues de Sallanches"
 tags: [agenda, carnaval, sallanches, famille, fete, animations]
 permalink: /agenda/carnaval-sallanches-2026/
