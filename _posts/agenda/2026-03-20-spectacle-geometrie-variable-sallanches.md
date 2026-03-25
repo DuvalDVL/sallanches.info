@@ -11,7 +11,7 @@ category: Agenda
 author: La redaction
 ville: Sallanches
 reading_time: 2
-image: /assets/img/articles/spectacle-leon-curral.jpg
+image: /assets/img/articles/spectacle-leon-curral.webp
 image_alt: "Salle Leon Curral de Sallanches"
 tags: [agenda, spectacle, cirque, sallanches, leon-curral]
 permalink: /agenda/spectacle-geometrie-variable-sallanches-mars-2026/
