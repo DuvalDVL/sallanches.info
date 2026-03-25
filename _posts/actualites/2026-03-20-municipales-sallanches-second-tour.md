@@ -9,7 +9,7 @@ category: Actualites
 author: Clement Duval
 ville: Sallanches
 reading_time: 4
-image: /assets/img/articles/municipales-sallanches-2026.jpg
+image: /assets/img/articles/municipales-sallanches-2026.webp
 image_alt: "Isoloirs lors des elections municipales de Sallanches 2026"
 tags: [municipales, elections, sallanches, second-tour, 2026]
 permalink: /actualites/municipales-sallanches-second-tour-22-mars-2026/
