@@ -11,7 +11,7 @@ category: Agenda
 author: La rédaction
 ville: Sallanches
 reading_time: 2
-image: /assets/img/articles/harmonie-municipale-sallanches.jpg
+image: /assets/img/articles/harmonie-municipale-sallanches.webp
 image_alt: "Concert de l'Harmonie Municipale de Sallanches"
 tags: [agenda, musique, concert, harmonie, hans-zimmer, sallanches]
 permalink: /agenda/concert-harmonie-municipale-hans-zimmer-sallanches-2026/
