@@ -7,7 +7,7 @@ category: Economie
 author: La rédaction
 ville: Saint-Gervais
 reading_time: 4
-image: /assets/img/articles/compagnie-mont-blanc-saint-gervais.jpg
+image: /assets/img/articles/compagnie-mont-blanc-saint-gervais.webp
 image_alt: "Remontées mécaniques de la Compagnie du Mont-Blanc en Haute-Savoie"
 tags: [economie, tourisme, compagnie-mont-blanc, saint-gervais, chamonix, ski, remontees-mecaniques]
 permalink: /economie/compagnie-mont-blanc-chiffre-affaires-2025/
