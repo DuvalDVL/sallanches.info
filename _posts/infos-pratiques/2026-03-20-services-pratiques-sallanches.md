@@ -7,7 +7,7 @@ category: Pratique
 author: La rédaction
 ville: Sallanches
 reading_time: 5
-image: /assets/img/articles/mairie-sallanches.jpg
+image: /assets/img/articles/mairie-sallanches.webp
 image_alt: "Mairie de Sallanches en Haute-Savoie"
 tags: [pratique, services, sallanches, mairie, transport, sante]
 permalink: /infos-pratiques/services-pratiques-sallanches/
