@@ -365,7 +365,29 @@ description: Toute l'actualité locale de Sallanches et de la vallée. 100% grat
         
         <article class="agenda-item" itemscope itemtype="https://schema.org/Event">
           <meta itemprop="startDate" content="{{ edate | date_to_xmlschema }}">
-          <meta itemprop="description" content="{{ event.description }}">
+          <meta itemprop="endDate" content="{% if event.event_end_date %}{{ event.event_end_date | date_to_xmlschema }}{% else %}{{ edate | date_to_xmlschema }}{% endif %}">
+          <meta itemprop="description" content="{{ event.description | escape }}">
+          <meta itemprop="eventStatus" content="https://schema.org/EventScheduled">
+          <meta itemprop="image" content="{% if event.image %}{{ site.url }}{{ event.image }}{% else %}{{ site.url }}/assets/img/og-default.jpg{% endif %}">
+          
+          <div itemprop="organizer" itemscope itemtype="https://schema.org/Organization" style="display:none">
+            <meta itemprop="name" content="{{ event.organizer | default: 'Sallanches Info' }}">
+            <meta itemprop="url" content="{{ site.url }}">
+          </div>
+
+          <div itemprop="offers" itemscope itemtype="https://schema.org/Offer" style="display:none">
+            <meta itemprop="url" content="{{ site.url }}{{ event.url }}">
+            <meta itemprop="priceCurrency" content="EUR">
+            <meta itemprop="price" content="{% if event.prix %}{{ event.prix }}{% else %}0{% endif %}">
+            <meta itemprop="availability" content="https://schema.org/InStock">
+          </div>
+
+          {% if event.performer %}
+          <div itemprop="performer" itemscope itemtype="https://schema.org/PerformingGroup" style="display:none">
+            <meta itemprop="name" content="{{ event.performer | escape }}">
+          </div>
+          {% endif %}
+
           <div itemprop="location" itemscope itemtype="https://schema.org/Place" style="display:none">
             <meta itemprop="name" content="{% if event.event_lieu %}{{ event.event_lieu }}{% else %}{{ event.ville }}{% endif %}">
             <div itemprop="address" itemscope itemtype="https://schema.org/PostalAddress">
