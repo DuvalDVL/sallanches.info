@@ -1,192 +1,151 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.gstatic.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://www.google-analytics.com; connect-src 'self' https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com https://sallanches-info-default-rtdb.europe-west1.firebasedatabase.app wss://sallanches-info-default-rtdb.europe-west1.firebasedatabase.app https://d302d3af.sibforms.com;">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.gstatic.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://www.google-analytics.com; connect-src 'self' https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com https://*.firebasedatabase.app wss://*.firebasedatabase.app https://d302d3af.sibforms.com; frame-src 'self' https://*.firebasedatabase.app;">
 
-  <!-- SEO de base -->
-  <title>{% if page.title %}{{ page.title }} | Sallanches.info{% else %}Sallanches.info - L'actualité locale{% endif %}</title>
-  <meta name="description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
-  <meta name="robots" content="index, follow">
+<title>{% if page.title %}{{ page.title }} | Sallanches.info{% else %}Sallanches.info - L'actualité locale{% endif %}</title>
+<meta name="description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
+<meta name="robots" content="index, follow">
 
-  <!-- Open Graph (Facebook, LinkedIn, WhatsApp) -->
-  <meta property="og:type" content="{% if page.layout == 'post' %}article{% else %}website{% endif %}">
-  <meta property="og:title" content="{% if page.title %}{{ page.title }}{% else %}Sallanches.info{% endif %}">
-  <meta property="og:description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
-  <meta property="og:url" content="{{ page.url | absolute_url }}">
-  <meta property="og:site_name" content="Sallanches.info">
-  <meta property="og:locale" content="fr_FR">
-  {% if page.image %}
-  <meta property="og:image" content="{{ site.url }}{{ page.image }}">
-  <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="630">
-  {% else %}
-  <meta property="og:image" content="{{ site.url }}/assets/img/og-default.jpg">
-  {% endif %}
+<meta property="og:type" content="{% if page.layout == 'post' %}article{% else %}website{% endif %}">
+<meta property="og:title" content="{% if page.title %}{{ page.title }}{% else %}Sallanches.info{% endif %}">
+<meta property="og:description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
+<meta property="og:url" content="{{ page.url | absolute_url }}">
+<meta property="og:site_name" content="Sallanches.info">
+<meta property="og:locale" content="fr_FR">
+{% if page.image %}
+<meta property="og:image" content="{{ site.url }}{{ page.image }}">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+{% else %}
+<meta property="og:image" content="{{ site.url }}/assets/img/og-default.jpg">
+{% endif %}
 
-  <!-- Twitter Card (X) -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:site" content="@sallanchesinfo">
-  <meta name="twitter:title" content="{% if page.title %}{{ page.title }}{% else %}Sallanches.info{% endif %}">
-  <meta name="twitter:description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
-  {% if page.image %}
-  <meta name="twitter:image" content="{{ site.url }}{{ page.image }}">
-  {% else %}
-  <meta name="twitter:image" content="{{ site.url }}/assets/img/og-default.jpg">
-  {% endif %}
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@sallanchesinfo">
+<meta name="twitter:title" content="{% if page.title %}{{ page.title }}{% else %}Sallanches.info{% endif %}">
+<meta name="twitter:description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
+{% if page.image %}
+<meta name="twitter:image" content="{{ site.url }}{{ page.image }}">
+{% else %}
+<meta name="twitter:image" content="{{ site.url }}/assets/img/og-default.jpg">
+{% endif %}
 
-  <!-- Article metadata (Google News) -->
-  {% if page.layout == 'post' %}
-  <meta property="article:published_time" content="{{ page.date | date_to_xmlschema }}">
-  <meta property="article:author" content="{{ page.author | default: 'La rédaction' }}">
-  {% if page.category %}
-  <meta property="article:section" content="{{ page.category }}">
-  {% endif %}
-  {% endif %}
+{% if page.layout == 'post' %}
+<meta property="article:published_time" content="{{ page.date | date_to_xmlschema }}">
+<meta property="article:author" content="{{ page.author | default: 'La rédaction' }}">
+{% if page.category %}
+<meta property="article:section" content="{{ page.category }}">
+{% endif %}
+{% endif %}
 
-  <!-- Canonical -->
-  <link rel="canonical" href="{{ page.url | replace:'index.html','' | absolute_url }}">
+<link rel="canonical" href="{{ page.url | replace:'index.html','' | absolute_url }}">
 
-  <!-- Schema.org -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "NewsMediaOrganization",
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "NewsMediaOrganization",
+  "name": "Sallanches.info",
+  "url": "{{ site.url }}",
+  "logo": "{{ site.url }}/assets/img/logo.png",
+  "description": "{{ site.description }}",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Sallanches",
+    "postalCode": "74700",
+    "addressCountry": "FR"
+  },
+  "areaServed": [
+    { "@type": "City", "name": "Sallanches" },
+    { "@type": "City", "name": "Passy" },
+    { "@type": "City", "name": "Saint-Gervais-les-Bains" },
+    { "@type": "City", "name": "Magland" }
+  ],
+  "sameAs": [
+    "{{ site.social.facebook }}",
+    "{{ site.social.twitter }}",
+    "{{ site.social.linkedin }}"
+  ]
+}
+</script>
+
+{% if page.layout == 'post' %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "NewsArticle",
+  "headline": "{{ page.title | escape }}",
+  "description": "{{ page.description | escape }}",
+  "datePublished": "{{ page.date | date_to_xmlschema }}",
+  "dateModified": "{{ page.date | date_to_xmlschema }}",
+  "author": {
+    "@type": "Person",
+    "name": "{{ page.author | default: 'La rédaction' }}"
+  },
+  "publisher": {
+    "@type": "Organization",
     "name": "Sallanches.info",
-    "url": "{{ site.url }}",
-    "logo": "{{ site.url }}/assets/img/logo.png",
-    "description": "{{ site.description }}",
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Sallanches",
-      "postalCode": "74700",
-      "addressCountry": "FR"
-    },
-    "areaServed": [
-      { "@type": "City", "name": "Sallanches" },
-      { "@type": "City", "name": "Passy" },
-      { "@type": "City", "name": "Saint-Gervais-les-Bains" },
-      { "@type": "City", "name": "Magland" }
-    ],
-    "sameAs": [
-      "{{ site.social.facebook }}",
-      "{{ site.social.twitter }}",
-      "{{ site.social.linkedin }}"
-    ]
-  }
-  </script>
+    "logo": {
+      "@type": "ImageObject",
+      "url": "{{ site.url }}/assets/img/logo.png"
+    }
+  },
+  "image": "{% if page.image %}{{ site.url }}{{ page.image }}{% else %}{{ site.url }}/assets/img/og-default.jpg{% endif %}",
+  "url": "{{ page.url | absolute_url }}",
+  "mainEntityOfPage": "{{ page.url | absolute_url }}"
+}
+</script>
+{% endif %}
 
-  {% if page.layout == 'post' %}
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "NewsArticle",
-    "headline": "{{ page.title | escape }}",
-    "description": "{{ page.description | escape }}",
-    "datePublished": "{{ page.date | date_to_xmlschema }}",
-    "dateModified": "{{ page.date | date_to_xmlschema }}",
-    "author": {
-      "@type": "Person",
-      "name": "{{ page.author | default: 'La rédaction' }}"
-    },
-    "publisher": {
-      "@type": "Organization",
-      "name": "Sallanches.info",
-      "logo": {
-        "@type": "ImageObject",
-        "url": "{{ site.url }}/assets/img/logo.png"
-      }
-    },
-    "image": "{% if page.image %}{{ site.url }}{{ page.image }}{% else %}{{ site.url }}/assets/img/og-default.jpg{% endif %}",
-    "url": "{{ page.url | absolute_url }}",
-    "mainEntityOfPage": "{{ page.url | absolute_url }}"
-  }
-  </script>
-  {% endif %}
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap"></noscript>
 
-  <!-- Fonts (preconnect pour performance) -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap">
-  </noscript>
-  <!-- Styles -->
-  <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/styles.css">
+<link rel="stylesheet" href="{{ site.baseurl }}/assets/css/styles.css">
 
-  <!-- Favicon -->
-  <link rel="icon" type="image/png" href="{{ site.baseurl }}/assets/img/favicon.png">
-  <link rel="apple-touch-icon" href="{{ site.baseurl }}/assets/img/apple-touch-icon.png">
-
-  <!-- Sitemap -->
-  <link rel="sitemap" type="application/xml" href="{{ site.baseurl }}/sitemap.xml">
-
-  <!-- RSS Feed -->
-  <link rel="alternate" type="application/rss+xml" title="Sallanches.info" href="{{ site.baseurl }}/feed.xml">
-
-  <!-- Google Analytics (à activer) -->
-  <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script> -->
-
+<link rel="icon" type="image/png" href="{{ site.baseurl }}/assets/img/favicon.png">
+<link rel="apple-touch-icon" href="{{ site.baseurl }}/assets/img/apple-touch-icon.png">
+<link rel="sitemap" type="application/xml" href="{{ site.baseurl }}/sitemap.xml">
+<link rel="alternate" type="application/rss+xml" title="Sallanches.info" href="{{ site.baseurl }}/feed.xml">
 </head>
 <body>
-  {% include header.html %}
-  <main id="main-content" tabindex="-1">
-    {% unless page.hide_rubriques %}{% include rubriques-bar.html %}{% endunless %}
-    {{ content }}
-  </main>
+{% include header.html %}
+<main id="main-content" tabindex="-1">
+{% unless page.hide_rubriques %}{% include rubriques-bar.html %}{% endunless %}
+{{ content }}
+</main>
+{% include footer.html %}
 
-  {% include footer.html %}
+<nav class="bottom-nav" aria-label="Navigation mobile">
+  <a href="{{ site.baseurl }}/" class="{% if page.url == '/' %}active{% endif %}">
+    <span class="bn-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></span>
+    <span class="bn-label">Accueil</span>
+  </a>
+  <a href="{{ site.baseurl }}/actualites/" class="{% if page.url contains '/actualites' %}active{% endif %}">
+    <span class="bn-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></span>
+    <span class="bn-label">Actus</span>
+  </a>
+  <a href="{{ site.baseurl }}/agenda/" class="{% if page.url contains '/agenda' %}active{% endif %}">
+    <span class="bn-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></span>
+    <span class="bn-label">Agenda</span>
+  </a>
+  <a href="{{ site.baseurl }}/contribuer/" class="{% if page.url contains '/contribuer' %}active{% endif %}">
+    <span class="bn-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M11 4H4a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 013 3L12 15l-4 1 1-4 9.5-9.5z"/></svg></span>
+    <span class="bn-label">Contribuer</span>
+  </a>
+</nav>
 
-  <!-- Bottom nav mobile -->
-  <nav class="bottom-nav" aria-label="Navigation mobile">
-    <a href="{{ site.baseurl }}/" class="{% if page.url == '/' %}active{% endif %}">
-      <span class="bn-icon">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
-          <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/>
-        </svg>
-      </span>
-      <span class="bn-label">Accueil</span>
-    </a>
-    <a href="{{ site.baseurl }}/actualites/" class="{% if page.url contains '/actualites' %}active{% endif %}">
-      <span class="bn-icon">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
-          <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/>
-        </svg>
-      </span>
-      <span class="bn-label">Actus</span>
-    </a>
-    <a href="{{ site.baseurl }}/agenda/" class="{% if page.url contains '/agenda' %}active{% endif %}">
-      <span class="bn-icon">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
-          <rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/>
-        </svg>
-      </span>
-      <span class="bn-label">Agenda</span>
-    </a>
-    <a href="{{ site.baseurl }}/contribuer/" class="{% if page.url contains '/contribuer' %}active{% endif %}">
-      <span class="bn-icon">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
-          <path d="M11 4H4a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 013 3L12 15l-4 1 1-4 9.5-9.5z"/>
-        </svg>
-      </span>
-      <span class="bn-label">Contribuer</span>
-    </a>
-  </nav>
-
-  <!-- JS -->
-  <script src="{{ site.baseurl }}/assets/js/main.js" defer></script>
-
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-RYYV26H845"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-RYYV26H845');
-  </script>
-
+<script src="{{ site.baseurl }}/assets/js/main.js" defer></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-RYYV26H845"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-RYYV26H845');
+</script>
 </body>
 </html>
