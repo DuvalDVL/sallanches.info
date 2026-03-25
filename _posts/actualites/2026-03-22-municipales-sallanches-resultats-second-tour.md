@@ -9,7 +9,7 @@ category: Actualites
 author: Clément Duval
 ville: Sallanches
 reading_time: 4
-image: /assets/img/articles/municipales-sallanches-second-tour-2026.jpg
+image: /assets/img/articles/municipales-sallanches-second-tour-2026.webp
 image_alt: "Résultats du second tour des élections municipales de Sallanches 2026"
 tags: [municipales, elections, sallanches, second-tour, perruchione, 2026]
 permalink: /actualites/municipales-sallanches-resultats-second-tour-2026/
