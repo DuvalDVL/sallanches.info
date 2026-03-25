@@ -7,7 +7,7 @@ category: Actualites
 author: La rédaction
 ville: Magland
 reading_time: 3
-image: /assets/img/articles/faucigny-municipales-2026.jpg
+image: /assets/img/articles/faucigny-municipales-2026.webp
 image_alt: "Panneau d'entrée de la commune de Magland en Haute-Savoie"
 tags: [municipales, elections, magland, faucigny, premier-tour, 2026]
 permalink: /actualites/municipales-faucigny-elus-premier-tour-2026/
