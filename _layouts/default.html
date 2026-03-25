@@ -129,15 +129,8 @@
   <!-- Google Analytics (à activer) -->
   <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script> -->
 
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-RYYV26H845"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-RYYV26H845');
-  </script>
 </head>
+  
 <body>
 
   {% include header.html %}
@@ -187,6 +180,15 @@
 
   <!-- JS -->
   <script src="{{ site.baseurl }}/assets/js/main.js" defer></script>
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-RYYV26H845"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-RYYV26H845');
+  </script>
 
 </body>
 </html>
