@@ -180,6 +180,15 @@ button { font-family: var(--font-titre); cursor: pointer; }
 /* Burger mobile */
 .burger-btn {
   display: none !important;
+  background: transparent; /* Enlève le fond blanc */
+  border: none; /* Enlève la bordure */
+  color: var(--blanc);
+  padding: 0;
+  width: 24px;
+  height: 24px;
+}
+@media (max-width: 768px) {
+  .burger-btn { display: flex !important; align-items: center; justify-content: center; }
 }
 
 /* ============================================================
@@ -1055,7 +1064,17 @@ button { font-family: var(--font-titre); cursor: pointer; }
    MOBILE MENU
    ============================================================ */
 .mobile-menu {
-  display: none !important;
+  display: none; /* J'ai enlevé le !important ici */
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: var(--noir);
+  z-index: 1000;
+  padding: 20px;
+  flex-direction: column;
+}
+/* La classe magique qui ouvrira le menu */
+.mobile-menu.is-open {
+  display: flex !important;
 }
 .mobile-menu-header {
   display: flex;
