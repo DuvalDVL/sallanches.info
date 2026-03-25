@@ -7,7 +7,7 @@ category: Economie
 author: Clément Duval
 ville: Sallanches
 reading_time: 4
-image: /assets/img/articles/soitec-industrie-region.jpg
+image: /assets/img/articles/soitec-industrie-region.webp
 image_alt: "Industrie haute technologie en Auvergne-Rhone-Alpes"
 tags: [economie, industrie, soitec, semi-conducteurs, haute-savoie, technologie]
 permalink: /economie/soitec-cea-partenariat-impact-industrie-regionale/
