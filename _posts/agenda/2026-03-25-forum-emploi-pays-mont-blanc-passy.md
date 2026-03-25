@@ -11,7 +11,7 @@ category: Agenda
 author: La rédaction
 ville: Passy
 reading_time: 2
-image: /assets/img/articles/forum-emploi-parvis-des-fiz-passy.jpg
+image: /assets/img/articles/forum-emploi-parvis-des-fiz-passy.webp
 image_alt: "Candidats et recruteurs lors d'un forum de l'emploi au Pays du Mont-Blanc"
 tags: [emploi, agenda, passy, pays-du-mont-blanc, recrutement, parvis-des-fiz, forum-emploi]
 permalink: /agenda/forum-emploi-pays-mont-blanc-passy-2026/
