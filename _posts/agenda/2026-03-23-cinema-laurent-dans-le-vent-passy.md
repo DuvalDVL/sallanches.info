@@ -11,7 +11,7 @@ category: Agenda
 author: La rédaction
 ville: Passy
 reading_time: 1
-image: /assets/img/articles/cinema-passy-laurent-dans-le-vent.jpg
+image: /assets/img/articles/cinema-passy-laurent-dans-le-vent.webp
 image_alt: "Projection cinéma à Passy"
 tags: [agenda, cinema, passy, plateau-d-assy, culture, film]
 permalink: /agenda/cinema-laurent-dans-le-vent-passy/
