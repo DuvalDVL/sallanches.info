@@ -11,7 +11,7 @@ category: Agenda
 author: La rédaction
 ville: Sallanches
 reading_time: 2
-image: /assets/img/articles/spectacle-jeune-public-leon-curral.jpg
+image: /assets/img/articles/spectacle-jeune-public-leon-curral.webp
 image_alt: "Spectacle jeune public salle Léon Curral Sallanches"
 tags: [agenda, spectacle, jeune-public, enfants, sallanches, leon-curral]
 permalink: /agenda/spectacle-ultra-saucisse-sallanches-avril-2026/
