@@ -11,7 +11,7 @@ category: Agenda
 author: La rédaction
 ville: Sallanches
 reading_time: 2
-image: /assets/img/articles/carnaval-sallanches.jpg
+image: /assets/img/articles/carnaval-sallanches.webp
 image_alt: "Carnaval dans le centre-ville de Sallanches"
 tags: [agenda, carnaval, famille, sallanches, gratuit]
 permalink: /agenda/carnaval-sallanches-avril-2026/
