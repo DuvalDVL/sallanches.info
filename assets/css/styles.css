@@ -180,12 +180,19 @@ button { font-family: var(--font-titre); cursor: pointer; }
 /* Burger mobile */
 .burger-btn {
   display: none !important;
-  background: transparent; /* Enlève le fond blanc */
-  border: none; /* Enlève la bordure */
+  background: transparent;
+  border: none;
   color: var(--blanc);
-  padding: 0;
+  padding: 4px; /* Un peu d'espace autour du SVG */
+  width: 32px;  /* Plus large pour être facile à cliquer */
+  height: 32px;
+  flex-shrink: 0; /* Empêche le bouton de s'écraser */
+  cursor: pointer;
+}
+.burger-btn svg {
   width: 24px;
   height: 24px;
+  display: block;
 }
 @media (max-width: 768px) {
   .burger-btn { display: flex !important; align-items: center; justify-content: center; }
