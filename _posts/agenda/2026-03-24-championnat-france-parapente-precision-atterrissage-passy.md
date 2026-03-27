@@ -4,7 +4,7 @@ title: "Championnat de France de parapente a Passy : les meilleurs pilotes dans 
 description: "Du 4 au 6 avril 2026, Passy accueille le Championnat de France d'atterrissage de precision en parapente. Gratuit et ouvert au public, l'evenement se tient au Plateau d'Assy avec le Mont-Blanc en toile de fond."
 date: 2026-03-24
 category: Agenda
-event_date: "2026-04-26"
+event_date: 2026-04-26
 event_time: "Toute la journee"
 event_lieu: "Plateau d'Assy, Passy"
 event_tarif: "Gratuit"
