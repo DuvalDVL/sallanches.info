@@ -130,21 +130,3 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
 });
-
-// Ouverture et fermeture du menu burger
-document.addEventListener("DOMContentLoaded", () => {
-  const burgerBtn = document.getElementById("burger-btn");
-  const mobileMenu = document.getElementById("mobile-menu");
-  const closeBtn = document.getElementById("mobile-close");
-
-  if (burgerBtn && mobileMenu) {
-    burgerBtn.addEventListener("click", () => {
-      mobileMenu.classList.add("is-open");
-    });
-  }
-  if (closeBtn && mobileMenu) {
-    closeBtn.addEventListener("click", () => {
-      mobileMenu.classList.remove("is-open");
-    });
-  }
-});
