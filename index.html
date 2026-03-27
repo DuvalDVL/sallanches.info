@@ -212,135 +212,125 @@ description: Toute l'actualité locale de Sallanches et de la vallée. 100% grat
 </style>
 
 <script type="module">
-  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-app.js";
-  import { getDatabase, ref, onValue, runTransaction } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-database.js";
-
-  const firebaseConfig = {
-    apiKey: "AIzaSyCnmo7OGbJ5FOJptrW_gIjCu1nRwK_jsYI",
-    authDomain: "sallanches-info.firebaseapp.com",
-    projectId: "sallanches-info",
-    storageBucket: "sallanches-info.firebasestorage.app",
-    messagingSenderId: "190835836805",
-    appId: "1:190835836805:web:e37329717ace60660d26ec",
-    measurementId: "G-LYQH3QESC0",
-    databaseURL: "https://sallanches-info-default-rtdb.europe-west1.firebasedatabase.app" 
-  };
-
-  const app = initializeApp(firebaseConfig);
-  const db = getDatabase(app);
-
   document.addEventListener("DOMContentLoaded", () => {
     const pollCard = document.getElementById('poll-card');
     if (!pollCard) return;
 
-    const pollId = pollCard.getAttribute('data-id'); 
-    const pollRef = ref(db, pollId);
-    const optionsButtons = pollCard.querySelectorAll('.sondage-option');
-    const totalVotantsText = document.getElementById('total-votants');
-    
-    // NOUVEAU : Verrou pour empêcher l'updateUI de réagir aux mises à jour "fantômes"
-    let isVotingMode = false;
-    // Stockage local des dernières données fiables
-    let lastKnownData = null;
-
-    function updateUI(votesData) {
-      if (!votesData) return;
-      
-      let totalVotes = 0;
-      for (const key in votesData) {
-        if (typeof votesData[key] === 'number') {
-          totalVotes += votesData[key];
-        }
-      }
-
-      if (totalVotantsText) {
-        if (totalVotes === 0) {
-          totalVotantsText.innerText = "Sondage en cours";
-        } else if (totalVotes === 1) {
-          totalVotantsText.innerText = "1 votant";
-        } else {
-          totalVotantsText.innerText = totalVotes + " votants";
-        }
-      }
-
-      if (!localStorage.getItem(pollId)) return;
-
-      optionsButtons.forEach(button => {
-        const value = button.getAttribute('data-value');
-        const votes = votesData[value] || 0;
-        const pct = (totalVotes > 0) ? Math.round((votes / totalVotes) * 100) : 0;
-
-        const pctText = button.querySelector('.option-pct');
-        pctText.classList.remove('hidden-result');
-        pctText.innerText = pct + '%';
-
-        const progressBar = button.querySelector('.progress-bar');
-        progressBar.style.transition = "width 0.6s cubic-bezier(0.4, 0, 0.2, 1)";
-        progressBar.style.width = pct + '%';
-        progressBar.style.backgroundColor = "var(--ambre, #f0a500)"; 
-        
-        button.style.cursor = 'default';
-        button.setAttribute("aria-pressed", "true");
-        button.classList.remove('unvoted-state');
-      });
-    }
-
-    onValue(pollRef, (snapshot) => {
-      const data = snapshot.val();
-      if (data) {
-        // NOUVEAU : On met à jour lastKnownData, mais on ne dessine l'interface
-        // QUE SI on n'est pas en train d'attendre une confirmation de vote.
-        lastKnownData = data;
-        if (!isVotingMode) {
-          updateUI(data);
-        }
-      } else {
-        if (totalVotantsText) totalVotantsText.innerText = "Sondage en cours";
-      }
-    });
-
-    optionsButtons.forEach(button => {
-      button.addEventListener('click', function() {
-        if (localStorage.getItem(pollId)) return; 
-
-        // NOUVEAU : On active le verrou pour bloquer les rendus parasites
-        isVotingMode = true;
-
-        const votedValue = this.getAttribute('data-value');
-        this.classList.add('user-choice');
-        
-        // On retourne à la méthode transaction qui garantit que l'on lit
-        // les données serveur complètes avant d'écrire.
-        const voteRef = ref(db, pollId + '/' + votedValue);
-
-        runTransaction(voteRef, (currentVotes) => {
-          return (currentVotes || 0) + 1;
-        }).then(() => {
-          // Succès ! Le serveur a validé.
-          localStorage.setItem(pollId, 'voted');
+    // On configure l'observateur pour déclencher Firebase quand on approche du sondage (à 300px près)
+    const observer = new IntersectionObserver((entries, obs) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
           
-          // On relâche le verrou et on force un rendu avec les dernières données fiables
-          isVotingMode = false;
-          if (lastKnownData) {
-            // Petite "triche" pour afficher le résultat immédiat sans attendre le prochain onValue
-            lastKnownData[votedValue] = (lastKnownData[votedValue] || 0) + 1;
-            updateUI(lastKnownData);
-          }
-        }).catch((error) => {
-          console.error("Erreur de vote :", error);
-          isVotingMode = false;
-          // En cas d'erreur, on restaure l'interface
-          if (lastKnownData) updateUI(lastKnownData);
-        });
+          // Importation dynamique de Firebase UNIQUEMENT au scroll
+          Promise.all([
+            import("https://www.gstatic.com/firebasejs/10.11.0/firebase-app.js"),
+            import("https://www.gstatic.com/firebasejs/10.11.0/firebase-database.js")
+          ]).then(([ { initializeApp }, { getDatabase, ref, onValue, runTransaction } ]) => {
+            
+            const firebaseConfig = {
+              apiKey: "AIzaSyCnmo7OGbJ5FOJptrW_gIjCu1nRwK_jsYI",
+              authDomain: "sallanches-info.firebaseapp.com",
+              projectId: "sallanches-info",
+              storageBucket: "sallanches-info.firebasestorage.app",
+              messagingSenderId: "190835836805",
+              appId: "1:190835836805:web:e37329717ace60660d26ec",
+              databaseURL: "https://sallanches-info-default-rtdb.europe-west1.firebasedatabase.app" 
+            };
+
+            const app = initializeApp(firebaseConfig);
+            const db = getDatabase(app);
+            const pollId = pollCard.getAttribute('data-id'); 
+            const pollRef = ref(db, pollId);
+            const optionsButtons = pollCard.querySelectorAll('.sondage-option');
+            const totalVotantsText = document.getElementById('total-votants');
+            
+            let isVotingMode = false;
+            let lastKnownData = null;
+
+            function updateUI(votesData) {
+              if (!votesData) return;
+              let totalVotes = 0;
+              for (const key in votesData) {
+                if (typeof votesData[key] === 'number') totalVotes += votesData[key];
+              }
+
+              if (totalVotantsText) {
+                if (totalVotes === 0) totalVotantsText.innerText = "Sondage en cours";
+                else if (totalVotes === 1) totalVotantsText.innerText = "1 votant";
+                else totalVotantsText.innerText = totalVotes + " votants";
+              }
+
+              if (!localStorage.getItem(pollId)) return;
+
+              optionsButtons.forEach(button => {
+                const value = button.getAttribute('data-value');
+                const votes = votesData[value] || 0;
+                const pct = (totalVotes > 0) ? Math.round((votes / totalVotes) * 100) : 0;
+
+                const pctText = button.querySelector('.option-pct');
+                pctText.classList.remove('hidden-result');
+                pctText.innerText = pct + '%';
+
+                const progressBar = button.querySelector('.progress-bar');
+                progressBar.style.width = pct + '%';
+                progressBar.style.backgroundColor = "var(--ambre, #f0a500)"; 
+                
+                button.style.cursor = 'default';
+                button.setAttribute("aria-pressed", "true");
+                button.classList.remove('unvoted-state');
+              });
+            }
+
+            onValue(pollRef, (snapshot) => {
+              const data = snapshot.val();
+              if (data) {
+                lastKnownData = data;
+                if (!isVotingMode) updateUI(data);
+              } else {
+                if (totalVotantsText) totalVotantsText.innerText = "Sondage en cours";
+              }
+            });
+
+            optionsButtons.forEach(button => {
+              button.addEventListener('click', function() {
+                if (localStorage.getItem(pollId)) return; 
+                isVotingMode = true;
+                const votedValue = this.getAttribute('data-value');
+                this.classList.add('user-choice');
+                
+                const voteRef = ref(db, pollId + '/' + votedValue);
+                runTransaction(voteRef, (currentVotes) => {
+                  return (currentVotes || 0) + 1;
+                }).then(() => {
+                  localStorage.setItem(pollId, 'voted');
+                  isVotingMode = false;
+                  if (lastKnownData) {
+                    lastKnownData[votedValue] = (lastKnownData[votedValue] || 0) + 1;
+                    updateUI(lastKnownData);
+                  }
+                }).catch((error) => {
+                  console.error("Erreur :", error);
+                  isVotingMode = false;
+                  if (lastKnownData) updateUI(lastKnownData);
+                });
+              });
+            });
+            
+            if (localStorage.getItem(pollId)) {
+              optionsButtons.forEach(button => {
+                button.style.cursor = 'default';
+                button.classList.remove('unvoted-state');
+              });
+            }
+          });
+          
+          // On arrête d'observer une fois que c'est chargé
+          obs.unobserve(entry.target);
+        }
       });
-    });
-    
-    if (localStorage.getItem(pollId)) {
-      optionsButtons.forEach(button => {
-        button.style.cursor = 'default';
-        button.classList.remove('unvoted-state');
-      });
-    }
+    }, { rootMargin: "300px" });
+
+    observer.observe(pollCard);
   });
 </script>
 
