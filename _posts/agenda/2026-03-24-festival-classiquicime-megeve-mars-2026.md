@@ -4,16 +4,13 @@ title: "Festival Classiquicime a Megeve : 4 jours de musique classique au pied d
 description: "Du 26 au 29 mars 2026, Megeve accueille la deuxieme edition du festival Classiquicime. Plus de 200 artistes, 10 concerts dans 3 salles, des performances en altitude et des evenements gratuits en plein air. Billets a partir de 16 euros."
 date: 2026-03-24
 category: Agenda
-event_date: "2026-03-26"
-event_time: "Soirée"
-event_lieu: "Palais de Megève"
-event_tarif: "16 euros"
-author: La redaction
-ville: Megeve
 event_date: 2026-03-26
 event_end_date: 2026-03-29
 event_time: "A partir de 10h00"
 event_lieu: "Palais de Megeve et Eglise Saint-Jean-Baptiste"
+event_tarif: "16 euros"
+author: La redaction
+ville: Megeve
 reading_time: 3
 image: /assets/img/articles/classiquicime-megeve-festival-2026.webp
 image_alt: "Festival Classiquicime a Megeve, musique classique dans les Alpes"
