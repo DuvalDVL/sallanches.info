@@ -77,7 +77,7 @@ layout: default
       <div class="sidebar-widget">
         <div class="widget-title">À lire aussi</div>
         {% assign related = site.posts | where_exp: "post", "post.url != page.url" %}
-        {% for post in related limit: 4 %}
+        {% for post in related limit: 6 %}
         <div style="margin-bottom: 12px; padding-bottom: 12px; border-bottom: 1px solid var(--gris-border);">
           {% if post.category %}
           <span class="badge" style="font-size: 9px; margin-bottom: 4px;">{{ post.category }}</span>
