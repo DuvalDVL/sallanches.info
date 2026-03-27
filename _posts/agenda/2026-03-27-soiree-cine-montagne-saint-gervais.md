@@ -2,7 +2,7 @@
 layout: post
 title: "Soirée Ciné-Montagne à Saint-Gervais : projection du documentaire 'Sommets de l'Arve'"
 description: "Le Théâtre du Mont-Blanc propose une soirée spéciale le vendredi 10 avril 2026 en présence du réalisateur local Marc Durand. Échanges et débat autour de la préservation de nos montagnes."
-date: 2026-03-29
+date: 2026-03-27
 category: Agenda
 event_date: 2026-04-10
 event_end_date: 2026-04-10
