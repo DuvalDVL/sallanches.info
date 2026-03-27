@@ -5,7 +5,6 @@ description: "Du 4 au 6 avril 2026, Passy accueille le Championnat de France d'a
 date: 2026-03-24
 category: Agenda
 event_date: "2026-04-26"
-event_date_texte: "26 au 29 Avril"
 event_time: "Toute la journee"
 event_lieu: "Plateau d'Assy, Passy"
 event_tarif: "Gratuit"
