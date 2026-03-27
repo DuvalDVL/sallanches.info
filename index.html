@@ -373,6 +373,7 @@ description: Toute l'actualité locale de Sallanches et de la vallée. 100% grat
             <meta itemprop="priceCurrency" content="EUR">
             <meta itemprop="price" content="{% if event.prix %}{{ event.prix }}{% else %}0{% endif %}">
             <meta itemprop="availability" content="https://schema.org/InStock">
+            <meta itemprop="validFrom" content="{{ event.date | date_to_xmlschema }}">
           </div>
 
           {% if event.performer %}
