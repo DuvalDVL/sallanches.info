@@ -18,7 +18,7 @@ tags: [musique, festival, megeve, classique, agenda, culture]
 permalink: /agenda/festival-classiquicime-megeve-mars-2026/
 ---
 
-La montagne vibre de musique ce week-end. Du jeudi 26 au dimanche 29 mars 2026, Megeve accueille la deuxieme edition du festival Classiquicime, un evenement de musique classique pas comme les autres, concu pour sortir ce repertoire de son carcan et le faire vivre au coeur des Alpes.
+La montagne vibre de musique ce week-end. Du jeudi 26 au dimanche 29 mars 2026, Megève accueille la deuxieme edition du festival Classiquicime, un evenement de musique classique pas comme les autres, concu pour sortir ce repertoire de son carcan et le faire vivre au coeur des Alpes.
 
 <!--more-->
 
