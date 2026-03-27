@@ -17,7 +17,7 @@ image_alt: "Affiche du film documentaire sur les sommets de l'Arve"
 tags: [agenda, cinema, montagne, saint-gervais, ecologie, documentaire]
 permalink: /agenda/soiree-cine-montagne-saint-gervais-2026/
 ---
-Amoureux des cimes et protecteurs de l'environnement, cochez cette date dans vos agendas. Le vendredi 10 avril 2026, le Théâtre du Mont-Blanc à Saint-Gervais accueille une projection-débat exceptionnelle.
+Amoureux des cimes et protecteurs de l'environnement, cochez cette date dans vos agendas. Le vendredi 10 avril 2026, le Théâtre du Mont-Blanc à Saint-Gervais accueille une projection/débat exceptionnelle.
 
 Une immersion au cœur des glaciers
 Le documentaire "Sommets de l'Arve", réalisé par le Haut-Savoyard Marc Durand, propose des images époustouflantes de notre vallée, filmées sur quatre saisons. Plus qu'une simple vitrine esthétique, le film aborde avec justesse les conséquences visibles du réchauffement climatique sur les glaciers de notre région et le quotidien des guides de haute montagne.
