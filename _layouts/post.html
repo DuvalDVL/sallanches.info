@@ -76,8 +76,8 @@ layout: default
 
       <div class="sidebar-widget">
         <div class="widget-title">À lire aussi</div>
-        {% assign related = site.posts | where_exp: "post", "post.url != page.url" | limit: 4 %}
-        {% for post in related %}
+        {% assign related = site.posts | where_exp: "post", "post.url != page.url" %}
+        {% for post in related limit: 4 %}
         <div style="margin-bottom: 12px; padding-bottom: 12px; border-bottom: 1px solid var(--gris-border);">
           {% if post.category %}
           <span class="badge" style="font-size: 9px; margin-bottom: 4px;">{{ post.category }}</span>
@@ -85,7 +85,9 @@ layout: default
           <p style="font-family: var(--font-titre); font-size: 12px; font-weight: 600; line-height: 1.4; margin-top: 4px;">
             <a href="{{ post.url | prepend: site.baseurl }}" style="color: var(--texte);">{{ post.title }}</a>
           </p>
-          <p style="font-family: var(--font-titre); font-size: 10px; color: var(--gris-text); margin-top: 3px;">{{ post.date | date: "%d %B %Y" }}</p>
+          <p style="font-family: var(--font-titre); font-size: 10px; color: var(--gris-text); margin-top: 3px;">
+            {{ post.date | date: "%d" }} {% assign m3 = post.date | date: "%-m" %}{% case m3 %}{% when "1" %}janvier{% when "2" %}février{% when "3" %}mars{% when "4" %}avril{% when "5" %}mai{% when "6" %}juin{% when "7" %}juillet{% when "8" %}août{% when "9" %}septembre{% when "10" %}octobre{% when "11" %}novembre{% when "12" %}décembre{% endcase %} {{ post.date | date: "%Y" }}
+          </p>
         </div>
         {% endfor %}
       </div>
