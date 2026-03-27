@@ -2,37 +2,7 @@
 
 document.addEventListener('DOMContentLoaded', function () {
 
-  /* ---- MENU MOBILE ---- */
-  var burger = document.getElementById('burger-btn');
-  var mobileMenu = document.getElementById('mobile-menu');
-  var mobileClose = document.getElementById('mobile-close');
 
-  if (burger && mobileMenu) {
-    burger.addEventListener('click', function () {
-      var isOpen = !mobileMenu.hidden;
-      mobileMenu.hidden = isOpen;
-      burger.setAttribute('aria-expanded', !isOpen);
-      document.body.style.overflow = isOpen ? '' : 'hidden';
-    });
-  }
-
-  if (mobileClose && mobileMenu) {
-    mobileClose.addEventListener('click', function () {
-      mobileMenu.hidden = true;
-      if (burger) burger.setAttribute('aria-expanded', 'false');
-      document.body.style.overflow = '';
-    });
-  }
-
-  /* Fermeture menu mobile sur touche Echap */
-  document.addEventListener('keydown', function (e) {
-    if (e.key === 'Escape' && mobileMenu && !mobileMenu.hidden) {
-      mobileMenu.hidden = true;
-      if (burger) burger.setAttribute('aria-expanded', 'false');
-      document.body.style.overflow = '';
-      if (burger) burger.focus();
-    }
-  });
 
   /* ---- SONDAGE ---- */
   var options = document.querySelectorAll('.sondage-option');
@@ -129,4 +99,22 @@ document.addEventListener('DOMContentLoaded', function () {
     lazyImgs.forEach(function (img) { img.src = img.dataset.src || img.src; });
   }
 
+});
+
+// Ouverture et fermeture du menu burger
+document.addEventListener("DOMContentLoaded", () => {
+  const burgerBtn = document.getElementById("burger-btn");
+  const mobileMenu = document.getElementById("mobile-menu");
+  const closeBtn = document.getElementById("mobile-close");
+
+  if (burgerBtn && mobileMenu) {
+    burgerBtn.addEventListener("click", () => {
+      mobileMenu.classList.add("is-open");
+    });
+  }
+  if (closeBtn && mobileMenu) {
+    closeBtn.addEventListener("click", () => {
+      mobileMenu.classList.remove("is-open");
+    });
+  }
 });
