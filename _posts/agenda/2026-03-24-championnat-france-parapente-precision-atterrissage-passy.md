@@ -20,7 +20,7 @@ tags: [parapente, sport, passy, plateau-assy, competition, agenda, plein-air]
 permalink: /agenda/championnat-france-parapente-precision-atterrissage-passy-2026/
 ---
 
-Le ciel de Passy va se couvrir de voiles colorees du 4 au 6 avril 2026. La commune accueille le Championnat de France d'atterrissage de precision en parapente, une discipline ou chaque centimetre compte et ou les meilleurs pilotes francais s'affrontent dans l'un des plus beaux decors alpins.
+Le ciel de Passy va se couvrir de voiles colorées du 4 au 6 avril 2026. La commune accueille le Championnat de France d'atterrissage de précision en parapente, une discipline ou chaque centimetre compte et ou les meilleurs pilotes francais s'affrontent dans l'un des plus beaux decors alpins.
 
 <!--more-->
 
