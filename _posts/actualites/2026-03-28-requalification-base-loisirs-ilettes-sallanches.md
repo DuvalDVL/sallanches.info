@@ -3,7 +3,7 @@ layout: post
 title: "Base de loisirs des Ilettes : le projet de requalification se précise"
 description: "Un parking végétalisé, une nouvelle passerelle haubanée et un amphithéâtre de verdure : découvrez le futur visage du site naturel préféré des Sallanchards."
 date: 2026-03-28
-category: Actualités
+category: Actualites
 author: La rédaction
 ville: Sallanches
 reading_time: 3
