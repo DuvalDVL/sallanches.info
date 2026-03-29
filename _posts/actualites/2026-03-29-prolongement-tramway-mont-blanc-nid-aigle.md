@@ -3,7 +3,7 @@ layout: post
 title: "Le Tramway du Mont-Blanc atteint le Nid d'Aigle : ce qui change pour cet été 2026"
 description: "Après plus d'un siècle d'attente, le mythique train à crémaillère de Saint-Gervais franchit enfin les derniers mètres qui le séparaient du refuge."
 date: 2026-03-29 08:00:00 +0200
-category: Actualitess
+category: Actualites
 author: La rédaction
 ville: Saint-Gervais
 reading_time: 3
