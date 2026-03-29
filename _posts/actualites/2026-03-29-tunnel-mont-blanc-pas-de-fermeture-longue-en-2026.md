@@ -3,7 +3,7 @@ layout: post
 title: "Tunnel du Mont-Blanc : un répit en 2026, aucune fermeture prolongée cette année"
 description: "L'ATMB confirme que le tunnel ne subira pas de longue fermeture cet automne, le temps pour les États de tirer le bilan des travaux expérimentaux de 2024 et 2025."
 date: 2026-03-29 16:45:00 +0200
-category: Actualités
+category: Actualites
 author: La rédaction
 ville: Chamonix
 reading_time: 3
