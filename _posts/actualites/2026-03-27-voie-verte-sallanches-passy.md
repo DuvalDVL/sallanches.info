@@ -3,7 +3,7 @@ layout: post
 title: "Mobilité douce : la nouvelle voie verte reliant Sallanches à Passy enfin inaugurée"
 description: "Après six mois de travaux, le nouveau tronçon cyclable le long de l'Arve est ouvert aux cyclistes et piétons. Un projet à 1,2 million d'euros pour encourager les déplacements décarbonés."
 date: 2026-03-27
-category: Actualités
+category: Actualites
 author: La rédaction
 ville: Sallanches
 reading_time: 3
