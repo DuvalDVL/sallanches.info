@@ -3,7 +3,7 @@ layout: post
 title: "Bienvenue sur Sallanches.info, votre nouveau média local"
 description: "Sallanches.info, c'est le projet d'un habitant de la vallée qui voulait un endroit où trouver l'actualité de Sallanches, Passy, Saint-Gervais et Magland. Simple, rapide, gratuit."
 date: 2026-03-20
-category: Actualités
+category: Actualites
 author: Clément Duval
 ville: Sallanches
 reading_time: 3
