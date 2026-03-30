@@ -16,7 +16,7 @@ L'effervescence électorale redescend doucement au Pays du Mont-Blanc pour laiss
 
 ## Une séance d'installation solennelle
 
-C'est dans une salle du conseil comble que s'est tenue la première séance de la mandature ce week-end. Sans surprise, Sylvia Perruchione a été formellement élue maire par la nouvelle majorité. Dans son discours d'investiture, elle a tenu à rappeler sa volonté de "rassembler les Sallanchards" après une campagne particulièrement intense, et de se mettre immédiatement au travail sur les dossiers urgents de la ville, notamment la question du plan de circulation.
+C'est dans une salle du conseil comble qu'a eu lieu la première séance de la mandature ce week-end. Sans surprise, Sylvia Perruchione a été formellement élue maire par la nouvelle majorité. Dans son discours d'investiture, elle a tenu à rappeler sa volonté de "rassembler les Sallanchards" après une campagne particulièrement intense, et de se mettre immédiatement au travail sur les dossiers urgents de la ville, notamment la question du plan de circulation.
 
 ## La répartition des rôles stratégiques
 
