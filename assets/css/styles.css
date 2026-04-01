@@ -1252,7 +1252,21 @@ button { font-family: var(--font-titre); cursor: pointer; }
 @media (max-width: 768px) {
   .rubriques-bar { display: block; }
   .une-grid { grid-template-columns: 1fr; }
-  .une-side { display: none; }
+  @media (max-width: 768px) {
+  .rubriques-bar { display: block; }
+  .une-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+  
+  /* Affichage des articles secondaires sur mobile */
+  .une-side { display: flex; flex-direction: column; gap: 1.2rem; }
+  .side-card { flex-direction: row; align-items: center; gap: 1rem; }
+  .side-card-img { width: 110px; height: 85px; flex-shrink: 0; }
+  .side-card-img img { border-radius: 6px; }
+  .side-card-body { padding: 0; }
+
+  .articles-grid { grid-template-columns: 1fr; }
+  .header-tagline { display: none; }
+  .header-nav { display: none; }
+  /* ... (garde le reste de ton code en dessous intact) ... */
   .articles-grid { grid-template-columns: 1fr; }
   .header-tagline { display: none; }
   .header-nav { display: none; }
