@@ -4,7 +4,7 @@ title: "Fin de saison sur Évasion Mont-Blanc : quelles remontées encore ouvert
 description: "Le domaine skiable Évasion Mont-Blanc ferme ses portes le 6 avril 2026. Voici ce qui reste ouvert à Saint-Gervais, Megève et Les Contamines pour profiter des dernières journées de ski de la saison."
 date: 2026-04-01 06:00:00 +0200
 category: Actualites
-author: La rédaction
+author: La redaction
 ville: Saint-Gervais
 reading_time: 3
 image: /assets/img/articles/fin-saison-ski-evasion-mont-blanc-2026.webp
