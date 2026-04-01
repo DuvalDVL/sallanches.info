@@ -4,7 +4,7 @@ title: "L'Espace Mont-Blanc renforce sa coopération face à l'urgence climatiqu
 description: "La publication récente du rapport européen ESPON CROSSGOV vient valider et encourager les efforts conjoints de la France, de l'Italie et de la Suisse pour protéger le toit de l'Europe."
 date: 2026-03-30 05:55:00 +0200
 category: Actualites
-author: La rédaction
+author: La redaction
 ville: Chamonix
 reading_time: 3
 image: /assets/img/articles/espace-mont-blanc-cooperation-2026.webp
