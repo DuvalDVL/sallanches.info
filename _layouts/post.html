@@ -16,7 +16,14 @@ layout: default
           <time itemprop="datePublished" datetime="{{ page.date | date_to_xmlschema }}">
             Publié le {{ page.date | date: "%d/%m/%Y" }}
           </time>
-          {% if page.author %}<span class="sep">·</span><span itemprop="author">{{ page.author }}</span>{% endif %}
+          {% if page.author %}
+          <span class="sep">·</span>
+          <span itemprop="author" itemscope itemtype="https://schema.org/Person">
+            <a href="{{ site.baseurl }}/auteur/{{ page.author | slugify }}/" itemprop="url" style="color: inherit; text-decoration: underline; text-decoration-color: var(--ambre); text-underline-offset: 3px;">
+              <span itemprop="name">{{ page.author }}</span>
+            </a>
+          </span>
+          {% endif %}
           {% if page.ville %}<span class="sep">·</span><span class="ville">{{ page.ville }}</span>{% endif %}
         </div>
         {% include share.html %}
