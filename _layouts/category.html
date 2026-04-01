@@ -17,22 +17,9 @@ layout: default
 
 <section style="padding: 32px 0 48px; background: var(--gris-bg);">
   <div class="container">
-    
-    {% if page.filter_category %}
-      {% assign filtered_posts = site.categories[page.filter_category] %}
-    {% elsif page.filter_ville %}
-      {% assign filtered_posts = site.posts | where: "ville", page.filter_ville %}
-    {% elsif page.filter_tag %}
-      {% assign filtered_posts = site.tags[page.filter_tag] %}
-    {% else %}
-      {% assign filtered_posts = site.posts %}
-    {% endif %}
-
-    {% assign filtered_posts = filtered_posts | limit: 24 %}
-
-    {% if filtered_posts.size > 0 %}
-      <div class="cat-grid" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px;">
-        {% for post in filtered_posts %}
+    {% if paginator.posts.size > 0 %}
+      <div class="cat-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 16px;">
+        {% for post in paginator.posts %}
           <article class="article-card" itemscope itemtype="https://schema.org/NewsArticle">
             <a href="{{ post.url | prepend: site.baseurl }}" aria-label="{{ post.title }}">
               <div class="article-card-img">
@@ -44,7 +31,7 @@ layout: default
             </a>
             <div class="article-card-body">
               <div class="article-card-meta">
-               <time itemprop="datePublished" datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%d" }} {% assign m = post.date | date: "%-m" %}{% case m %}{% when "1" %}janvier{% when "2" %}février{% when "3" %}mars{% when "4" %}avril{% when "5" %}mai{% when "6" %}juin{% when "7" %}juillet{% when "8" %}août{% when "9" %}septembre{% when "10" %}octobre{% when "11" %}novembre{% when "12" %}décembre{% endcase %} {{ post.date | date: "%Y" }}</time>
+                <time itemprop="datePublished" datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%d/%m/%Y" }}</time>
                 {% if post.ville %} &middot; {{ post.ville }}{% endif %}
               </div>
               <h2 class="article-card-title" itemprop="headline">
@@ -57,12 +44,23 @@ layout: default
           </article>
         {% endfor %}
       </div>
+      
+      {% if paginator.total_pages > 1 %}
+      <div style="margin-top: 3rem; text-align: center; display: flex; gap: 10px; justify-content: center;">
+        {% if paginator.previous_page %}
+          <a href="{{ paginator.previous_page_path | prepend: site.baseurl }}" class="badge-outline" style="padding: 8px 16px; text-decoration: none;">Précédent</a>
+        {% endif %}
+        {% if paginator.next_page %}
+          <a href="{{ paginator.next_page_path | prepend: site.baseurl }}" class="badge-outline" style="padding: 8px 16px; text-decoration: none;">Suivant</a>
+        {% endif %}
+      </div>
+      {% endif %}
+
     {% else %}
       <div style="text-align: center; padding: 4rem; background: var(--blanc); border-radius: var(--rayon); border: 1px solid var(--gris-border);">
         <p style="font-family: var(--font-titre); font-size: 16px; color: var(--gris-text); margin-bottom: 16px;">Aucun article dans cette rubrique pour l'instant.</p>
         <a href="{{ site.baseurl }}/" style="color: var(--ambre); font-family: var(--font-titre); font-weight: 600; text-decoration: underline;">Retour à l'accueil</a>
       </div>
     {% endif %}
-    
   </div>
 </section>
