@@ -8,7 +8,7 @@ event_time: "20h30"
 event_lieu: "Salle Léon Curral, Sallanches"
 event_tarif: "Tarif à confirmer auprès de l'organisateur"
 category: Agenda
-author: La rédaction
+author: La redaction
 ville: Sallanches
 reading_time: 2
 image: /assets/img/articles/harmonie-municipale-sallanches.webp
