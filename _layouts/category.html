@@ -27,6 +27,8 @@ layout: default
         {% assign display_posts = site.posts | where: "ville", page.filter_ville %}
       {% elsif page.filter_tag %}
         {% assign display_posts = site.tags[page.filter_tag] %}
+      {% elsif page.filter_author %}
+        {% assign display_posts = site.posts | where: "author", page.filter_author %}
       {% else %}
         {% assign display_posts = site.posts %}
       {% endif %}
