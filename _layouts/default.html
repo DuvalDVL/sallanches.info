@@ -85,7 +85,7 @@
     "author": { 
     "@type": "Person", 
     "name": "{{ page.author | default: 'La rédaction' }}",
-    "url": "{{ site.url }}/auteur/{{ page.author | default: 'La rédaction' | slugify }}/"
+    "url": "{{ site.url }}/auteur/{{ page.author | default: 'La rédaction' | slugify: 'ascii' }}/"
   },
   "publisher": {
     "@type": "Organization",
