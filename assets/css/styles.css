@@ -1161,13 +1161,7 @@ button { font-family: var(--font-titre); cursor: pointer; }
   align-items: center;
   margin-bottom: 24px;
 }
-.mobile-close {
-  background: none;
-  border: none;
-  color: rgba(255,255,255,0.6);
-  font-size: 28px;
-  line-height: 1;
-}
+.mobile-close { background: none; border: none; color: var(--blanc); font-size: 32px; padding: 10px; cursor: pointer; }
 .mobile-nav-links { list-style: none; }
 .mobile-nav-links li { border-bottom: 1px solid rgba(255,255,255,0.07); }
 .mobile-nav-links a {
