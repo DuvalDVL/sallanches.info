@@ -4,7 +4,7 @@ title: "10 artisans locaux à l'honneur pour les Journées Européennes des Mét
 description: "Le 12 avril 2026, la ville célèbre le savoir-faire manuel avec l'événement « Jeux de Mains », une plongée fascinante dans la création artisanale."
 date: 2026-03-30 05:45:00 +0200
 category: Agenda
-author: La rédaction
+author: La redaction
 ville: Sallanches
 event_date: 2026-04-12
 event_end_date: 2026-04-12
