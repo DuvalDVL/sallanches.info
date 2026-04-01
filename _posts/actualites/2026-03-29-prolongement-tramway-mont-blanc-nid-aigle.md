@@ -10,7 +10,7 @@ reading_time: 3
 image: /assets/img/articles/tramway-mont-blanc-nid-aigle.webp
 image_alt: "Le Tramway du Mont-Blanc arrivant au Nid d'Aigle"
 tags: [tourisme, saint-gervais, tmb, mont-blanc, montagne, travaux]
-permalink: /tourisme/tramway-mont-blanc-nid-aigle-ete-2026/
+permalink: /actualites/tramway-mont-blanc-nid-aigle-ete-2026/
 ---
 C'est une page d'histoire qui s'écrit pour Saint-Gervais. Cet été 2026, le Tramway du Mont-Blanc (TMB) franchira enfin les derniers mètres qui lui manquaient depuis plus d'un siècle. La nouvelle gare du Nid d'Aigle, située à 2 400 mètres d'altitude, est prête à accueillir ses premiers voyageurs.
 
