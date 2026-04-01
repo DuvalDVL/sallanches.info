@@ -4,7 +4,7 @@ title: "Commerce : Pourquoi Sallanches doit devenir le bastion du Click & Collec
 description: "Face à l'évolution des modes de consommation, le Click & Collect devient une stratégie de croissance vitale pour les commerçants de Sallanches et de la vallée."
 date: 2026-04-01
 category: Economie
-author: Partenaire
+author: Publi-reportage
 ville: Sallanches
 reading_time: 4
 image: /assets/img/articles/commerce-sallanches-digital.webp
