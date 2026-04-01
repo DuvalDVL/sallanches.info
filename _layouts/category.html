@@ -17,15 +17,30 @@ layout: default
 
 <section style="padding: 32px 0 48px; background: var(--gris-bg);">
   <div class="container">
+    
     {% if paginator.posts.size > 0 %}
+      {% assign display_posts = paginator.posts %}
+    {% else %}
+      {% if page.filter_category %}
+        {% assign display_posts = site.categories[page.filter_category] %}
+      {% elsif page.filter_ville %}
+        {% assign display_posts = site.posts | where: "ville", page.filter_ville %}
+      {% elsif page.filter_tag %}
+        {% assign display_posts = site.tags[page.filter_tag] %}
+      {% else %}
+        {% assign display_posts = site.posts %}
+      {% endif %}
+    {% endif %}
+
+    {% if display_posts.size > 0 %}
       <div class="cat-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 16px;">
-        {% for post in paginator.posts %}
+        {% for post in display_posts limit: 24 %}
           <article class="article-card" itemscope itemtype="https://schema.org/NewsArticle">
             <a href="{{ post.url | prepend: site.baseurl }}" aria-label="{{ post.title }}">
               <div class="article-card-img">
                 {% if post.category %}<span class="badge">{{ post.category }}</span>{% endif %}
                 {% if post.image %}
-                <img src="{{ post.image | prepend: site.baseurl }}" alt="{{ post.image_alt | default: post.title }}" loading="lazy" itemprop="image">
+                <img src="{{ post.image | prepend: site.baseurl }}" alt="{{ post.image_alt | default: post.title }}" loading="lazy" itemprop="image" width="662" height="346">
                 {% endif %}
               </div>
             </a>
