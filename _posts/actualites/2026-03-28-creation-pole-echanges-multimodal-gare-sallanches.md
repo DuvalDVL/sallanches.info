@@ -4,7 +4,7 @@ title: "Gare de Sallanches : 14 millions d'euros pour le futur Pôle d'Échanges
 description: "Le vaste projet de transformation du quartier de la gare prévoit une nouvelle passerelle piétonne, une gare routière moderne et des parkings capacitaires."
 date: 2026-03-28
 category: Économie
-author: La rédaction
+author: La redaction
 ville: Sallanches
 reading_time: 3
 image: /assets/img/articles/pem-gare-sallanches.webp
