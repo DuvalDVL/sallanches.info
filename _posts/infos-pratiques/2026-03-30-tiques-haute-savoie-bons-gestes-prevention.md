@@ -9,7 +9,7 @@ ville: Pays du Mont-Blanc
 reading_time: 3
 image: /assets/img/articles/tique-prevention-haute-savoie.webp
 image_alt: "Randonneur marchant dans les herbes hautes"
-tags: [sante, prevention, nature, randonnee, printemps]
+tags: [sante, prevention, nature, randonnee, printemps, pratique]
 permalink: /pratique/tiques-haute-savoie-bons-gestes-prevention-2026/
 ---
 Le soleil brille, la neige fond en basse altitude et les sentiers du Pays du Mont-Blanc retrouvent leurs promeneurs. Mais attention, avec cette douceur précoce de fin mars, un habitant moins désirable des sous-bois a déjà fait son grand retour : la tique.
