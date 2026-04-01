@@ -8,7 +8,7 @@ event_time: "En journée (Ouverture)"
 event_lieu: "MJC et divers lieux, Saint-Gervais-les-Bains"
 event_tarif: "Accès libre (certains ateliers sur inscription)"
 category: Agenda
-author: La rédaction
+author: La redaction
 ville: Saint-Gervais
 reading_time: 2
 image: /assets/img/articles/quinzaine-japonaise-saint-gervais.webp
