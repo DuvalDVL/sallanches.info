@@ -7,7 +7,7 @@ category: Economie
 author: La rédaction
 ville: Sallanches
 reading_time: 4
-image: /assets/img/articles/commerce-sallanches-digital.webp
+image: /assets/img/economie/commerce-sallanches-digital.webp
 image_alt: "Commerce de proximité à Sallanches utilisant le Click & Collect"
 tags: [économie, commerce, sallanches, click-and-collect, digital]
 permalink: /economie/commerce-sallanches-click-and-collect/
