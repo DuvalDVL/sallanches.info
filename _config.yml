@@ -28,7 +28,6 @@ excerpt_separator: "<!--more-->"
 
 # Plugins
 plugins:
-  - jekyll-seo-tag
   - jekyll-sitemap
   - jekyll-feed
 
