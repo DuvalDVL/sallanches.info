@@ -3,7 +3,9 @@ layout: none
 ---
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-{% assign excluded = "404.html|search.json|sitemap.xml|donnees-personnelles/" %}
+{% assign excluded = "404.html|search.json|sitemap.xml|feed.xml|donnees-personnelles" %}
+{% for page in site.pages %}
+  {% unless excluded contains page.path or page.path contains 'assets/' %}
 {% for page in site.pages %}
   {% unless excluded contains page.path or page.path contains 'assets/' %}
   <url>
