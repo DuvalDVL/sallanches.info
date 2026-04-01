@@ -4,7 +4,7 @@ title: "Le retour des tiques en Haute-Savoie : les bons gestes pour vos balades 
 description: "Avec le redoux exceptionnel de ce mois de mars, les tiques sont déjà très actives dans la vallée de l'Arve. Rappel des précautions indispensables."
 date: 2026-03-30 16:45:00 +0200
 category: Pratique
-author: La rédaction
+author: La redaction
 ville: Pays du Mont-Blanc
 reading_time: 3
 image: /assets/img/articles/tique-prevention-haute-savoie.webp
