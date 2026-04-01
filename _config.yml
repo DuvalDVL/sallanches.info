@@ -5,28 +5,21 @@ url: "https://sallanches.info"
 locale: fr_FR
 lang: fr
 
-# Auteur
 author:
-  name: "La redaction"
+  name: "La rédaction"
   email: "contact@sallanches.info"
 
-# Reseaux sociaux
 social:
   facebook: "https://facebook.com/sallanchesinfo"
   twitter: "https://x.com/sallanchesinfo"
   linkedin: "https://linkedin.com/company/sallanchesinfo"
 
-# Contact
 contact:
   email: "contact@sallanches.info"
 
-# Permalink - utilise la categorie du dossier _posts/[categorie]/
 permalink: /:categories/:title/
+excerpt_separator: ""
 
-# Excerpts
-excerpt_separator: "<!--more-->"
-
-# Plugins
 plugins:
   - jekyll-sitemap
   - jekyll-feed
@@ -36,9 +29,9 @@ pagination:
   enabled: true
   per_page: 12
   permalink: '/page/:num/'
+  title: ':title - Page :num'
   sort_reverse: true
 
-# Layout par defaut pour les articles
 defaults:
   - scope:
       path: ""
@@ -46,7 +39,6 @@ defaults:
     values:
       layout: "post"
 
-# Exclusions
 exclude:
   - Gemfile
   - Gemfile.lock
