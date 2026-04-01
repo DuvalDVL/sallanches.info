@@ -3,8 +3,8 @@ layout: post
 title: "Commerce : Pourquoi Sallanches doit devenir le bastion du Click & Collect en 2026 ?"
 description: "Face à l'évolution des modes de consommation, le Click & Collect devient une stratégie de croissance vitale pour les commerçants de Sallanches et de la vallée."
 date: 2026-04-01
-category: Économie
-author: Clément Duval
+category: Economie
+author: La rédaction
 ville: Sallanches
 reading_time: 4
 image: /assets/img/articles/commerce-sallanches-digital.webp
