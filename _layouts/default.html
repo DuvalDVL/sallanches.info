@@ -82,8 +82,10 @@
   "datePublished": "{{ page.date | date_to_xmlschema }}",
   "dateModified": "{{ page.date | date_to_xmlschema }}",
   "author": {
-    "@type": "Person",
-    "name": "{{ page.author | default: 'La rédaction' }}"
+    "author": { 
+    "@type": "Person", 
+    "name": "{{ page.author | default: 'La rédaction' }}",
+    "url": "{{ site.url }}/auteur/{{ page.author | default: 'La rédaction' | slugify }}/"
   },
   "publisher": {
     "@type": "Organization",
