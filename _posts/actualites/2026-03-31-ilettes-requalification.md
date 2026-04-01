@@ -4,7 +4,7 @@ title: "Base de loisirs des Ilettes : Le visage du futur grand projet de requali
 description: "La municipalité a dévoilé les grandes lignes de son ambitieux projet de requalification de la base de loisirs des Ilettes à Sallanches."
 date: 2026-03-31 07:00:00 +0200
 category: Actualites
-author: La rédaction
+author: La redaction
 ville: Sallanches
 reading_time: 3
 image: /assets/img/articles/ilettes-requalification-sallanches-2026.webp
