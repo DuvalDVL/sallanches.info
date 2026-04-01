@@ -4,7 +4,7 @@ title: "L'ex-site Dynastar au cœur d'un bras de fer juridique : le premier gros
 description: "Entre une préemption à 5,5 M€, un recours en justice des frères Pugnat et l'intérêt de ZAG Skis, l'avenir de l'usine historique s'annonce complexe."
 date: 2026-03-23
 category: Economie
-author: La rédaction
+author: La redaction
 ville: Sallanches
 reading_time: 3
 image: /assets/img/articles/usine-dynastar-sallanches.webp
