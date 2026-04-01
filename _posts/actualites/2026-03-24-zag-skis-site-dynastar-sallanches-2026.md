@@ -4,7 +4,7 @@ title: "Apres Dynastar, ZAG Skis veut s'installer a Sallanches : ce que l'on sai
 description: "Alors que la mairie de Sallanches a préempté le site de l'ancienne usine Dynastar pour 5,5 millions d'euros, le fabricant de skis haut de gamme ZAG, basé à Chamonix, s'est positionné pour reprendre une partie des locaux et y produire ses skis."
 date: 2026-03-24
 category: Economie
-author: La rédaction
+author: La redaction
 ville: Sallanches
 reading_time: 4
 image: /assets/img/articles/site-dynastar-sallanches-zag-skis.webp
