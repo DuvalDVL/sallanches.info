@@ -10,7 +10,7 @@ reading_time: 3
 image: /assets/img/articles/ifas-hopitaux-sallanches.webp
 image_alt: "Institut de Formation d'Aides-Soignants à Sallanches"
 tags: [sante, formation, emploi, hopital, sallanches]
-permalink: /sante/ifas-sallanches-formation-aides-soignants-2026/
+permalink: /actualites/ifas-sallanches-formation-aides-soignants-2026/
 ---
 Alors que les métiers du soin sont plus que jamais essentiels sur notre territoire, l'Institut de Formation d'Aides-Soignants (IFAS), adossé aux Hôpitaux du Pays du Mont-Blanc à Sallanches, prouve son efficacité en matière de formation et d'insertion locale.
 
