@@ -4,7 +4,7 @@ title: "Élections municipales 2026 : une page se tourne pour les mairies de Cha
 description: "Alors que les scrutins battent leur plein, le paysage politique du Pays du Mont-Blanc s'apprête à vivre un renouvellement historique avec le départ de figures emblématiques."
 date: 2026-03-29 14:30:00 +0200
 category: Actualites
-author: La rédaction
+author: La redaction
 ville: Pays du Mont-Blanc
 reading_time: 3
 image: /assets/img/articles/mairies-mont-blanc-elections-2026.webp
