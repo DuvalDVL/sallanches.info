@@ -8,7 +8,7 @@ event_time: "20h00"
 event_lieu: "Salle Leon Curral, Sallanches"
 event_tarif: "Tarif a confirmer aupres de l'organisateur"
 category: Agenda
-author: La rédaction
+author: La redaction
 ville: Sallanches
 reading_time: 2
 image: /assets/img/articles/spectacle-leon-curral.webp
