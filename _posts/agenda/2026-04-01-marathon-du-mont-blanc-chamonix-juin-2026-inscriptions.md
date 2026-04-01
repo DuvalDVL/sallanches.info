@@ -4,7 +4,7 @@ title: "Marathon du Mont-Blanc 2026 : les inscriptions sont ouvertes, voici tout
 description: "La 16e édition du Marathon du Mont-Blanc se tient à Chamonix du 25 au 28 juin 2026. Quatre courses au programme, de 10 km au 90 km, pour tous les niveaux. Les inscriptions sont ouvertes sur le site officiel."
 date: 2026-04-01 06:00:00 +0200
 category: Agenda
-author: La rédaction
+author: La redaction
 ville: Chamonix
 event_date: 2026-06-25
 event_end_date: 2026-06-28
