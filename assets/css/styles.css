@@ -1246,7 +1246,8 @@ button { font-family: var(--font-titre); cursor: pointer; }
   .articles-grid { grid-template-columns: repeat(2, 1fr); }
   .footer-grid { grid-template-columns: 1fr 1fr; }
   .article-layout { grid-template-columns: 1fr; }
-  .article-sidebar { display: none; }
+  .article-layout { display: flex; flex-direction: column; }
+  .article-sidebar { width: 100%; margin-top: 2rem; border-top: 2px solid var(--gris-border); padding-top: 2rem; }
 }
 
 @media (max-width: 768px) {
