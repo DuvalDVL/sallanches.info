@@ -4,7 +4,7 @@ title: "Football : semaine chargée pour les équipes de Cluses-Scionzier"
 description: "Le Cluses Scionzier FC aligne plusieurs équipes ce week-end dans différentes compétitions régionales. Tour d'horizon des résultats et des prochains rendez-vous."
 date: 2026-03-20
 category: Actualites
-author: La rédaction
+author: La redaction
 ville: Passy
 reading_time: 3
 image: /assets/img/articles/football-cluses-scionzier.webp
