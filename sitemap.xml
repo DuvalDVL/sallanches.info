@@ -4,20 +4,11 @@ permalink: /sitemap.xml
 ---
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-{% assign excluded = "404.html|search.json|sitemap.xml|feed.xml|donnees-personnelles" %}
-{% for page in site.pages %}
-  {% unless excluded contains page.path or page.path contains 'assets/' %}
-{% for page in site.pages %}
-  {% unless excluded contains page.path or page.path contains 'assets/' %}
-  <url>
-    <loc>{{ site.url }}{{ page.url | remove: 'index.html' }}</loc>
-  </url>
-  {% endunless %}
-{% endfor %}
-{% for post in site.posts %}
-  <url>
-    <loc>{{ site.url }}{{ post.url }}</loc>
-    <lastmod>{{ post.date | date_to_xmlschema }}</lastmod>
-  </url>
-{% endfor %}
+{% for page in site.pages %}{% if page.url != '/404.html' and page.url != '/search.json' and page.url != '/sitemap.xml' and page.url != '/feed.xml' and page.url != '/donnees-personnelles/' %}{% unless page.url contains '/assets/' %}<url>
+  <loc>{{ site.url }}{{ page.url | remove: 'index.html' }}</loc>
+</url>{% endunless %}{% endif %}{% endfor %}
+{% for post in site.posts %}<url>
+  <loc>{{ site.url }}{{ post.url }}</loc>
+  <lastmod>{{ post.date | date_to_xmlschema }}</lastmod>
+</url>{% endfor %}
 </urlset>
