@@ -4,7 +4,7 @@ title: "Clement Duval, webdesigner à Sallanches : donner aux artisans locaux la
 description: "Autodidacte, installé à Sallanches, Clement Duval aide les artisans et PME de la vallée a exister sur internet. Portrait d'un indépendant qui a choisi de travailler local."
 date: 2026-03-20
 category: Portraits
-author: La redaction
+author: Partenaire
 ville: Sallanches
 reading_time: 5
 image: /assets/img/articles/clement-duval-webdesigner-sallanches.webp
@@ -12,6 +12,8 @@ image_alt: "Clement Duval, webdesigner et consultant SEO à Sallanches"
 tags: [portrait, webdesigner, seo, sallanches, entrepreneur, digital]
 permalink: /portraits/clement-duval-webdesigner-sallanches/
 ---
+
+*Ceci est un contenu sponsorisé proposé par notre partenaire Duval DVL.*
 
 Il n'y a pas de diplome informatique ni de passage en agence dans son parcours. Clement Duval a appris seul, pendant plus de dix ans, avant de lancer Duval DVL a Sallanches. Son créneau : aider les artisans et commercants de la vallée de l'Arve à exister en ligne.
 
