@@ -8,7 +8,7 @@ event_time: "20h00 - 22h00"
 event_lieu: "Plateau d'Assy, Passy"
 event_tarif: "Adulte : 5,50 € / Réduit : 4,50 €"
 category: Agenda
-author: La rédaction
+author: La redaction
 ville: Passy
 reading_time: 1
 image: /assets/img/articles/cinema-passy-laurent-dans-le-vent.webp
