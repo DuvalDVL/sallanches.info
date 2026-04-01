@@ -4,7 +4,7 @@ title: "Immobilier : Saint-Gervais et Combloux bousculent la suprématie de Meg�
 description: "Les dynamiques du marché immobilier évoluent au Pays du Mont-Blanc. De nouvelles communes s'affirment comme des alternatives premium très convoitées par les acheteurs."
 date: 2026-03-29 17:00:00 +0200
 category: Economie
-author: La rédaction
+author: La redaction
 ville: Saint-Gervais
 reading_time: 3
 image: /assets/img/articles/immobilier-chalet-saint-gervais-combloux.webp
