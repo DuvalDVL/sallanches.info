@@ -4,7 +4,7 @@ title: "Somfy supprime 350 postes dans la vallée de l'Arve : ce que ça change 
 description: "Le groupe clusciot spécialisé en domotique a annoncé fin janvier la suppression de 350 emplois en France, dont la grande majorité en Haute-Savoie. 350 salariés ont manifesté à Cluses le 24 mars. Le plan de sauvegarde est en négociation."
 date: 2026-04-01 06:00:00 +0200
 category: Economie
-author: La rédaction
+author: La redaction
 ville: Sallanches
 reading_time: 4
 image: /assets/img/articles/somfy-cluses-plan-social-2026.webp
