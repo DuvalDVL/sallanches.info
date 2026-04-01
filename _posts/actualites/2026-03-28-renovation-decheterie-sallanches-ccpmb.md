@@ -4,7 +4,7 @@ title: "Rénovation d'ampleur en cours pour la déchèterie intercommunale de Sa
 description: "Fermée pour d'importants travaux de modernisation initiés par la Communauté de Communes Pays du Mont-Blanc (CCPMB), la structure s'adapte aux nouveaux enjeux écologiques."
 date: 2026-03-28
 category: Pratique
-author: La rédaction
+author: La redaction
 ville: Sallanches
 reading_time: 2
 image: /assets/img/articles/travaux-decheterie-sallanches-ccpmb.webp
