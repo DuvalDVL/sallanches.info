@@ -6,7 +6,7 @@ date: 2026-03-20
 time: "21h00"
 breaking: false
 category: Actualites
-author: La rédaction
+author: La redaction
 ville: Sallanches
 reading_time: 4
 image: /assets/img/articles/municipales-sallanches-2026.webp
