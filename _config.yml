@@ -30,6 +30,13 @@ excerpt_separator: "<!--more-->"
 plugins:
   - jekyll-sitemap
   - jekyll-feed
+  - jekyll-paginate-v2
+
+pagination:
+  enabled: true
+  per_page: 12
+  permalink: '/page/:num/'
+  sort_reverse: true
 
 # Layout par defaut pour les articles
 defaults:
