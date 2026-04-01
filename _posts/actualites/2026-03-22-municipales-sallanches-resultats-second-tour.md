@@ -6,7 +6,7 @@ date: 2026-03-22
 breaking: true
 breaking_text: "Municipales Sallanches : Sylvia Perruchione élue au second tour"
 category: Actualites
-author: La rédaction
+author: La redaction
 ville: Sallanches
 reading_time: 4
 image: /assets/img/articles/municipales-sallanches-second-tour-2026.webp
