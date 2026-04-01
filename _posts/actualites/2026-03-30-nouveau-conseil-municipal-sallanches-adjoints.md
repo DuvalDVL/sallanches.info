@@ -4,7 +4,7 @@ title: "Sallanches : le nouveau conseil municipal installé, découvrez les adjo
 description: "Suite aux élections du 22 mars, la nouvelle équipe dirigeante de Sallanches a pris officiellement ses fonctions ce week-end en attribuant les délégations clés."
 date: 2026-03-30 15:30:00 +0200
 category: Actualites
-author: La rédaction
+author: La redaction
 ville: Sallanches
 reading_time: 3
 image: /assets/img/articles/conseil-municipal-sallanches-2026.webp
