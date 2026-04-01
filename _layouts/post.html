@@ -23,6 +23,15 @@ layout: default
       </header>
 
       {% if page.image %}
+      <nav class="breadcrumb" aria-label="Fil d'ariane" style="margin-bottom: 24px; padding-bottom: 12px; border-bottom: 1px solid var(--gris-border);">
+        <a href="{{ site.baseurl }}/">Accueil</a>
+        <span class="breadcrumb-sep" aria-hidden="true">›</span>
+        {% if page.category %}
+        <a href="{{ site.baseurl }}/{{ page.category | slugify }}/">{{ page.category }}</a>
+        <span class="breadcrumb-sep" aria-hidden="true">›</span>
+        {% endif %}
+        <span aria-current="page" style="color: var(--texte); font-weight: 600;">{{ page.title | truncate: 50 }}</span>
+      </nav>
       <figure class="article-featured-img" itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
         <img src="{{ page.image | prepend: site.baseurl }}" alt="{{ page.image_alt | default: page.title }}" loading="eager" itemprop="url">
         {% if page.image_caption %}<figcaption>{{ page.image_caption }}</figcaption>{% endif %}
