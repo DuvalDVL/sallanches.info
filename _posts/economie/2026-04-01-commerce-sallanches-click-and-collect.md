@@ -21,7 +21,7 @@ permalink: /economie/commerce-sallanches-click-and-collect/
 
 La concurrence des plateformes mondiales est rude. Mais le commerçant sallanchard possède un atout que les géants n'auront jamais : la **proximité**. 
 
-Le Click & Collect permet de combiner le meilleur des deux mondes. Un client peut réserver son produit depuis son bureau ou son salon à Passy, et venir le chercher 1h plus tard en ville. C’est du temps gagné pour lui, et une vente garantie pour vous. C'est une opportunité majeure pour le [commerce à Sallanches](/creation-site-internet-sallanches/).
+Le Click & Collect permet de combiner le meilleur des deux mondes. Un client peut réserver son produit depuis son bureau ou son salon à Passy, et venir le chercher 1h plus tard en ville. C’est du temps gagné pour lui, et une vente garantie pour vous. C'est une opportunité majeure pour le [commerce à Sallanches](https://duvaldvl.com/creation-site-internet-sallanches/).
 
 ## Dynamiser le centre-ville même après la fermeture
 
