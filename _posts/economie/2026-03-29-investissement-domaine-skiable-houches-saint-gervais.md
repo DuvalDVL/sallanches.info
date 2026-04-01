@@ -4,7 +4,7 @@ title: "Domaine skiable des Houches - Saint-Gervais : 15 millions d'euros invest
 description: "Modernisation des remontées et adaptation climatique : le SIVU valide un grand plan d'investissement pour pérenniser l'attractivité du domaine."
 date: 2026-03-29 11:30:00 +0200
 category: Economie
-author: La rédaction
+author: La redaction
 ville: Les Houches
 reading_time: 3
 image: /assets/img/articles/investissement-houches-saint-gervais.webp
