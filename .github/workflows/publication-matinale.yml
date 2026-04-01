@@ -2,14 +2,13 @@ name: Publication matinale des articles
 
 on:
   schedule:
-    # L'heure des serveurs GitHub est en UTC (Londres). 
-    # 04:00 UTC correspond à 06:00 en France (heure d'été) ou 05:00 (heure d'hiver).
     - cron: '0 4 * * *'
-  workflow_dispatch: # Permet aussi de déclencher manuellement via un bouton si besoin
+  workflow_dispatch:
 
 permissions:
-  contents: read
+  contents: write
   pages: write
+  actions: read
 
 jobs:
   rebuild-pages:
