@@ -4,7 +4,7 @@ title: "Sup'Sallanches et les Pionniers de Chamonix : un partenariat gagnant pou
 description: "Le pôle d'enseignement supérieur sallanchard consolide ses liens avec le célèbre club de hockey sur glace pour offrir des expériences professionnelles concrètes à ses jeunes."
 date: 2026-03-23
 category: Economie
-author: La rédaction
+author: La redaction
 ville: Sallanches
 reading_time: 3
 image: /assets/img/articles/supsallanches-pionniers-chamonix.webp
