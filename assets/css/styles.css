@@ -1205,7 +1205,9 @@ button { font-family: var(--font-titre); cursor: pointer; }
     z-index: 150;
     padding-bottom: env(safe-area-inset-bottom);
   }
-  .bottom-nav a {
+  /* On applique le même style aux liens <a> et à notre nouveau bouton <button> */
+  .bottom-nav a, 
+  .bottom-nav .btn-nav-mobile {
     flex: 1;
     display: flex;
     flex-direction: column;
@@ -1215,11 +1217,21 @@ button { font-family: var(--font-titre); cursor: pointer; }
     text-decoration: none;
     gap: 3px;
     transition: var(--transition);
+    /* Reset spécifique pour le bouton */
+    background: transparent;
+    border: none;
+    color: inherit;
+    font-family: inherit;
+    cursor: pointer;
   }
+  
   .bottom-nav a.active .bn-icon,
-  .bottom-nav a.active .bn-label { color: var(--ambre); }
+  .bottom-nav a.active .bn-label,
+  .bottom-nav .btn-nav-mobile:hover .bn-icon,
+  .bottom-nav .btn-nav-mobile:hover .bn-label { color: var(--ambre); }
+  
   .bn-icon { color: rgba(255,255,255,0.4); transition: var(--transition); }
-  .bn-icon svg { width: 20px; height: 20px; }
+  .bn-icon svg { width: 20px; height: 20px; display: block; }
   .bn-label {
     font-family: var(--font-titre);
     font-size: 9px;
