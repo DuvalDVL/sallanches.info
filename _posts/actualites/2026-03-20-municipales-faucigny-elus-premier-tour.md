@@ -4,7 +4,7 @@ title: "Municipales 2026 : plusieurs communes du Faucigny ont leur maire dès le
 description: "Pendant que Sallanches se dirige vers un second tour inédit, de nombreuses communes du Faucigny ont reglé leur élection dès le 15 mars. Magland en fait partie."
 date: 2026-03-20
 category: Actualites
-author: La rédaction
+author: La redaction
 ville: Magland
 reading_time: 3
 image: /assets/img/articles/faucigny-municipales-2026.webp
