@@ -21,7 +21,6 @@ permalink: /:categories/:title/
 excerpt_separator: ""
 
 plugins:
-  - jekyll-sitemap
   - jekyll-feed
   - jekyll-paginate-v2
 
