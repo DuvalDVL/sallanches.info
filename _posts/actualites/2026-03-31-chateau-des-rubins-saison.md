@@ -4,7 +4,7 @@ title: "Château des Rubins : L'Observatoire des Alpes prépare sa nouvelle sais
 description: "L'Observatoire des Alpes de Sallanches rouvre ses portes pour le printemps 2026 avec une scénographie immersive et de nouveaux ateliers."
 date: 2026-03-31 07:10:00 +0200
 category: Actualites
-author: La rédaction
+author: La redaction
 ville: Sallanches
 reading_time: 2
 image: /assets/img/articles/chateau-rubins-saison-sallanches-2026.webp
