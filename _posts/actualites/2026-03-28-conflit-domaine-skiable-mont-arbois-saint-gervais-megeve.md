@@ -4,7 +4,7 @@ title: "Tensions au sommet : l'avenir du domaine skiable du Mont d'Arbois en sus
 description: "Le bras de fer historique entre Saint-Gervais et Megève concernant la gestion des remontées mécaniques et la répartition des recettes s'intensifie."
 date: 2026-03-28
 category: Économie
-author: La rédaction
+author: La redaction
 ville: Saint-Gervais
 reading_time: 4
 image: /assets/img/articles/conflit-ski-saint-gervais-megeve.webp
