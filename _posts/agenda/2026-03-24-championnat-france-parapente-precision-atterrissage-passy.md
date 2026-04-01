@@ -10,7 +10,7 @@ event_lieu: "Plateau d'Assy, Passy"
 event_tarif: "Gratuit"
 event_date_iso: 2026-04-04
 event_end_date: 2026-04-06
-author: La rédaction
+author: La redaction
 ville: Passy
 reading_time: 3
 image: /assets/img/articles/parapente-passy-mont-blanc-2026.webp
