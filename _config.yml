@@ -31,6 +31,9 @@ pagination:
   title: ':title - Page :num'
   sort_reverse: true
 
+feed:
+  posts_limit: 50
+
 defaults:
   - scope:
       path: ""
@@ -43,6 +46,3 @@ exclude:
   - Gemfile.lock
   - node_modules
   - README.md
-
-  feed:
-  posts_limit: 50
