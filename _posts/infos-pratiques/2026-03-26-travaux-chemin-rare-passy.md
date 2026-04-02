@@ -4,7 +4,7 @@ title: "Rénovation en profondeur du Chemin de la Rare à Passy : de longs mois 
 description: "La commune de Passy a lancé un vaste chantier de modernisation de ses réseaux souterrains et de sa voirie. Le point sur les travaux et leurs impacts sur la circulation."
 date: 2026-03-26
 category: Pratique
-author: La redaction
+author: La rédaction
 ville: Passy
 reading_time: 2
 image: /assets/img/articles/travaux-chemin-rare-passy.webp

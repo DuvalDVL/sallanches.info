@@ -4,7 +4,7 @@ title: "Projet Funiflaine : la concertation se poursuit pour relier Magland à l
 description: "Le grand projet d'ascenseur valléen entre la vallée de l'Arve et le Grand Massif avance. De nouveaux ateliers et réunions du comité syndical rythment le dossier."
 date: 2026-03-25
 category: Actualites
-author: La redaction
+author: La rédaction
 ville: Magland
 reading_time: 3
 image: /assets/img/articles/projet-funiflaine-magland.webp

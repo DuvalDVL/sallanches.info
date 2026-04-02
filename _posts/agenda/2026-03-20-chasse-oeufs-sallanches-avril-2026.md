@@ -8,7 +8,7 @@ event_time: "10h00 - 11h30"
 event_lieu: "Sous la Grenette, Sallanches"
 event_tarif: "Gratuit"
 category: Agenda
-author: La redaction
+author: La rédaction
 ville: Sallanches
 reading_time: 2
 image: /assets/img/articles/chasse-oeufs-paques.webp

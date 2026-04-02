@@ -4,7 +4,7 @@ title: "Vide grenier aux Houches le 26 avril : brocante au pied du Mont-Blanc"
 description: "Chasseurs de bonnes affaires, rendez-vous le dimanche 26 avril 2026 pour le grand vide-grenier de printemps des Houches. L'occasion de s'équiper à petit prix à l'Espace Olca."
 date: 2026-04-02 08:50:00 +0200
 category: Agenda
-author: La redaction
+author: La rédaction
 ville: Les Houches
 event_date: 2026-04-26
 event_end_date: 2026-04-26

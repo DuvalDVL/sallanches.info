@@ -9,7 +9,7 @@ event_end_date: 2026-04-10
 event_time: "À partir de 20h00"
 event_lieu: "Théâtre du Mont-Blanc, Saint-Gervais"
 event_tarif: "8 euros (5€ tarif réduit)"
-author: La redaction
+author: La rédaction
 ville: Saint-Gervais
 reading_time: 2
 image: /assets/img/articles/cine-montagne-saint-gervais.webp

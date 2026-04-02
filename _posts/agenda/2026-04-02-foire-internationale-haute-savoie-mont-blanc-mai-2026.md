@@ -4,7 +4,7 @@ title: "Foire Internationale Haute-Savoie Mont-Blanc : rendez-vous du 1er au 10 
 description: "L'événement économique majeur du département revient à Rochexpo. Du 1er au 10 mai 2026, découvrez plus de 500 exposants à la Foire Internationale Haute-Savoie Mont-Blanc."
 date: 2026-04-02 09:00:00 +0200
 category: Agenda
-author: La redaction
+author: La rédaction
 ville: La Roche-sur-Foron
 event_date: 2026-05-01
 event_end_date: 2026-05-10

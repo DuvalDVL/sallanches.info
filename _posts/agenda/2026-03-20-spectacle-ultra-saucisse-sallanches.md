@@ -8,7 +8,7 @@ event_time: "10h00 et 18h00"
 event_lieu: "Salle Léon Curral, Sallanches"
 event_tarif: "Tarif à confirmer auprès de l'organisateur"
 category: Agenda
-author: La redaction
+author: La rédaction
 ville: Sallanches
 reading_time: 2
 image: /assets/img/articles/spectacle-jeune-public-leon-curral.webp

@@ -4,7 +4,7 @@ title: "Cars Borini : les horaires changent dès le 6 avril, ce qu'il faut savoi
 description: "Le réseau de transport local Cars Borini bascule sur ses horaires de printemps/été à partir du lundi 6 avril 2026. Lignes scolaires, dessertes touristiques : le point sur les ajustements dans le Pays du Mont-Blanc."
 date: 2026-04-02 08:20:00 +0200
 category: Pratique
-author: La redaction
+author: La rédaction
 ville: Sallanches
 reading_time: 2
 image: /assets/img/articles/cars-borini-horaires-avril-2026.webp

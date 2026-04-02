@@ -9,7 +9,7 @@ event_end_date: 2026-04-05
 event_time: "De 09h00 à 18h00"
 event_lieu: "Parvis des Fiz, Passy"
 event_tarif: "Gratuit"
-author: La redaction
+author: La rédaction
 ville: Passy
 reading_time: 2
 image: /assets/img/articles/fete-printemps-passy.webp

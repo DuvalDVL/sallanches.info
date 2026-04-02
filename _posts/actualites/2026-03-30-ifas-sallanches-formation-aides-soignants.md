@@ -4,7 +4,7 @@ title: "Hôpitaux du Mont-Blanc : l'IFAS, un tremplin vers l'emploi pour les soi
 description: "Implanté à Sallanches, l'Institut de Formation d'Aides-Soignants affiche un taux d'insertion professionnelle remarquable de 88,9 %."
 date: 2026-03-30 05:55:00 +0200
 category: Actualites
-author: La redaction
+author: La rédaction
 ville: Sallanches
 reading_time: 3
 image: /assets/img/articles/ifas-hopitaux-sallanches.webp

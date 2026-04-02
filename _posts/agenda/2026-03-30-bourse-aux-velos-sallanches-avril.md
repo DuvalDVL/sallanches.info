@@ -4,7 +4,7 @@ title: "Grande bourse aux vélos de Sallanches : préparez la saison cycliste à
 description: "Le samedi 18 avril 2026, venez vendre ou acheter votre vélo d'occasion lors du grand rassemblement annuel sous la Grenette."
 date: 2026-03-30 18:00:00 +0200
 category: Agenda
-author: La redaction
+author: La rédaction
 ville: Sallanches
 event_date: 2026-04-18
 event_end_date: 2026-04-18

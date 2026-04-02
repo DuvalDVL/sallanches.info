@@ -4,7 +4,7 @@ title: "Autoroute A40 et RN205 : le calendrier des travaux ATMB pour le printemp
 description: "Fermeture de bretelles à Sallanches, réfection du tunnel des Chavants... Découvrez les chantiers qui vont impacter la circulation dans la vallée de l'Arve."
 date: 2026-03-29 16:45:00 +0200
 category: Pratique
-author: La redaction
+author: La rédaction
 ville: Sallanches
 reading_time: 2
 image: /assets/img/articles/travaux-a40-sallanches-atmb.webp

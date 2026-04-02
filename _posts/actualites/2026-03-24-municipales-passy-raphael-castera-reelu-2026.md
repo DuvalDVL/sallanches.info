@@ -4,7 +4,7 @@ title: "Municipales 2026 a Passy : Raphael Castera reelu maire sans opposition a
 description: "Raphael Castera, maire sortant de Passy depuis 2020, a ete reelu a la tete de la commune des le premier tour des elections municipales de mars 2026. Retour sur un scrutin sans surprise pour la deuxieme commune du Pays du Mont-Blanc."
 date: 2026-03-24
 category: Actualites
-author: La redaction
+author: La rédaction
 ville: Passy
 reading_time: 3
 image: /assets/img/articles/mairie-passy-plateau-assy.webp

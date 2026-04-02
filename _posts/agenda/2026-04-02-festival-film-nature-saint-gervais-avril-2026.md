@@ -4,7 +4,7 @@ title: "Festival du Film Nature à Saint-Gervais : 4 jours de documentaires en a
 description: "Du 16 au 19 avril 2026, Saint-Gervais accueille une nouvelle édition du Festival du Film Nature. Projections, débats avec les réalisateurs et ateliers de sensibilisation à l'environnement alpin."
 date: 2026-04-02 08:30:00 +0200
 category: Agenda
-author: La redaction
+author: La rédaction
 ville: Saint-Gervais
 event_date: 2026-04-16
 event_end_date: 2026-04-19

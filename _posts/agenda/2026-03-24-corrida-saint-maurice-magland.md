@@ -9,7 +9,7 @@ event_end_date: 2026-09-19
 event_time: "Après-midi"
 event_lieu: "Centre-ville, Magland"
 event_tarif: "Sur inscription"
-author: La redaction
+author: La rédaction
 ville: Magland
 reading_time: 2
 image: /assets/img/articles/corrida-saint-maurice-magland.webp

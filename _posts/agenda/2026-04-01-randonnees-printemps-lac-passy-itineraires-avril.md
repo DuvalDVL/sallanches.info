@@ -4,7 +4,7 @@ title: "Randonnées de printemps autour du Lac de Passy : 5 itinéraires à fair
 description: "Avec la fonte des neiges et le retour des beaux jours, les sentiers de Passy Mont-Blanc retrouvent leur charme printanier. Tour du lac, Lac Vert, passerelle himalayenne, Lac de Pormenaz : voici cinq parcours accessibles dès avril pour tous les niveaux."
 date: 2026-04-01 06:00:00 +0200
 category: Agenda
-author: La redaction
+author: La rédaction
 ville: Passy
 event_date: 2026-04-01
 event_end_date: 2026-04-30

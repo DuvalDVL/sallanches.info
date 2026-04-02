@@ -8,7 +8,7 @@ event_time: "14h00 - 17h00"
 event_lieu: "Centre-ville, Sallanches"
 event_tarif: "Gratuit"
 category: Agenda
-author: La redaction
+author: La rédaction
 ville: Sallanches
 reading_time: 2
 image: /assets/img/articles/carnaval-sallanches-2026.webp

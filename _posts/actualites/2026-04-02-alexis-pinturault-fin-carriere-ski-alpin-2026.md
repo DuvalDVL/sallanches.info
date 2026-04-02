@@ -4,7 +4,7 @@ title: "Pinturault met fin à une carrière exceptionnelle : les Alpes perdent l
 description: "Après une décennie au sommet du ski alpin mondial, Alexis Pinturault annonce officiellement sa retraite. Retour sur l'immense palmarès du skieur de Courchevel qui a marqué l'histoire des sports d'hiver français."
 date: 2026-04-02 08:00:00 +0200
 category: Actualites
-author: La redaction
+author: La rédaction
 reading_time: 3
 image: /assets/img/articles/alexis-pinturault-retraite-ski-2026.webp
 image_alt: "Alexis Pinturault franchissant la ligne d'arrivée lors de sa dernière course de ski alpin"

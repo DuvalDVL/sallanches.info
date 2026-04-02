@@ -4,7 +4,7 @@ title: "Services pratiques à Sallanches : horaires, contacts et ressources util
 description: "Mairie, hôpital, transport, déchetterie, prix du carburant... Toutes les informations pratiques pour les habitants de Sallanches et des communes voisines."
 date: 2026-03-20
 category: Pratique
-author: La redaction
+author: La rédaction
 ville: Sallanches
 reading_time: 5
 image: /assets/img/articles/mairie-sallanches.webp

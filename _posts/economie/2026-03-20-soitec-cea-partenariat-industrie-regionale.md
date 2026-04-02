@@ -4,7 +4,7 @@ title: "Soitec et le CEA renforcent leur partenariat : ce que ca signifie pour l
 description: "Le fabricant de semi-conducteurs Soitec et le CEA-Leti ont réorganisé leur collaboration de recherche. Un accord qui conforte le tissu industriel de haute technologie de la région, et soulève quelques questions."
 date: 2026-03-20
 category: Economie
-author: La redaction
+author: La rédaction
 ville: Sallanches
 reading_time: 4
 image: /assets/img/articles/soitec-industrie-region.webp

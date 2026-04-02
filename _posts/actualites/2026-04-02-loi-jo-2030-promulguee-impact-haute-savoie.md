@@ -4,7 +4,7 @@ title: "JO 2030 : la loi est promulguée, ce que ça change concrètement pour l
 description: "La loi d'organisation des Jeux Olympiques et Paralympiques d'hiver 2030 vient d'être promulguée. Transports, hébergements, infrastructures sportives : découvrez les chantiers qui vont transformer la Haute-Savoie."
 date: 2026-04-02 08:10:00 +0200
 category: Actualites
-author: La redaction
+author: La rédaction
 ville: Sallanches
 reading_time: 4
 image: /assets/img/articles/jo-2030-loi-promulgation-haute-savoie.webp

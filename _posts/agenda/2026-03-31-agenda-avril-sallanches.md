@@ -4,7 +4,7 @@ title: "Carnaval, humour et musiques de films : Un mois d'avril riche en émotio
 description: "Mathieu Madenian, le retour du Carnaval et l'Harmonie municipale : découvrez l'agenda culturel d'avril 2026 à Sallanches."
 date: 2026-03-31 07:05:00 +0200
 category: Agenda
-author: La redaction
+author: La rédaction
 ville: Sallanches
 event_date: 2026-04-01
 event_end_date: 2026-04-25

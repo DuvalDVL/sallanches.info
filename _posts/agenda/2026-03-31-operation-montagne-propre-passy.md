@@ -4,7 +4,7 @@ title: "Opération Montagne Propre : une grande journée citoyenne de ramassage 
 description: "Le 25 avril 2026, rejoignez les bénévoles pour nettoyer les abords du Lac de Passy et les sentiers de la commune après la fonte des neiges."
 date: 2026-03-31 05:45:00 +0200
 category: Agenda
-author: La redaction
+author: La rédaction
 ville: Passy
 event_date: 2026-04-25
 event_end_date: 2026-04-25

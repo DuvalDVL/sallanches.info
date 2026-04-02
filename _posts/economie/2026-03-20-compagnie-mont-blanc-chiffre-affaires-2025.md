@@ -4,7 +4,7 @@ title: "La Compagnie du Mont-Blanc publie un chiffre d'affaires de 155 millions 
 description: "La société qui gère les remontées mécaniques de Chamonix et Saint-Gervais affiche des résultats solides pour son dernier exercice, avec un chiffre d'affaires record pour le groupe."
 date: 2026-03-20
 category: Economie
-author: La redaction
+author: La rédaction
 ville: Saint-Gervais
 reading_time: 4
 image: /assets/img/articles/compagnie-mont-blanc-saint-gervais.webp

@@ -4,7 +4,7 @@ title: "Marathon du Lac d'Annecy : les inscriptions sont ouvertes pour l'éditio
 description: "L'un des plus beaux marathons de France revient les 18 et 19 avril 2026. Derniers jours pour s'inscrire au Marathon du Lac d'Annecy, au semi-marathon ou aux épreuves de 10 km et 5 km."
 date: 2026-04-02 08:40:00 +0200
 category: Agenda
-author: La redaction
+author: La rédaction
 ville: Annecy
 event_date: 2026-04-18
 event_end_date: 2026-04-19

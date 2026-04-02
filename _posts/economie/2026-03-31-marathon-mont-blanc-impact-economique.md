@@ -4,7 +4,7 @@ title: "Marathon du Mont-Blanc 2026 : un moteur économique incontournable pour 
 description: "Si l'épreuve sportive n'a lieu que fin juin, les retombées économiques de cet événement mondial se font déjà ressentir sur tout le Pays du Mont-Blanc."
 date: 2026-03-31 05:55:00 +0200
 category: Economie
-author: La redaction
+author: La rédaction
 ville: Chamonix
 reading_time: 3
 image: /assets/img/articles/marathon-mont-blanc-economie.webp

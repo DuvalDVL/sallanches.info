@@ -8,7 +8,7 @@ event_time: "8h30 - 14h00"
 event_lieu: "Parvis des Fiz, Passy"
 event_tarif: "Gratuit"
 category: Agenda
-author: La redaction
+author: La rédaction
 ville: Passy
 reading_time: 2
 image: /assets/img/articles/forum-emploi-parvis-des-fiz-passy.webp
