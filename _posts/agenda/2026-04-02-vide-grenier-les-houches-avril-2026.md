@@ -11,6 +11,7 @@ event_end_date: 2026-04-26
 event_time: "08h00 - 17h00"
 event_lieu: "Espace Animation Olca, Les Houches"
 event_tarif: "Entrée libre"
+author: La rédaction
 reading_time: 2
 image: /assets/img/articles/vide-grenier-les-houches-avril-2026.webp
 image_alt: "Ambiance conviviale lors d'un vide-grenier aux Houches"
