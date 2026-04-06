@@ -6,6 +6,7 @@ date: 2026-03-30 05:45:00 +0200
 category: Agenda
 author: La rédaction
 ville: Sallanches
+performer: Artisans Locaux
 event_date: 2026-04-12
 event_end_date: 2026-04-12
 event_time: "À partir de 8h00"
