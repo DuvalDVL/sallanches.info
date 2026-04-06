@@ -6,6 +6,7 @@ date: 2026-04-02 08:30:00 +0200
 category: Agenda
 author: La rédaction
 ville: Saint-Gervais
+performer: Commune de Saint-Gervais
 event_date: 2026-04-16
 event_end_date: 2026-04-19
 event_time: "De 14h00 à 23h00"
