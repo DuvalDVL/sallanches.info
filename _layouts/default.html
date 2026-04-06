@@ -59,26 +59,9 @@
   "@context": "https://schema.org",
   "@type": "NewsMediaOrganization",
   "name": "Sallanches.info",
-  "url": "{{ site.url }}",
+  "url": {{ site.url | jsonify }},
   "logo": "{{ site.url }}/assets/img/logo.png",
-  "description": "{{ site.description }}",
-  "address": {
-    "@type": "PostalAddress",
-    "addressLocality": "Sallanches",
-    "postalCode": "74700",
-    "addressCountry": "FR"
-  },
-  "areaServed": [
-    { "@type": "City", "name": "Sallanches" },
-    { "@type": "City", "name": "Passy" },
-    { "@type": "City", "name": "Saint-Gervais-les-Bains" },
-    { "@type": "City", "name": "Magland" }
-  ],
-  "sameAs": [
-    "{{ site.social.facebook }}",
-    "{{ site.social.twitter }}",
-    "{{ site.social.linkedin }}"
-  ]
+  "description": {{ site.description | jsonify }}
 }
 </script>
 
@@ -87,15 +70,14 @@
 {
   "@context": "https://schema.org",
   "@type": "NewsArticle",
-  "headline": "{{ page.title | escape }}",
-  "description": "{{ page.description | escape }}",
+  "headline": {{ page.title | jsonify }},
+  "description": {{ page.description | jsonify }},
   "datePublished": "{{ page.date | date_to_xmlschema }}",
-  "dateModified": "{{ page.date | date_to_xmlschema }}",
+  "dateModified": "{% if page.last_modified_at %}{{ page.last_modified_at | date_to_xmlschema }}{% else %}{{ page.date | date_to_xmlschema }}{% endif %}",
   "author": {
-    "author": { 
-    "@type": "Person", 
+    "@type": "Person",
     "name": "{{ page.author | default: 'La rédaction' }}",
-    "url": "{{ site.url }}/auteur/{{ page.author | default: 'La rédaction' | slugify }}/"
+    "url": "{{ site.url }}/auteur/{{ page.author | default: 'La rédaction' | slugify: 'ascii' }}/"
   },
   "publisher": {
     "@type": "Organization",
@@ -105,9 +87,50 @@
       "url": "{{ site.url }}/assets/img/logo.png"
     }
   },
-  "image": "{% if page.image %}{{ site.url }}{{ page.image }}{% else %}{{ site.url }}/assets/img/og-default.jpg{% endif %}",
-  "url": "{{ page.url | absolute_url }}",
+  "image": "{{ site.url }}{% if page.image %}{{ page.image }}{% else %}/assets/img/og-default.jpg{% endif %}",
   "mainEntityOfPage": "{{ page.url | absolute_url }}"
+}
+</script>
+{% endif %}
+
+{% if page.event_date %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Event",
+  "name": {{ page.title | jsonify }},
+  "description": {{ page.description | jsonify }},
+  "startDate": "{{ page.event_date | date_to_xmlschema }}",
+  "endDate": "{% if page.event_end_date %}{{ page.event_end_date | date_to_xmlschema }}{% else %}{{ page.event_date | date_to_xmlschema }}{% endif %}",
+  "eventStatus": "https://schema.org/EventScheduled",
+  "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+  "location": {
+    "@type": "Place",
+    "name": {{ page.event_lieu | default: page.ville | default: 'Sallanches' | jsonify }},
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "{{ page.ville | default: 'Sallanches' }}",
+      "addressCountry": "FR"
+    }
+  },
+  "image": "{{ site.url }}{% if page.image %}{{ page.image }}{% else %}/assets/img/og-default.jpg{% endif %}",
+  "organizer": {
+    "@type": "Organization",
+    "name": {{ page.organizer | default: page.ville | default: 'Organisation locale' | jsonify }},
+    "url": {{ site.url | jsonify }}
+  },
+  "performer": {
+    "@type": "Organization",
+    "name": {{ page.performer | default: 'Artistes et intervenants' | jsonify }}
+  },
+  "offers": {
+    "@type": "Offer",
+    "url": "{{ page.url | absolute_url }}",
+    "price": "0",
+    "priceCurrency": "EUR",
+    "availability": "https://schema.org/InStock",
+    "validFrom": "{{ page.date | date_to_xmlschema }}"
+  }
 }
 </script>
 {% endif %}
