@@ -4,6 +4,7 @@ title: "Fête du Printemps à Passy : artisans locaux et animations pour toute l
 description: "Le dimanche 5 avril 2026, le Parvis des Fiz accueille le grand marché de printemps. Une cinquantaine d'exposants, des ateliers pour enfants et de la petite restauration. Entrée libre."
 date: 2026-03-27
 category: Agenda
+performer: Artisans et commerçants locaux
 event_date: 2026-04-05
 event_end_date: 2026-04-05
 event_time: "De 09h00 à 18h00"
