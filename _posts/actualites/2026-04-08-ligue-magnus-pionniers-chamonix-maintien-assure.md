@@ -2,7 +2,7 @@
 layout: post
 title: "Ligue Magnus : les Pionniers de Chamonix assurent leur maintien au terme d'une saison à suspense"
 description: "Grâce à une fin de championnat maîtrisée dans la poule de maintien, les hockeyeurs chamoniards ont officiellement validé leur ticket pour rester dans l'élite du hockey français."
-date: 2026-04-08 07:30:00 +0200
+date: 2026-04-08 06:10:00 +0200
 category: Actualites
 author: La rédaction
 ville: Chamonix
