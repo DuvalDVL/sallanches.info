@@ -2,7 +2,7 @@
 layout: post
 title: "Autoroute A40 : l'installation du péage en flux libre entraîne des fermetures nocturnes à Magland"
 description: "L'Autoroute Blanche sera totalement coupée à la circulation la nuit de ce mercredi 8 avril entre Sallanches et Scionzier pour permettre la pose des nouveaux portiques de télépéage."
-date: 2026-04-08 07:00:00 +0200
+date: 2026-04-08 06:20:00 +0200
 category: Pratique
 author: La rédaction
 ville: Magland
