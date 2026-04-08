@@ -2,7 +2,7 @@
 layout: post
 title: "UTMB 2026 : le vainqueur sortant Tom Evans confirme son retour à Chamonix"
 description: "Le plateau élite de l'Ultra-Trail du Mont-Blanc commence à prendre forme. Le coureur britannique Tom Evans viendra défendre son titre cet été autour des glaciers."
-date: 2026-04-08 09:00:00 +0200
+date: 2026-04-08 08:00:00 +0200
 category: Actualites
 author: La rédaction
 ville: Chamonix
