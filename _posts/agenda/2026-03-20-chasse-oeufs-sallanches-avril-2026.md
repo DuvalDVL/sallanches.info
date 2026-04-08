@@ -12,7 +12,7 @@ category: Agenda
 author: La rédaction
 ville: Sallanches
 reading_time: 2
-image: /assets/img/articles/jeu-de-piste-sallanches-rubins.webp
+image: /assets/img/articles/chasse-oeufs-paques.webp
 image_alt: "Enquête et jeu de piste dans les rues de Sallanches"
 tags: [agenda, famille, enfants, enquete, sallanches, chateau-des-rubins]
 permalink: /agenda/chasse-oeufs-paques-sallanches-2026/
