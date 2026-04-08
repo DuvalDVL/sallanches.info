@@ -15,7 +15,7 @@ reading_time: 2
 image: /assets/img/articles/jeu-de-piste-sallanches-rubins.webp
 image_alt: "Enquête et jeu de piste dans les rues de Sallanches"
 tags: [agenda, famille, enfants, enquete, sallanches, chateau-des-rubins]
-permalink: /agenda/jeu-de-piste-chaude-piste-sallanches-2026/
+permalink: /agenda/chasse-oeufs-paques-sallanches-2026/
 ---
 
 Bien décidés à résoudre un mystère au cœur de Sallanches, vous vous lancez dans une enquête minutieuse et partez à la recherche d’indices dans le centre-ville ! Le départ de cette aventure familiale est donné sous la Grenette.
