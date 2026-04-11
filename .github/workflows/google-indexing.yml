@@ -1,0 +1,22 @@
+name: Google Indexing API
+
+# Le script s'active à chaque fois que tu publies (push) sur ta branche principale
+on:
+  push:
+    branches:
+      - main  # Remplace par 'master' si ta branche principale s'appelle master
+
+jobs:
+  index:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Récupérer le code du site
+        uses: actions/checkout@v3
+
+      - name: Prévenir Google via l'API d'Indexation
+        uses: rohit0220/google-indexing-api-bulk@v1.2.0
+        with:
+          # Cible ton sitemap
+          sitemap_url: "https://sallanches.info/sitemap.xml"
+          # Utilise le coffre-fort GitHub pour la clé de sécurité
+          service_account_json: ${{ secrets.INDEXING_API_KEY }}
