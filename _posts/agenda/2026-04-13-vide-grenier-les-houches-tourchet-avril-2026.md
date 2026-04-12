@@ -2,7 +2,7 @@
 layout: post
 title: "Agenda : grand vide-greniers de printemps au Parking du Tourchet aux Houches"
 description: "Le traditionnel vide-greniers des Houches se tiendra le dimanche 26 avril 2026. Chineurs et passionnés de bonnes affaires sont attendus pour cette journée de déballage."
-date: 2026-04-12 11:00:00 +0200
+date: 2026-04-13 06:00:00 +0200
 category: Agenda
 author: La rédaction
 ville: Les Houches
