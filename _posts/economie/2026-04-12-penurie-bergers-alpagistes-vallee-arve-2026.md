@@ -17,7 +17,7 @@ Le printemps annonce le retour imminent des troupeaux en altitude. Pourtant, dan
 
 ## Des conditions de vie qui découragent les candidats
 
-Le métier de berger ou de vacher en haute montagne a souvent été romancé par l'imaginaire collectif. La réalité est bien plus rude. Les conditions de vie très spartiates dans certains chalets d'alpage (parfois sans électricité ni eau courante), l'isolement, les journées à rallonge et les intempéries découragent de plus en plus les saisonniers. 
+Le métier de berger ou de vacher en haute montagne a souvent été romancé par l'imaginaire collectif. La réalité est bien plus complexe. Les conditions de vie très spartiates dans certains chalets d'alpage (parfois sans électricité ni eau courante), l'isolement, les journées à rallonge et les intempéries découragent de plus en plus les saisonniers. 
 
 À cela s'ajoute une nouvelle source de stress majeur qui épuise mentalement les professionnels : le retour des grands prédateurs (loups et lynx) dans le massif du Mont-Blanc et les Aravis, obligeant les bergers à une vigilance constante de jour comme de nuit.
 
