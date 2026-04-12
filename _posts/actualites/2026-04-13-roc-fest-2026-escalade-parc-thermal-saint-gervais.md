@@ -2,7 +2,7 @@
 layout: post
 title: "Événement : le Roc Fest 2026 fait son grand retour au Parc Thermal de Saint-Gervais"
 description: "Du 29 au 31 mai 2026, les amateurs de grimpe ont rendez-vous à Saint-Gervais pour la nouvelle édition du Roc Fest. Trois jours dédiés à l'escalade et à la verticalité."
-date: 2026-04-12 06:10:00 +0200
+date: 2026-04-13 06:10:00 +0200
 category: Actualites
 author: La rédaction
 ville: Saint-Gervais
