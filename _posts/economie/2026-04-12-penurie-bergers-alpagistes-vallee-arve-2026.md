@@ -2,7 +2,7 @@
 layout: post
 title: "Agriculture : pénurie de bergers, l'inquiétude grandit chez les alpagistes de la Vallée de l'Arve"
 description: "À quelques semaines de la saison de l'emmontagnée, les propriétaires d'alpages peinent à recruter du personnel pour garder les troupeaux en altitude."
-date: 2026-04-12 14:00:00 +0200
+date: 2026-04-12 11:00:00 +0200
 category: Economie
 author: La rédaction
 ville: Magland
