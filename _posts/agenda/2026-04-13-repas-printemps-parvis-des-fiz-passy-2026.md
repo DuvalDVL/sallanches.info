@@ -2,7 +2,7 @@
 layout: post
 title: "Agenda : un repas de printemps convivial organisé au Parvis des Fiz à Passy"
 description: "Rendez-vous le 28 avril 2026 au Parvis des Fiz pour un grand repas de printemps animé en musique. Un moment de partage et de gastronomie ouvert à tous."
-date: 2026-04-12 12:00:00 +0200
+date: 2026-04-13 06:20:00 +0200
 category: Agenda
 author: La rédaction
 ville: Passy
