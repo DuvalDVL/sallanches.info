@@ -2,7 +2,7 @@
 layout: post
 title: "Faune alpine : retour précoce du Gypaète Barbu au-dessus des Fiz, appel à la vigilance"
 description: "Les agents du Conservatoire d'Espaces Naturels (ASTERS) ont observé des nichées très précoces cette année dans le massif des Fiz, incitant les sportifs à la prudence."
-date: 2026-04-12 12:00:00 +0200
+date: 2026-04-12 11:00:00 +0200
 category: Actualites
 author: La rédaction
 ville: Passy
