@@ -2,7 +2,7 @@
 layout: post
 title: "Saint-Gervais : des vols de matériel d'alpinisme dans les refuges du Mont-Blanc suscitent la colère"
 description: "La mairie de Saint-Gervais dénonce le vol d'équipements de montagne dans deux refuges de la voie normale. Des ressortissants allemands et ukrainiens ont été interpellés."
-date: 2026-04-12 06:05:00 +0200
+date: 2026-04-13 06:05:00 +0200
 category: Actualites
 author: La rédaction
 ville: Saint-Gervais
