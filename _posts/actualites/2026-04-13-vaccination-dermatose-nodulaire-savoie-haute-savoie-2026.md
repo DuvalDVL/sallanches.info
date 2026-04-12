@@ -2,7 +2,7 @@
 layout: post
 title: "Agriculture : lancement de la campagne de vaccination contre la dermatose nodulaire en Savoie et Haute-Savoie"
 description: "Face à la propagation de la maladie, le ministère de l'Agriculture a officiellement lancé la campagne de vaccination 2026 ce 9 avril. Une mesure obligatoire et prise en charge par l'État."
-date: 2026-04-12 06:00:00 +0200
+date: 2026-04-13 06:00:00 +0200
 category: Actualites
 author: La rédaction
 ville: Haute-Savoie
