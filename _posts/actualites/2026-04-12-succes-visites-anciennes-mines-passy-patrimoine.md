@@ -2,7 +2,7 @@
 layout: post
 title: "Patrimoine caché : le succès grandissant des visites insolites des anciennes mines de Passy"
 description: "Loin de l'agitation des stations de ski, le passé industriel et minier du Pays du Mont-Blanc suscite un vif intérêt grâce à des parcours pédestres thématiques."
-date: 2026-04-12 16:30:00 +0200
+date: 2026-04-12 11:10:00 +0200
 category: Culture
 author: La rédaction
 ville: Passy
