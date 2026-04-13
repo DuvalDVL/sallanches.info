@@ -3,8 +3,6 @@ layout: post
 title: "Municipales à Sallanches : Sylvia Perruchione élue maire avec 43,41% des voix"
 description: "Sylvia Perruchione remporte le second tour des élections municipales de Sallanches avec 43,41% des suffrages exprimés, devant Elodie André (24,63%), Martial Da Silva (16,38%) et Josée Serasset-Krempp (15,58%)."
 date: 2026-03-22
-breaking: true
-breaking_text: "Municipales Sallanches : Sylvia Perruchione élue au second tour"
 category: Actualites
 author: La rédaction
 ville: Sallanches
