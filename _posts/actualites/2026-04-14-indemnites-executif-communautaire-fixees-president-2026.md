@@ -3,7 +3,7 @@ layout: post
 title: "2 774 € pour le président, 1 016 € pour les vice-présidents : les indemnités de l'exécutif communautaire fixées"
 description: "Le nouveau conseil communautaire a officiellement voté les indemnités de ses dirigeants. Une délibération obligatoire qui fixe le cadre financier du nouvel exécutif."
 date: 2026-04-14 06:15:00 +0200
-category: Politique
+category: Actualites
 author: La rédaction
 ville: Passy
 reading_time: 2
