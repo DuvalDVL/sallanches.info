@@ -3,7 +3,7 @@ layout: post
 title: "Sallanches : un deuxième conseil municipal crucial pour lancer véritablement la mandature"
 description: "Après l'élection du maire et des adjoints, les élus se réunissent pour le deuxième conseil municipal de la nouvelle mandature. Au programme : le vote très attendu du budget."
 date: 2026-04-14 06:00:00 +0200
-category: Politique
+category: Actualites
 author: La rédaction
 ville: Sallanches
 reading_time: 2
