@@ -3,8 +3,6 @@ layout: post
 title: "Saint-Gervais : un poids lourd se coince de nouveau sous le pont et bloque la RD 902"
 description: "C'est un scénario qui se répète inlassablement. Un camion s'est encastré sous un pont de la commune, paralysant la circulation sur cet axe très fréquenté."
 date: 2026-04-14 06:30:00 +0200
-breaking: true
-breaking_text: "ALERTE INFO - Saint-Gervais : un poids lourd coincé sous un pont bloque totalement la RD 902"
 category: Actualites
 author: La rédaction
 ville: Saint-Gervais
