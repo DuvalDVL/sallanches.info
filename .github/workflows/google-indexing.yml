@@ -1,4 +1,4 @@
-name: Google Indexing API
+name: API Indexation (Google & Bing)
 
 on:
   workflow_run:
@@ -8,6 +8,7 @@ on:
 
 jobs:
   index:
+    # On vérifie que le site a bien été mis en ligne avant de prévenir les moteurs
     if: ${{ github.event.workflow_run.conclusion == 'success' }}
     runs-on: ubuntu-latest
     steps:
@@ -17,7 +18,10 @@ jobs:
       - name: Prévenir Google via l'API d'Indexation
         uses: robingenz/action-google-indexing@v1.0.2
         with:
-          # L'adresse exacte de ta propriété Search Console
           siteUrl: 'https://sallanches.info/'
-          # Ta clé secrète bien à l'abri
           gcpServiceAccountKey: ${{ secrets.INDEXING_API_KEY }}
+
+      - name: Prévenir Bing (Ping instantané)
+        # Cette commande simple alerte Bing que le sitemap a été mis à jour
+        run: |
+          curl -s "https://www.bing.com/ping?sitemap=https://sallanches.info/sitemap.xml"
