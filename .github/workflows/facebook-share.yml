@@ -1,0 +1,42 @@
+name: Partage Automatique Facebook
+
+on:
+  workflow_run:
+    workflows: ["Publication matinale des articles"]
+    types:
+      - completed
+
+jobs:
+  share:
+    # On vérifie que la publication matinale s'est bien passée
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Extraire le dernier article du flux RSS
+        id: get_url
+        run: |
+          # Petit script Python pour lire ton flux XML proprement et isoler le dernier lien
+          python3 -c "
+          import urllib.request
+          import xml.etree.ElementTree as ET
+          
+          url = 'https://sallanches.info/feed.xml'
+          req = urllib.request.urlopen(url)
+          xml_data = req.read()
+          root = ET.fromstring(xml_data)
+          
+          ns = {'atom': 'http://www.w3.org/2005/Atom'}
+          entry = root.find('atom:entry', ns)
+          link = entry.find('atom:link', ns).attrib['href']
+          
+          # On envoie l'URL trouvée à l'étape suivante
+          print(f'url={link}')
+          with open('$GITHUB_OUTPUT', 'a') as f:
+              f.write(f'url={link}\n')
+          "
+
+      - name: Envoyer l'article sur la Page Facebook
+        run: |
+          curl -X POST "https://graph.facebook.com/v19.0/${{ secrets.FB_PAGE_ID }}/feed" \
+          -d "link=${{ steps.get_url.outputs.url }}" \
+          -d "access_token=${{ secrets.FB_PAGE_ACCESS_TOKEN }}"
