@@ -2,7 +2,7 @@
 layout: post
 title: "UTMB 2026 : la star Kilian Jornet confirme son grand retour à Chamonix"
 description: "Après quatre ans d'absence, l'icône mondiale du trail running sera au départ de l'épreuve reine le 28 août prochain pour briguer un 5e titre historique."
-date: 2026-04-19 06:00:00 +0200
+date: 2026-04-19 03:10:00 +0200
 category: Actualites
 author: La rédaction
 ville: Chamonix
