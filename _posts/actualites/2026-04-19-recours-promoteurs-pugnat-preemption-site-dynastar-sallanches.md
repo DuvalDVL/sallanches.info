@@ -2,7 +2,7 @@
 layout: post
 title: "Sallanches : recours déposé contre la préemption municipale du site Dynastar"
 description: "Les promoteurs immobiliers Pugnat contestent devant le tribunal administratif la décision de la ville de racheter le site industriel pour 5,5 millions d'euros."
-date: 2026-04-19 07:00:00 +0200
+date: 2026-04-19 03:00:00 +0200
 category: Actualites
 author: La rédaction
 ville: Sallanches
