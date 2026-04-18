@@ -1,17 +1,19 @@
 name: Google Indexing API
 
 on:
-  push:
-    branches:
-      - main  # (ou 'master', selon le nom de ta branche)
+  workflow_run:
+    workflows: ["Publication matinale des articles", "pages-build-deployment"]
+    types:
+      - completed
 
 jobs:
   index:
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
     runs-on: ubuntu-latest
     steps:
       - name: Récupérer le code du site
         uses: actions/checkout@v4
-
+        
       - name: Prévenir Google via l'API d'Indexation
         uses: robingenz/action-google-indexing@v1.0.2
         with:
