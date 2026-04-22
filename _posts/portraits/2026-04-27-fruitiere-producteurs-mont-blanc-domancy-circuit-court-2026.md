@@ -2,7 +2,7 @@
 layout: post
 title: "Portrait : La Fruitière des producteurs du Mont-Blanc, le trait d'union entre nos fermes et nos assiettes"
 description: "Plongée au cœur de la coopérative de Domancy, une institution locale qui rassemble 32 fermes du Pays du Mont-Blanc pour défendre le circuit court et le goût de notre terroir."
-date: 2026-04-24 05:00:00 +0200
+date: 2026-04-27 05:00:00 +0200
 category: Portraits
 author: Publi-reportage
 ville: Domancy
