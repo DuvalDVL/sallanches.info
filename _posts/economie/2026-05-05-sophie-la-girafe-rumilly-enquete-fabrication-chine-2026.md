@@ -2,7 +2,7 @@
 layout: post
 title: "Économie : Sophie la girafe, le « Made in France » de Rumilly ébranlé par une enquête"
 description: "Une enquête révèle que l'icône de la petite enfance serait produite en Chine, l'usine de Rumilly ne servant plus que de vitrine de façade."
-date: 2026-05-02 05:00:00 +0200
+date: 2026-05-05 05:00:00 +0200
 category: Economie
 author: La rédaction
 ville: Rumilly
