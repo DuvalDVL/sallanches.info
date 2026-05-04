@@ -2,7 +2,7 @@
 layout: post
 title: "Pratique : emmener son vélo en TER coûte désormais 1 euro en Haute-Savoie"
 description: "Depuis le 1er mai, la Région impose une réservation payante pour les vélos dans les TER. Une mesure qui divise les usagers de la vallée de l'Arve."
-date: 2026-05-02 05:15:00 +0200
+date: 2026-05-05 05:15:00 +0200
 category: Pratique
 author: La rédaction
 ville: Sallanches
