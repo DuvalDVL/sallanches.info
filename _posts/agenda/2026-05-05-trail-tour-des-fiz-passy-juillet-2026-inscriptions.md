@@ -2,7 +2,7 @@
 layout: post
 title: "Agenda : le Trail du Tour des Fiz fête sa 17e édition le 11 juillet à Passy"
 description: "Avec trois parcours mythiques au départ du Plateau d'Assy, le Trail du Tour des Fiz s'impose comme le rendez-vous trail de l'été au coeur du massif."
-date: 2026-05-02 06:45:00 +0200
+date: 2026-05-05 05:45:00 +0200
 category: Agenda
 author: La rédaction
 ville: Passy
