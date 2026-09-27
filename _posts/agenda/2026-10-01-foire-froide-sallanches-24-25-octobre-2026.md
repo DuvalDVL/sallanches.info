@@ -2,7 +2,7 @@
 layout: post
 title: "Agenda : la Foire Froide, rendez-vous automnal incontournable, revient à Sallanches les 24 et 25 octobre"
 description: "Comice agricole, grand marché et produits du terroir : la traditionnelle Foire Froide de Sallanches se tient le dernier week-end d'octobre en centre-ville."
-date: 2026-10-01 07:00:00 +0200
+date: 2026-09-27 07:00:00 +0200
 category: Agenda
 author: La rédaction
 ville: Sallanches
