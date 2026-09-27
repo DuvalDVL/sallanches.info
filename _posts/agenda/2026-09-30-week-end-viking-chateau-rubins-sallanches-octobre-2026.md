@@ -2,7 +2,7 @@
 layout: post
 title: "Agenda : le Château des Rubins accueille son Week-end Viking les 10 et 11 octobre"
 description: "Campement, animations et démonstrations de combats vikings au Château des Rubins, précédés d'une séance ciné-dédicace le vendredi 9 octobre."
-date: 2026-09-30 07:00:00 +0200
+date: 2026-09-27 07:00:00 +0200
 category: Agenda
 author: La rédaction
 ville: Sallanches
