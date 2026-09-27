@@ -2,7 +2,7 @@
 layout: post
 title: "Agenda : “On ferme la rue !” fait son retour quai de Warens le 1er octobre"
 description: "Fête de quartier gratuite le jeudi 1er octobre à Sallanches, avec TALES & AHLAM en ouverture et LA DAME BLANCHE en clôture."
-date: 2026-09-29 07:00:00 +0200
+date: 2026-09-27 07:00:00 +0200
 category: Agenda
 author: La rédaction
 ville: Sallanches
